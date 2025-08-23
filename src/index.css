@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: none; /* Hide default cursor */
+  }
+  
+  body {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    cursor: none; /* Hide default cursor */
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .font-retro {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .font-cursive {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  /* Custom cursor styles for interactive elements */
+  a, button, [role="button"], input, textarea, select {
+    cursor: none !important;
+  }
+
+  /* Ensure cursor trail works on all elements */
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Remove glow effects in light mode */
+@media (prefers-color-scheme: light) {
+  .dark\:animate-glow {
+    animation: none !important;
+  }
+  
+  .dark\:hover\:drop-shadow-\[0_0_15px_rgba\(249\,115\,22\,0\.8\)\]:hover {
+    filter: none !important;
+  }
+}
+
+/* Ensure glow effects only work in dark mode */
+html:not(.dark) .dark\:animate-glow {
+  animation: none !important;
+}
+
+html:not(.dark) .dark\:hover\:drop-shadow-\[0_0_15px_rgba\(249\,115\,22\,0\.8\)\]:hover {
+  filter: none !important;
+}
+
+html:not(.dark) .dark\:hover\:drop-shadow-\[0_0_10px_rgba\(249\,115\,22\,0\.8\)\]:hover {
+  filter: none !important;
+}
+
+html:not(.dark) .dark\:hover\:drop-shadow-\[0_0_8px_rgba\(249\,115\,22\,0\.6\)\]:hover {
+  filter: none !important;
+}
