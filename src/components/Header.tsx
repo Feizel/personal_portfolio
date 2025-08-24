@@ -19,8 +19,8 @@ const Header = ({ onContactClick, onBlogClick }: HeaderProps) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/80 dark:bg-true-black/80 backdrop-blur-md border-b border-gray-200/20 dark:border-orange-500/20' 
-        : 'bg-transparent'
+        ? 'bg-white/10 dark:bg-true-black/10 backdrop-filter backdrop-blur-md border border-gray-200/20 dark:border-orange-500/20 shadow-sm'
+      : 'bg-transparent'
     }`}>
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">

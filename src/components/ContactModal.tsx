@@ -67,7 +67,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 href="mailto:contact@feizelzemaduna.com"
                 className="text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light"
               >
-                contact@feizelzemaduna.com
+                feizel.maduna@gmail.com
               </a>
             </div>
           </div>
@@ -82,7 +82,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 href="tel:+1234567890"
                 className="text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light"
               >
-                +1 (234) 567-890
+                Email to get this
               </a>
             </div>
           </div>
@@ -93,7 +93,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Location</p>
-              <p className="text-gray-900 dark:text-white font-light">Available for remote work</p>
+              <p className="text-gray-900 dark:text-white font-light">Johannesburg & Cape Town</p>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Connect with me</p>
           <div className="flex space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Feizel"
               className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-100 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"

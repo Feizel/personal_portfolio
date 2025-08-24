@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Twitter, Heart, Code, Rocket } from 'lucide-react';
+import { Github, Linkedin, Mail, Award, Heart, Code, Rocket } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/feizel"
                 className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,15 +33,15 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.credly.com/users/feizel"
                 className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter size={20} />
+                <Award size={20} />
               </a>
               <a
-                href="mailto:contact@feizelzemaduna.com"
+                href="mailto:feizel.maduna@gmail.com"
                 className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
               >
                 <Mail size={20} />

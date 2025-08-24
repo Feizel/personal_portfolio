@@ -3,17 +3,34 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'AWS Intern',
+      title: 'AWS Cloud Engineer Intern',
       company: 'Amazon Web Services',
       period: 'Present',
-      description: 'Working on cloud infrastructure projects and learning enterprise-scale solutions.',
+      description: (
+        <>
+          Amazon Web Services (AWS) Cloud Engineer Intern<br />
+          <strong>Location:</strong> Cape Town, Western Cape<br />
+          <strong>Responsibilities:</strong> <em>Working on cloud infrastructure projects at Amazon Web Services, 
+            gaining hands-on experience with enterprise-scale solutions. I actively troubleshoot, automate, and contribute 
+            to cloud architecture while collaborating with global teams to support mission-critical applications. 
+            This experience is imrpoving my expertise in AWS core services and cutting-edge AI technologies, 
+            which is equipping me to build scalable, secure, and innovative cloud solutions.</em>
+        </>
+      ),
       current: true
     },
     {
-      title: 'Recent Graduate',
-      company: 'University',
-      period: '2024',
-      description: 'Completed degree with focus on computer science and technology.',
+      title: 'Bachelor of Science in Information Technologoly Graduate',
+      company: 'University of the Free State',
+      period: '2021 - 2024',
+      description: (
+        <>
+          University of the Free State Bloemfontein, Free State<br />
+          Bachelor of Science in Information Technology majoring in Computer Science.<br /><br />
+          <strong><strong>Relevant Coursework:</strong></strong> <em>Data Structures & Algorithms, Software Engineering, Mathematics & Applied Mathematics,
+          Computer Networks, Advanced Databases, Mobile Development, Web Development, Human-Computer Interaction</em>
+        </>
+      ),
       current: false
     }
   ];
@@ -53,9 +70,9 @@ const Experience = () => {
                     <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
                       {exp.company}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-400 font-light">
+                    <div className="text-gray-600 dark:text-gray-400 font-light">
                       {exp.description}
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>

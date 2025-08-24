@@ -35,7 +35,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
         As we continue to push the boundaries of what's possible, I'm excited to be part of this transformation and to share these insights with the community.
       `,
-      date: "2024-01-15",
+      date: "2025-03-15",
       readTime: "5 min read",
       tags: ["AI", "Cloud Computing", "AWS", "Technology"]
     },
@@ -69,7 +69,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
         As I continue my journey in cloud computing, these foundational lessons will undoubtedly shape how I approach future challenges and opportunities.
       `,
-      date: "2024-01-08",
+      date: "2025-07-08",
       readTime: "4 min read",
       tags: ["AWS", "Scalability", "Internship", "Cloud Architecture"]
     },
@@ -107,7 +107,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
         As businesses continue to digitize, cloud computing will remain a critical enabler of transformation and growth. The organizations that approach cloud migration strategically will be best positioned for future success.
       `,
-      date: "2024-01-01",
+      date: "2025-05-22",
       readTime: "6 min read",
       tags: ["Business Strategy", "Cloud Migration", "Digital Transformation"]
     },
@@ -145,7 +145,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
         Whether I'm debugging a complex system or observing Saturn's rings through a telescope, both activities remind me of the beauty of discovery and the importance of curiosity in driving innovation.
       `,
-      date: "2023-12-25",
+      date: "2025-08-21",
       readTime: "4 min read",
       tags: ["Astronomy", "Philosophy", "Software Development", "Personal"]
     }

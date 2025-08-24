@@ -69,7 +69,7 @@ const Hero = () => {
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light whitespace-nowrap">
               AWS Intern passionate about cloud computing, AI, and building innovative solutions.<br />
-              Recent graduate exploring the intersection of technology and business strategy.
+              Recent graduate exploring the intersection of cloud technology, AI, and business strategy.
             </p>
 
             <div className="flex space-x-4 mb-12">
@@ -98,7 +98,7 @@ const Hero = () => {
                 <Award size={24} />
               </a>
               <a
-                href="mailto:contact@feizelzemaduna.com"
+                href="mailto:feizel.maduna@gmail.com"
                 className="p-3 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
               >
                 <Mail size={24} />
