@@ -55,8 +55,8 @@ const Hero = () => {
               Hi, I'm{' '}
               <span
                 className="
-                  inline-block whitespace-nowrap
-                  h-[3.5rem] min-w-[18rem]
+                  inline-block
+                  min-h-[3.5rem] sm:min-w-[18rem]
                   text-orange-500 hover:text-orange-600 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_15px_rgba(249,115,22,0.8)]
                   transition-all duration-300 cursor-default font-display
@@ -67,10 +67,9 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light whitespace-nowrap">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light">
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions ✨</span>.<br />
-              Recent Information Technology graduate exploring the intersection between Cloud Technology,<br/>
-               Artificial Intelligence, and Business Strategy 🚀.
+              Recent Information Technology graduate exploring the intersection between Cloud Technology, Artificial Intelligence, and Business Strategy 🚀.
             </p>
 
             <div className="flex space-x-4 mb-12">

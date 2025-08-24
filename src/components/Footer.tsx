@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="text-3xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive">
-              Feizel ✨
+              Feizel
             </div>
             <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions</span>. 
@@ -100,8 +100,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 dark:text-gray-400 flex items-center font-light">
-              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" /> and ☕ by 
-               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">feizeldev</span>
+              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" />
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-light">
               © {new Date().getFullYear()} All rights reserved
