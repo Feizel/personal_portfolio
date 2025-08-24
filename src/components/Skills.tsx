@@ -3,81 +3,101 @@ import React from 'react';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Technology & Programming',
+      title: '💻 Technology & Programming',
+      emoji: '💻',
       skills: [
-        { name: 'Python', level: 95 },
-        { name: 'JavaScript/TypeScript', level: 90 },
-        { name: 'React/Next.js', level: 88 },
-        { name: 'Node.js', level: 85 },
-        { name: 'SQL/NoSQL Databases', level: 90 }
+        { name: 'C# 🟢', level: 90 },
+        { name: 'Java ☕', level: 85 },
+        { name: 'JavaScript/TypeScript ⚡', level: 90 },
+        { name: 'Python 🐍', level: 80 },
+        { name: 'SQL (MySQL) 🗄️', level: 88 },
+        { name: 'HTML/CSS 🎨', level: 85 },
+        { name: 'C/C++ 🔧', level: 60 }
       ]
     },
     {
-      title: 'AI & Machine Learning',
+      title: '☁️ Cloud & Infrastructure',
+      emoji: '☁️',
       skills: [
-        { name: 'Machine Learning', level: 92 },
-        { name: 'Deep Learning', level: 88 },
-        { name: 'Natural Language Processing', level: 85 },
-        { name: 'Computer Vision', level: 80 },
-        { name: 'MLOps', level: 85 }
+        { name: 'AWS (EC2, Lambda, VPC, S3, RDS, DynamoDB, IAM, Cognito) ☁️', level: 90 },
+        { name: 'AWS Serverless ☁️', level: 80 },
+        { name: 'AWS & SageMaker 🤖', level: 72 },
+        { name: 'AWS Bedrock 🤖', level: 75 },
+        { name: 'AWS Amplify 📱', level: 85 },
+        { name: 'GraphQL 🔗', level: 80 },
+        { name: 'REST APIs 🌐', level: 85 }
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
+      title: '📱 Frameworks & Tools',
+      emoji: '🛠️',
       skills: [
-        { name: 'AWS', level: 90 },
-        { name: 'Azure', level: 85 },
-        { name: 'Google Cloud Platform', level: 82 },
-        { name: 'Docker/Kubernetes', level: 88 },
-        { name: 'CI/CD', level: 87 }
+        { name: 'React ⚛️', level: 88 },
+        { name: '.NET Core / ASP.NET ⚙️', level: 85 },
+        { name: 'Entity Framework 📊', level: 80 },
+        { name: 'Firebase 🔥', level: 75 },
+        { name: 'Material-UI 🎨', level: 75 },
+        { name: 'Android SDK 🤖', level: 70 },
+        { name: 'Developer Tools (Git, VS Code, IntelliJ, Android Studio) 🛠️', level: 88 }
       ]
     },
     {
-      title: 'Business & Strategy',
+      title: '🧠 Concepts & Soft Skills',
+      emoji: '🧠',
       skills: [
-        { name: 'Product Strategy', level: 88 },
-        { name: 'Project Management', level: 92 },
-        { name: 'Business Analysis', level: 85 },
-        { name: 'Team Leadership', level: 90 },
-        { name: 'Stakeholder Management', level: 88 }
+        { name: 'Data Structures & Algorithms 📚', level: 85 },
+        { name: 'Object-Oriented Programming 🔄', level: 90 },
+        { name: 'Serverless Architecture 🌩️', level: 80 },
+        { name: 'API Design & Development ⚙️', level: 85 },
+        { name: 'Problem-solving & Critical Thinking 💡', level: 90 },
+        { name: 'Effective Communication 🗣️', level: 88 },
+        { name: 'Collaborative Teamwork 🤝', level: 90 },
+        { name: 'Rapid Learning & Adaptability 🚀', level: 92 },
+        { name: 'Time Management ⏰', level: 90 }
       ]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            My <span className="bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent">Skills</span>
+    <section className="py-16 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+            🚀 Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise and professional capabilities
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{category.title}</h3>
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-teal-500 to-blue-600 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skillCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="group">
+                <div className="bg-white dark:bg-gray-900/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-orange-500/10">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-all duration-300">
+                    {category.title}
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex} className="group/skill">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-gray-700 dark:text-gray-300 font-medium group-hover/skill:text-orange-500 dark:group-hover/skill:text-orange-400 transition-all duration-300">
+                            {skill.name}
+                          </span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                          <div
+                            className="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full transition-all duration-1000 ease-out hover:shadow-md hover:shadow-orange-500/50"
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
