@@ -3,32 +3,36 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'AWS Cloud Engineer Intern',
-      company: 'Amazon Web Services',
-      period: 'Present',
+      title: '☁️ AWS Cloud Engineer Intern',
+      company: '🚀 Amazon Web Services',
+      period: '⚡ Present',
       description: (
         <>
-          Amazon Web Services (AWS) Cloud Engineer Intern<br />
-          <strong>Location:</strong> Cape Town, Western Cape<br />
-          <strong>Responsibilities:</strong> <em>Working on cloud infrastructure projects at Amazon Web Services, 
-            gaining hands-on experience with enterprise-scale solutions. I actively troubleshoot, automate, and contribute 
-            to cloud architecture while collaborating with global teams to support mission-critical applications. 
-            This experience is imrpoving my expertise in AWS core services and cutting-edge AI technologies, 
-            which is equipping me to build scalable, secure, and innovative cloud solutions.</em>
+          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">Amazon Web Services (AWS)</span> Cloud Engineer Intern ☁️<br />
+          <strong>📍 Location:</strong> Cape Town, Western Cape<br /><br />
+          <strong>🎯 Responsibilities:</strong>
+          <ul className="mt-2 ml-4 space-y-1">
+            <li>• Working on <span className="text-blue-500 dark:text-blue-400 font-medium">cloud infrastructure projects</span> at Amazon Web Services</li>
+            <li>• Gaining hands-on experience with <span className="text-green-500 dark:text-green-400 font-medium">enterprise-scale solutions</span></li>
+            <li>• Actively troubleshooting, automating, and contributing to cloud architecture</li>
+            <li>• Collaborating with <span className="text-purple-500 dark:text-purple-400 font-medium">global teams</span> to support mission-critical applications</li>
+            <li>• Improving expertise in <span className="text-orange-500 dark:text-orange-400 font-medium">AWS core services</span> and cutting-edge <span className="text-indigo-500 dark:text-indigo-400 font-medium">AI technologies</span></li>
+            <li>• Building scalable, secure, and innovative cloud solutions ✨</li>
+          </ul>
         </>
       ),
       current: true
     },
     {
-      title: 'Bachelor of Science in Information Technologoly Graduate',
-      company: 'University of the Free State',
-      period: '2021 - 2024',
+      title: '🎓 Bachelor of Science in Information Technology Graduate',
+      company: '🏛️ University of the Free State',
+      period: '📅 2021 - 2024',
       description: (
         <>
-          University of the Free State Bloemfontein, Free State<br />
-          Bachelor of Science in Information Technology majoring in Computer Science.<br /><br />
-          <strong><strong>Relevant Coursework:</strong></strong> <em>Data Structures & Algorithms, Software Engineering, Mathematics & Applied Mathematics,
-          Computer Networks, Advanced Databases, Mobile Development, Web Development, Human-Computer Interaction</em>
+          <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium">University of the Free State</span> Bloemfontein, Free State 🏛️<br />
+          Bachelor of Science in <span className="text-green-500 dark:text-green-400 font-medium">Information Technology</span> majoring in <span className="text-blue-500 dark:text-blue-400 font-medium">Computer Science</span>. 💻<br /><br />
+          <strong>📚 Relevant Coursework:</strong> <em><span className="text-purple-500 dark:text-purple-400 font-medium">Data Structures & Algorithms</span>, <span className="text-orange-500 dark:text-orange-400 font-medium">Software Engineering</span>, <span className="text-red-500 dark:text-red-400 font-medium">Mathematics & Applied Mathematics</span>,
+            <span className="text-teal-500 dark:text-teal-400 font-medium">Computer Networks</span>, <span className="text-indigo-500 dark:text-indigo-400 font-medium">Advanced Databases</span>, <span className="text-pink-500 dark:text-pink-400 font-medium">Mobile Development</span>, <span className="text-cyan-500 dark:text-cyan-400 font-medium">Web Development</span>, <span className="text-yellow-500 dark:text-yellow-400 font-medium">Human-Computer Interaction</span></em> 🚀
         </>
       ),
       current: false
@@ -40,7 +44,7 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-            Experience
+            💼 Experience
           </h2>
           
           <div className="space-y-8">

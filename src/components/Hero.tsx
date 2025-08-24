@@ -5,12 +5,12 @@ import { Github, Linkedin, Mail, Award } from 'lucide-react';
 const Hero = () => {
   // Memoize titles to keep reference stable and avoid unnecessary effect re-runs
   const titles = useMemo(() => [
-    "Feizel",
-    "a Software Developer",
-    "a Solutions Architect",
-    "an Astronomer",
-    "a Bookworm",
-    "a Deep thinker"
+    "Feizel 👋",
+    "a Software Developer 💻",
+    "a Solutions Architect ☁️",
+    "an Astronomer 🌌",
+    "a Bookworm 📚",
+    "a Deep thinker 🤔"
   ], []);
 
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -68,8 +68,9 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light whitespace-nowrap">
-              AWS Intern passionate about cloud computing, AI, and building innovative solutions.<br />
-              Recent graduate exploring the intersection of cloud technology, AI, and business strategy.
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions ✨</span>.<br />
+              Recent Information Technology graduate exploring the intersection between Cloud Technology,<br/>
+               Artificial Intelligence, and Business Strategy 🚀.
             </p>
 
             <div className="flex space-x-4 mb-12">
@@ -115,7 +116,7 @@ const Hero = () => {
                   hover:scale-105 active:scale-95 dark:shadow-orange-500/30 dark:shadow-md
                 "
               >
-                View My Work
+                🎯 View My Work
               </button>
               <button
                 className="
@@ -128,7 +129,7 @@ const Hero = () => {
                   hover:scale-105 active:scale-95
                 "
               >
-                Download Resume
+                📄 Download Resume
               </button>
             </div>
           </div>

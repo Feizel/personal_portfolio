@@ -9,11 +9,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="text-3xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive">
-              Feizel
+              Feizel ✨
             </div>
             <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-              AWS Intern passionate about cloud computing, AI, and building innovative solutions. 
-              Always exploring the intersection of technology and the cosmos.
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions</span>. 
+              Always exploring the intersection of technology and the cosmos 🌌.
             </p>
             <div className="flex space-x-4">
               <a
@@ -52,20 +52,20 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="space-y-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-display">
-              Explore
+              🧭 Explore
             </h3>
             <div className="space-y-3">
               <a href="#about" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
-                About Me
+                👋 About Me
               </a>
               <a href="#experience" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
-                Experience
+                💼 Experience
               </a>
               <a href="#projects" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
-                Projects
+                🚀 Projects
               </a>
               <button className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left">
-                Blog
+                📝 Blog
               </button>
             </div>
           </div>
@@ -73,23 +73,23 @@ const Footer = () => {
           {/* Interests & Tech */}
           <div className="space-y-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-display">
-              Interests
+              💫 Interests
             </h3>
             <div className="space-y-3">
               <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <Code className="w-4 h-4 mr-2 text-orange-500" />
+                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">☁️</span>
                 <span className="font-light">Cloud Computing</span>
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <Rocket className="w-4 h-4 mr-2 text-orange-500" />
+                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">🤖</span>
                 <span className="font-light">Artificial Intelligence</span>
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">🌟</span>
+                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">🌌</span>
                 <span className="font-light">Astronomy</span>
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">📚</span>
+                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">📈</span>
                 <span className="font-light">Business Strategy</span>
               </div>
             </div>
@@ -100,7 +100,8 @@ const Footer = () => {
         <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 dark:text-gray-400 flex items-center font-light">
-              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" /> by Feizel Ze Maduna
+              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" /> and ☕ by 
+               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">feizeldev</span>
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-light">
               © {new Date().getFullYear()} All rights reserved
