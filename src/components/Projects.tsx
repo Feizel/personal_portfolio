@@ -27,7 +27,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="pt-24 md:pt-40 pb-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
@@ -41,7 +41,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div key={index} className="group p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
                     {project.title}
                   </h3>
                   <div className="flex space-x-3">
@@ -60,7 +60,7 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 font-light">
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 font-light">
                   {project.description}
                 </p>
                 

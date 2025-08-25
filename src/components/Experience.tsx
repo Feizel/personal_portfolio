@@ -40,7 +40,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="pt-24 md:pt-40 pb-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">

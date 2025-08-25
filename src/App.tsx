@@ -60,7 +60,7 @@ function App() {
         onBlogClick={() => setCurrentView('blog')}
         onHomeClick={() => setCurrentView('home')}
       />
-      <main className="pb-24">
+      <main className="pb-24 md:pb-8">
         {renderContent()}
       </main>
       <Footer onViewChange={setCurrentView} />

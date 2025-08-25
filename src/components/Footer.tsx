@@ -1,5 +1,13 @@
-import React from 'react';
-import { Github, Linkedin, Mail, Award, Heart, Code, Rocket } from 'lucide-react';
+import React from "react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Award,
+  Heart,
+  Code,
+  Rocket,
+} from "lucide-react";
 
 interface FooterProps {
   onViewChange?: (view: string) => void;
@@ -16,8 +24,23 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
               Feizel
             </div>
             <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions</span>. 
-              Always exploring the intersection of technology and the cosmos 🌌.
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
+                AWS Intern
+              </span>{" "}
+              passionate about{" "}
+              <span className="text-blue-500 dark:text-blue-400 font-medium">
+                cloud computing ☁️
+              </span>
+              ,{" "}
+              <span className="text-purple-500 dark:text-purple-400 font-medium">
+                AI 🤖
+              </span>
+              , and building{" "}
+              <span className="text-green-500 dark:text-green-400 font-medium">
+                innovative solutions
+              </span>
+              . Always exploring the intersection of technology and the cosmos
+              🌌.
             </p>
             <div className="flex space-x-4">
               <a
@@ -59,38 +82,38 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
               🧭 Explore
             </h3>
             <div className="space-y-3">
-              <button 
-                onClick={() => onViewChange?.('home')}
+              <button
+                onClick={() => onViewChange?.("home")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 🏠 Home
               </button>
-              <button 
-                onClick={() => onViewChange?.('about')}
+              <button
+                onClick={() => onViewChange?.("about")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 👋 About Me
               </button>
-              <button 
-                onClick={() => onViewChange?.('experience')}
+              <button
+                onClick={() => onViewChange?.("experience")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 💼 Experience
               </button>
-              <button 
-                onClick={() => onViewChange?.('skills')}
+              <button
+                onClick={() => onViewChange?.("skills")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 🚀 Skills
               </button>
-              <button 
-                onClick={() => onViewChange?.('projects')}
+              <button
+                onClick={() => onViewChange?.("projects")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 📁 Projects
               </button>
-              <button 
-                onClick={() => onViewChange?.('blog')}
+              <button
+                onClick={() => onViewChange?.("blog")}
                 className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
               >
                 📝 Blog
@@ -128,7 +151,15 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
         <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 dark:text-gray-400 flex items-center font-light">
-              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" />
+              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" /> by
+              <a
+                href="https://www.linkedin.com/in/feizel-ze-maduna/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium transition-colors duration-300 hover:underline"
+              >
+                Feizel
+              </a>
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-light">
               © {new Date().getFullYear()} All rights reserved

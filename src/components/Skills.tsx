@@ -58,7 +58,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="pt-24 md:pt-40 pb-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
@@ -72,7 +72,7 @@ const Skills = () => {
             {skillCategories.map((category, categoryIndex) => (
               <div key={categoryIndex} className="group">
                 <div className="bg-white dark:bg-gray-900/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-orange-500/10">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-all duration-300">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-6 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-all duration-300">
                     {category.title}
                   </h3>
                   
@@ -80,7 +80,7 @@ const Skills = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="group/skill">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-gray-700 dark:text-gray-300 font-medium group-hover/skill:text-orange-500 dark:group-hover/skill:text-orange-400 transition-all duration-300">
+                          <span className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium group-hover/skill:text-orange-500 dark:group-hover/skill:text-orange-400 transition-all duration-300">
                             {skill.name}
                           </span>
                           <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
