@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import ThemeToggle from './components/ThemeToggle';
 import CursorTrail from './components/CursorTrail';
+import BottomNav from './components/BottomNav';
 
 function App() {
   const [isDark, setIsDark] = useState(true); // Default to dark mode
@@ -35,16 +36,22 @@ function App() {
     }
   }, [isDark]);
 
-  if (currentView === 'blog') {
-    return (
-      <div className="min-h-screen bg-white dark:bg-true-black transition-colors duration-500">
-        <Blog onBackToHome={() => setCurrentView('home')} />
-        <Footer />
-        <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-        <CursorTrail />
-      </div>
-    );
-  }
+  const renderContent = () => {
+    switch (currentView) {
+      case 'blog':
+        return <Blog onBackToHome={() => setCurrentView('home')} />;
+      case 'about':
+        return <About />;
+      case 'experience':
+        return <Experience />;
+      case 'skills':
+        return <Skills />;
+      case 'projects':
+        return <Projects />;
+      default:
+        return <Hero />;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-true-black transition-colors duration-500">
@@ -52,14 +59,16 @@ function App() {
         onContactClick={() => setIsContactOpen(true)} 
         onBlogClick={() => setCurrentView('blog')}
       />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
+      <main className="pb-24">
+        {renderContent()}
       </main>
-      <Footer />
+      <Footer onViewChange={setCurrentView} />
+      {currentView !== 'blog' && (
+        <BottomNav 
+          currentView={currentView} 
+          onViewChange={setCurrentView} 
+        />
+      )}
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
       <CursorTrail />

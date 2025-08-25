@@ -6,11 +6,11 @@ const Skills = () => {
       title: '💻 Technology & Programming',
       emoji: '💻',
       skills: [
-        { name: 'C# 🟢', level: 90 },
-        { name: 'Java ☕', level: 85 },
-        { name: 'JavaScript/TypeScript ⚡', level: 90 },
-        { name: 'Python 🐍', level: 80 },
-        { name: 'SQL (MySQL) 🗄️', level: 88 },
+        { name: 'C# 🟢', level: 85 },
+        { name: 'Java ☕', level: 82 },
+        { name: 'JavaScript/TypeScript ⚡', level: 83 },
+        { name: 'Python 🐍', level: 85 },
+        { name: 'SQL/NoSQL 🗄️', level: 80 },
         { name: 'HTML/CSS 🎨', level: 85 },
         { name: 'C/C++ 🔧', level: 60 }
       ]
@@ -19,10 +19,9 @@ const Skills = () => {
       title: '☁️ Cloud & Infrastructure',
       emoji: '☁️',
       skills: [
-        { name: 'AWS (EC2, Lambda, VPC, S3, RDS, DynamoDB, IAM, Cognito) ☁️', level: 90 },
-        { name: 'AWS Serverless ☁️', level: 80 },
-        { name: 'AWS & SageMaker 🤖', level: 72 },
-        { name: 'AWS Bedrock 🤖', level: 75 },
+        { name: 'AWS (EC2, Lambda, VPC, S3, RDS, DynamoDB, IAM, Cognito) ☁️', level: 86 },
+        { name: 'AWS SageMaker (Machine Learning) 🤖', level: 72 },
+        { name: 'AWS Bedrock (Foundational Models) 🤖', level: 75 },
         { name: 'AWS Amplify 📱', level: 85 },
         { name: 'GraphQL 🔗', level: 80 },
         { name: 'REST APIs 🌐', level: 85 }
@@ -32,8 +31,8 @@ const Skills = () => {
       title: '📱 Frameworks & Tools',
       emoji: '🛠️',
       skills: [
-        { name: 'React ⚛️', level: 88 },
-        { name: '.NET Core / ASP.NET ⚙️', level: 85 },
+        { name: 'React ⚛️', level: 80 },
+        { name: '.NET Core / ASP.NET ⚙️', level: 82 },
         { name: 'Entity Framework 📊', level: 80 },
         { name: 'Firebase 🔥', level: 75 },
         { name: 'Material-UI 🎨', level: 75 },
@@ -45,26 +44,29 @@ const Skills = () => {
       title: '🧠 Concepts & Soft Skills',
       emoji: '🧠',
       skills: [
-        { name: 'Data Structures & Algorithms 📚', level: 85 },
-        { name: 'Object-Oriented Programming 🔄', level: 90 },
-        { name: 'Serverless Architecture 🌩️', level: 80 },
-        { name: 'API Design & Development ⚙️', level: 85 },
+        { name: 'Data Structures & Algorithms 📚', level: 75 },
+        { name: 'Object-Oriented Programming 🔄', level: 80 },
+        { name: 'Serverless Architecture 🌩️', level: 84 },
+        { name: 'API Design & Development ⚙️', level: 82 },
         { name: 'Problem-solving & Critical Thinking 💡', level: 90 },
-        { name: 'Effective Communication 🗣️', level: 88 },
-        { name: 'Collaborative Teamwork 🤝', level: 90 },
-        { name: 'Rapid Learning & Adaptability 🚀', level: 92 },
+        { name: 'Effective Communication 🗣️', level: 92 },
+        { name: 'Collaborative Teamwork 🤝', level: 93 },
+        { name: 'Rapid Learning & Adaptability 🚀', level: 96 },
         { name: 'Time Management ⏰', level: 90 }
       ]
     }
   ];
 
   return (
-    <section className="py-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-20 pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
             🚀 Skills & Expertise
           </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 font-light">
+            Get to know my technical abilities, skills, and professional competencies 💪
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, categoryIndex) => (

@@ -40,12 +40,15 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-20 pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
             💼 Experience
           </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 font-light">
+            My professional journey and educational background in technology and cloud computing 🚀
+          </p>
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Github, Linkedin, Mail, Award, Heart, Code, Rocket } from 'lucide-react';
 
-const Footer = () => {
+interface FooterProps {
+  onViewChange?: (view: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900/20 border-t border-gray-200 dark:border-orange-500/20 py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -55,16 +59,40 @@ const Footer = () => {
               🧭 Explore
             </h3>
             <div className="space-y-3">
-              <a href="#about" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
+              <button 
+                onClick={() => onViewChange?.('home')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
+                🏠 Home
+              </button>
+              <button 
+                onClick={() => onViewChange?.('about')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
                 👋 About Me
-              </a>
-              <a href="#experience" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
+              </button>
+              <button 
+                onClick={() => onViewChange?.('experience')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
                 💼 Experience
-              </a>
-              <a href="#projects" className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light">
-                🚀 Projects
-              </a>
-              <button className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left">
+              </button>
+              <button 
+                onClick={() => onViewChange?.('skills')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
+                🚀 Skills
+              </button>
+              <button 
+                onClick={() => onViewChange?.('projects')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
+                📁 Projects
+              </button>
+              <button 
+                onClick={() => onViewChange?.('blog')}
+                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
+              >
                 📝 Blog
               </button>
             </div>
