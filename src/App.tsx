@@ -58,17 +58,16 @@ function App() {
       <Header 
         onContactClick={() => setIsContactOpen(true)} 
         onBlogClick={() => setCurrentView('blog')}
+        onHomeClick={() => setCurrentView('home')}
       />
       <main className="pb-24">
         {renderContent()}
       </main>
       <Footer onViewChange={setCurrentView} />
-      {currentView !== 'blog' && (
-        <BottomNav 
-          currentView={currentView} 
-          onViewChange={setCurrentView} 
-        />
-      )}
+      <BottomNav 
+        currentView={currentView} 
+        onViewChange={setCurrentView} 
+      />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
       <CursorTrail />

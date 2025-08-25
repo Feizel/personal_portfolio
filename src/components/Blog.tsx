@@ -156,7 +156,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
   if (selectedPost) {
     return (
       <div className="min-h-screen">
-        <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20">
+        <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-20">
           <div className="max-w-4xl mx-auto px-6 py-6">
             <button
               onClick={() => setSelectedPost(null)}
@@ -229,7 +229,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20">
+      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-20">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <button
             onClick={onBackToHome}

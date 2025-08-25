@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 interface HeaderProps {
   onContactClick: () => void;
   onBlogClick: () => void;
+  onHomeClick?: () => void;
 }
 
-const Header = ({ onContactClick, onBlogClick }: HeaderProps) => {
+const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,7 +25,10 @@ const Header = ({ onContactClick, onBlogClick }: HeaderProps) => {
     }`}>
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive">
+          <div 
+            onClick={onHomeClick}
+            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive"
+          >
             Feizel
           </div>
 

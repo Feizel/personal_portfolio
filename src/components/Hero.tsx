@@ -108,27 +108,40 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 className="
-                  px-8 py-3 border-2 border-orange-500 text-orange-500
+                  group relative px-8 py-3 border-2 border-orange-500 text-orange-500
                   hover:bg-orange-500 hover:text-white
-                  transition-all duration-300 font-medium rounded-lg
+                  transition-all duration-500 ease-out font-medium rounded-lg
                   hover:shadow-lg hover:shadow-orange-500/25 dark:hover:shadow-orange-500/50 dark:hover:shadow-xl
                   hover:scale-105 active:scale-95 dark:shadow-orange-500/30 dark:shadow-md
+                  transform hover:rotate-1
                 "
               >
-                🎯 View My Work
+                <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                  🎯
+                </span>
+                {' '}View My Work
+                <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce text-xs">
+                  ✨
+                </div>
               </button>
               <button
                 className="
-                  px-8 py-3 border-2 border-gray-300 dark:border-gray-600
+                  group relative px-8 py-3 border-2 border-gray-300 dark:border-gray-600
                   text-gray-700 dark:text-gray-300
                   hover:border-gray-400 dark:hover:border-orange-500/50
                   hover:bg-gray-50 dark:hover:bg-gray-900/50 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]
-                  transition-all duration-300 font-medium rounded-lg
-                  hover:scale-105 active:scale-95
+                  transition-all duration-500 ease-out font-medium rounded-lg
+                  hover:scale-105 active:scale-95 transform hover:-rotate-1
                 "
               >
-                📄 Download Resume
+                <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                  📄
+                </span>
+                {' '}Download Resume
+                <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse text-xs">
+                  💫
+                </div>
               </button>
             </div>
           </div>
