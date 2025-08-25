@@ -2,17 +2,17 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="pt-20 pb-16 border-t border-gray-100 dark:border-gray-800">
+    <section className="pt-24 md:pt-40 pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-            About 👋
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+            About Me 👋
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 font-light">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 font-light">
             Get to know me better; my journey, passions, and what drives me in the world of technology 👨‍💻
           </p>
           
-          <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+          <div className="space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
             <p>
               🎓 I'm a recent graduate currently interning at <span className="text-orange-500 dark:text-orange-400 font-medium">Amazon Web Services</span>, where I'm sinking myself head-first in cloud computing 
               technologies ☁️. My journey into the world of technology began with a passion for coding 💻, where I built my skills and 

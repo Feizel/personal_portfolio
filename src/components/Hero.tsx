@@ -46,7 +46,7 @@ const Hero = () => {
   }, [displayText, isDeleting, currentTitleIndex, typeSpeed, titles]);
 
   return (
-    <section className="min-h-screen flex items-center justify-start pt-20 pb-12"
+    <section className="min-h-screen flex items-center justify-start pt-16 md:pt-20 pb-12"
     style={{ backgroundImage: "url('/background.jpg')" }}>
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-3xl">

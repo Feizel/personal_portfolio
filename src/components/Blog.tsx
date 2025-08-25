@@ -156,7 +156,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
   if (selectedPost) {
     return (
       <div className="min-h-screen">
-        <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-20">
+        <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-16 md:pt-20">
           <div className="max-w-4xl mx-auto px-6 py-6">
             <button
               onClick={() => setSelectedPost(null)}
@@ -165,7 +165,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
             </button>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
               {selectedPost.title}
             </h1>
             <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
@@ -229,7 +229,7 @@ const Blog = ({ onBackToHome }: BlogProps) => {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-20">
+      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-16 md:pt-20">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <button
             onClick={onBackToHome}
@@ -238,10 +238,10 @@ const Blog = ({ onBackToHome }: BlogProps) => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </button>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
             My Blog
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 font-light">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-light">
             Thoughts on technology, AI, cloud computing, business strategy, and astronomy
           </p>
         </div>
