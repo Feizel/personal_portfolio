@@ -8,6 +8,16 @@ readTime: "4 min read"
 tags: ["Astronomy", "Philosophy", "Software Development", "Personal"]
 ---
 
+<img src="/blogphotos/stargazing_software.jpeg" alt="AWS Internship" style="width: 100%; height: 160px; object-fit: cover; object-position: center center; border-radius: 8px; margin-bottom: 1rem;" class="blog-hero-image" />
+
+<style>
+@media (min-width: 768px) {
+  .blog-hero-image {
+    height: 250px !important;
+  }
+}
+</style>
+
 There's something pretty magical about looking up at the night sky and thinking about how BIG and mysterious the universe is. As someone who loves both software development and astronomy, I've noticed some cool similarities between exploring the stars and solving problems in tech.
 
 ## Patterns Everywhere

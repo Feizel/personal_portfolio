@@ -8,6 +8,16 @@ readTime: "5 min read"
 tags: ["AI", "Cloud Computing", "AWS", "Technology"]
 ---
 
+<img src="/blogphotos/ai2.jpg" alt="AWS Internship" style="width: 100%; height: 160px; object-fit: cover; object-position: center center; border-radius: 8px; margin-bottom: 1rem;" class="blog-hero-image" />
+
+<style>
+@media (min-width: 768px) {
+  .blog-hero-image {
+    height: 250px !important;
+  }
+}
+</style>
+
 Artificial Intelligence is fundamentally transforming how we approach cloud computing. As someone working at AWS, I've witnessed firsthand the incredible innovations happening at the intersection of AI and cloud infrastructure.
 
 ## The Current Landscape
