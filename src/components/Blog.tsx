@@ -69,7 +69,7 @@ const Blog = () => {
                 onClick={() => handlePostClick(post)}
               >
                 <div className="p-6">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <div className="flex items-center flex-wrap gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1" />
                       {new Date(post.date).toLocaleDateString("en-US", {

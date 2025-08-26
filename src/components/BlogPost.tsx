@@ -68,7 +68,7 @@ const BlogPostComponent = () => {
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
             {post.title}
           </h1>
-          <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center flex-wrap gap-2 sm:gap-6 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-1" />
               {new Date(post.date).toLocaleDateString("en-US", {
