@@ -8,7 +8,15 @@ readTime: "9 min read"
 tags: ["AWS", "Scalability", "Internship", "Cloud Architecture"]
 ---
 
-<img src="/blogphotos/amazon.jpeg" alt="AWS Internship" style="width: 100%; height: 250px; object-fit: cover; object-position: center top; border-radius: 8px; margin-bottom: 1rem;" />
+<img src="/blogphotos/amazon.jpeg" alt="AWS Internship" style="width: 100%; height: 160px; object-fit: cover; object-position: center top; border-radius: 8px; margin-bottom: 1rem;" class="blog-hero-image" />
+
+<style>
+@media (min-width: 768px) {
+  .blog-hero-image {
+    height: 250px !important;
+  }
+}
+</style>
 
 My journey as an AWS intern has been incredibly rewarding. Working on enterprise-scale solutions has taught me valuable lessons about building systems that can handle massive workloads while maintaining reliability and performance.
 
