@@ -1,5 +1,13 @@
-import React, { useEffect } from 'react';
-import { X, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useEffect } from "react";
+import {
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -9,29 +17,29 @@ interface ContactModalProps {
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen, onClose]);
 
@@ -39,11 +47,11 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div 
+      <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      
+
       <div className="relative bg-white dark:bg-true-black rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl border border-gray-200 dark:border-orange-500/30 dark:shadow-orange-500/20 dark:shadow-2xl animate-in fade-in zoom-in duration-200">
         <button
           onClick={onClose}
@@ -62,8 +70,10 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <Mail className="w-5 h-5 text-orange-500 dark:drop-shadow-[0_0_5px_rgba(249,115,22,0.8)]" />
             </div>
             <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Email</p>
-              <a 
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                Email
+              </p>
+              <a
                 href="mailto:contact@feizelzemaduna.com"
                 className="text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light"
               >
@@ -77,12 +87,14 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <Phone className="w-5 h-5 text-orange-500 dark:drop-shadow-[0_0_5px_rgba(249,115,22,0.8)]" />
             </div>
             <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Phone</p>
-              <a 
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                Phone
+              </p>
+              <a
                 href="tel:+1234567890"
                 className="text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light"
               >
-                Email to get this
+                Shoot me an email for my digits
               </a>
             </div>
           </div>
@@ -92,14 +104,20 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <MapPin className="w-5 h-5 text-orange-500 dark:drop-shadow-[0_0_5px_rgba(249,115,22,0.8)]" />
             </div>
             <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Location</p>
-              <p className="text-gray-900 dark:text-white font-light">Johannesburg & Cape Town</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                Location
+              </p>
+              <p className="text-gray-900 dark:text-white font-light">
+                Johannesburg & Cape Town
+              </p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-200 dark:border-orange-500/30 pt-6">
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Connect with me</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">
+            Connect with me
+          </p>
           <div className="flex space-x-4">
             <a
               href="https://github.com/Feizel"

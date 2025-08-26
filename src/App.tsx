@@ -62,7 +62,7 @@ function AppContent() {
       <main className="pb-24 md:pb-8">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About onContactClick={() => setIsContactOpen(true)} onBlogClick={() => navigate('/blog')} />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />

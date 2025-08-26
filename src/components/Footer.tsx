@@ -7,6 +7,7 @@ import {
   Heart,
   Code,
   Rocket,
+  Coffee,
 } from "lucide-react";
 
 interface FooterProps {
@@ -151,7 +152,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
         <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 dark:text-gray-400 flex items-center font-light">
-              Made with <Heart className="w-4 h-4 mx-2 text-orange-500" /> by
+              Made with <Coffee className="w-4 h-4 mx-2 text-orange-500" /> by
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"
                 target="_blank"

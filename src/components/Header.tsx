@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface HeaderProps {
   onContactClick: () => void;
@@ -13,19 +13,21 @@ const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-white/10 dark:bg-true-black/10 backdrop-filter backdrop-blur-md border border-gray-200/20 dark:border-orange-500/20 shadow-sm'
-      : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white/10 dark:bg-true-black/10 backdrop-filter backdrop-blur-md border border-gray-200/20 dark:border-orange-500/20 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div 
+          <div
             onClick={onHomeClick}
             className="text-2xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive"
           >
@@ -37,7 +39,7 @@ const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
               onClick={onBlogClick}
               className="text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-medium"
             >
-              Blog
+              Journal
             </button>
             <button
               onClick={onContactClick}

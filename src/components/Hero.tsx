@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-
 import { Github, Linkedin, Mail, Award } from 'lucide-react';
 
 const Hero = () => {

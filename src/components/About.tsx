@@ -1,6 +1,11 @@
 import React from "react";
 
-const About = () => {
+interface AboutProps {
+  onContactClick?: () => void;
+  onBlogClick?: () => void;
+}
+
+const About = ({ onContactClick, onBlogClick }: AboutProps) => {
   return (
     <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
@@ -85,7 +90,7 @@ const About = () => {
           </div>
 
           <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-900/30 dark:to-orange-900/10 rounded-xl border border-orange-100 dark:border-orange-900/20">
-            <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-4 text-orange-600 dark:text-orange-400 flex items-center gap-2">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-4 text-orange-600 dark:text-orange-400 flex items-center gap-2">
               <span className="animate-pulse">🎯</span> A Few Fun Facts About Me
             </h3>
             <div className="space-y-3">
@@ -149,7 +154,7 @@ const About = () => {
           </div>
 
           <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900/30 dark:to-green-900/10 rounded-xl border border-green-100 dark:border-green-900/20">
-            <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-4 text-blue-600 dark:text-blue-400 flex items-center gap-2">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-4 text-blue-600 dark:text-blue-400 flex items-center gap-2">
               <span className="animate-bounce">🎭</span> And just for fun
             </h3>
             <div className="space-y-3">
@@ -191,7 +196,42 @@ const About = () => {
                   do not worry, I am not one of those annoying fans LOL! 👑
                 </p>
               </div>
+              <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
+                <span className="text-orange-500 text-lg group-hover:scale-110 transition-transform duration-200">
+                  📝
+                </span>
+                <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  I keep a laid-back tech journal where I jot down my random
+                  thoughts on tech, AI breakthroughs,, and cosmic discoveries,{" "}
+                  <a
+                    href="/blog"
+                    className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors underline font-medium"
+                  >
+                    check out my notes
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
+              <span className="font-semibold">Plot twist:</span> I'm also
+              looking for my next adventure! 🚀
+            </p>
+            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+              If you know of any exciting opportunities where I can combine my
+              AWS skills, coding passion, and maybe even discuss Saturn's rings
+              during coffee breaks,{" "}
+              <button
+                onClick={onContactClick}
+                className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors cursor-pointer underline"
+              >
+                reach out to me!
+              </button>{" "}
+              ☕
+            </p>
           </div>
         </div>
       </div>
