@@ -40,17 +40,18 @@ const Experience = () => {
   ];
 
   return (
-    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-            💼 Experience
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 font-light">
+    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-4 md:pb-16 xl:pb-20 2xl:pb-24 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
+        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+          <div className="pt-8 sm:pt-6 md:pt-0">
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+              💼 Experience
+            </h2>
+          <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
             My professional journey and educational background in technology and cloud computing 🚀
           </p>
           
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className="group">
                 <div className="flex items-start space-x-4">
@@ -63,10 +64,10 @@ const Experience = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300">
+                      <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300">
                         {exp.title}
                       </h3>
-                      <span className={`text-sm font-medium px-3 py-1 rounded-full transition-all duration-300 ${
+                      <span className={`text-xs sm:text-sm xl:text-base 2xl:text-lg font-medium px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 rounded-full transition-all duration-300 ${
                         exp.current 
                           ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 dark:shadow-orange-500/30 dark:shadow-sm' 
                           : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 group-hover:bg-orange-100 dark:group-hover:bg-orange-900/30 group-hover:text-orange-600 dark:group-hover:text-orange-400'
@@ -74,16 +75,17 @@ const Experience = () => {
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-2">
                       {exp.company}
                     </p>
-                    <div className="text-gray-600 dark:text-gray-400 font-light">
+                    <div className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
                       {exp.description}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>

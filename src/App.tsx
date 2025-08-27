@@ -59,7 +59,7 @@ function AppContent() {
         onBlogClick={() => navigate('/blog')}
         onHomeClick={() => navigate('/')}
       />
-      <main className="pb-24 md:pb-8">
+      <main className="pb-12 sm:pb-24 md:pb-8">
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About onContactClick={() => setIsContactOpen(true)} onBlogClick={() => navigate('/blog')} />} />

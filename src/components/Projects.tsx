@@ -30,52 +30,53 @@ const Projects = () => {
   ];
 
   return (
-    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-            📁 Projects
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 font-light">
+    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-4 md:pb-16 xl:pb-20 2xl:pb-24 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
+        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+          <div className="pt-8 sm:pt-6 md:pt-0">
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+              📁 Projects
+            </h2>
+          <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
             A showcase of my work - from cloud infrastructure to AI applications
             and beyond 🎆
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20"
+                className="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20"
               >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
+                  <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
                     {project.title}
                   </h3>
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-2 sm:space-x-3 xl:space-x-4 2xl:space-x-5">
                     <a
                       href={project.github}
                       className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                     >
-                      <Github size={20} />
+                      <Github size={16} className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
                     </a>
                     <a
                       href={project.demo}
                       className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={16} className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
                     </a>
                   </div>
                 </div>
 
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 font-light">
+                <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-2 xl:gap-3 2xl:gap-4">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600 dark:hover:text-orange-400 dark:hover:shadow-orange-500/30 dark:hover:shadow-sm transition-all duration-300 font-medium"
+                      className="px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 text-xs sm:text-sm xl:text-base 2xl:text-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600 dark:hover:text-orange-400 dark:hover:shadow-orange-500/30 dark:hover:shadow-sm transition-all duration-300 font-medium"
                     >
                       {tech}
                     </span>
@@ -83,6 +84,7 @@ const Projects = () => {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>

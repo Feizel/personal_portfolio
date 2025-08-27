@@ -35,59 +35,59 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-16 md:pt-20">
-        <div className="max-w-6xl mx-auto px-6 py-12">
+      <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-14 sm:pt-16 md:pt-20 xl:pt-24 2xl:pt-28">
+        <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 py-8 sm:py-12 xl:py-16 2xl:py-20">
           <button
             onClick={() => navigate("/")}
-            className="flex items-center text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-8"
+            className="flex items-center text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 text-sm sm:text-base xl:text-lg 2xl:text-xl"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
             Back to Portfolio
           </button>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-retro">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 xl:mb-6 2xl:mb-8 font-retro">
             My Journal
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-light">
+          <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-600 dark:text-gray-300 font-light">
             Casual reflections on tech, AI, cloud, business, and space
           </p>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <main className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 py-8 sm:py-12 xl:py-16 2xl:py-20">
         {blogPosts.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-gray-600 dark:text-gray-400">
+          <div className="text-center py-8 sm:py-12 xl:py-16 2xl:py-20">
+            <p className="text-sm sm:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400">
               No blog posts found. Posts count: {blogPosts.length}
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 xl:gap-10 2xl:gap-12">
             {blogPosts.map((post) => (
               <article
                 key={post.id}
                 className="bg-white dark:bg-gray-900/20 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] cursor-pointer"
                 onClick={() => handlePostClick(post)}
               >
-                <div className="p-6">
-                  <div className="flex items-center flex-wrap gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <div className="p-4 sm:p-6 xl:p-7 2xl:p-8">
+                  <div className="flex items-center flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-500 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
                     <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
                       {new Date(post.date).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                       })}
                     </div>
                     <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
                       {post.readTime}
                     </div>
                   </div>
 
-                  <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-retro">
+                  <h2 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 xl:mb-4 2xl:mb-6 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-retro">
                     {post.title}
                   </h2>
 
-                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light leading-relaxed">
                     {post.excerpt}
                   </p>
 

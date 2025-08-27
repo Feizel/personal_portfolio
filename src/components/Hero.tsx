@@ -45,17 +45,17 @@ const Hero = () => {
   }, [displayText, isDeleting, currentTitleIndex, typeSpeed, titles]);
 
   return (
-    <section className="min-h-screen flex items-center justify-start pt-16 md:pt-20 pb-8 md:pb-0"
+    <section className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0"
     style={{ backgroundImage: "url('/background.jpg')" }}>
-      <div className="max-w-6xl mx-auto px-6 w-full">
-        <div className="max-w-3xl">
-          <div className="mb-8">
-            <h1 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 w-full">
+        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+          <div className="pt-8 sm:pt-6 md:pt-0 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16">
+            <h1 className="text-2xl sm:text-[1.5rem] md:text-5xl xl:text-6xl 2xl:text-7xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 leading-tight">
               Hi, I'm{' '}
               <span
                 className="
                   inline-block
-                  min-h-[3.5rem] sm:min-w-[18rem]
+                  min-h-[2.5rem] sm:min-h-[3.5rem] xl:min-h-[4.5rem] 2xl:min-h-[5.5rem] sm:min-w-[18rem] xl:min-w-[24rem] 2xl:min-w-[30rem]
                   text-orange-500 hover:text-orange-600 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_15px_rgba(249,115,22,0.8)]
                   transition-all duration-300 cursor-default font-display
@@ -66,49 +66,49 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed font-light">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions ✨</span>.<br />
-              Recent Information Technology graduate exploring the intersection between Cloud Technology, Artificial Intelligence, and Business Strategy 🚀.
+            <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions</span>.<br />
+              <br/>I'm a recent Information Technology graduate with a computer science major exploring the intersection between Cloud Technology, Artificial Intelligence, and Business Strategy 🚀.
             </p>
 
-            <div className="flex space-x-4 mb-12">
+            <div className="flex space-x-3 sm:space-x-4 xl:space-x-6 2xl:space-x-8 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
               <a
                 href="https://github.com/Feizel"
-                className="p-3 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={24} />
+                <Github size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
               </a>
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"
-                className="p-3 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={24} />
+                <Linkedin size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
               </a>
               <a
                 href="https://www.credly.com/users/feizel/"
-                className="p-3 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Award size={24} />
+                <Award size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
               </a>
               <a
                 href="mailto:feizel.maduna@gmail.com"
-                className="p-3 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
               >
-                <Mail size={24} />
+                <Mail size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
               </a>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6 2xl:gap-8">
               <button
                 className="
-                  group relative px-8 py-3 border-2 border-orange-500 text-orange-500
-                  hover:bg-orange-500 hover:text-white
+                  group relative px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-orange-500 text-orange-500
+                  hover:bg-orange-500 hover:text-white text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
                   transition-all duration-500 ease-out font-medium rounded-lg
                   hover:shadow-lg hover:shadow-orange-500/25 dark:hover:shadow-orange-500/50 dark:hover:shadow-xl
                   hover:scale-105 active:scale-95 dark:shadow-orange-500/30 dark:shadow-md
@@ -125,8 +125,8 @@ const Hero = () => {
               </button>
               <button
                 className="
-                  group relative px-8 py-3 border-2 border-gray-300 dark:border-gray-600
-                  text-gray-700 dark:text-gray-300
+                  group relative px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-gray-300 dark:border-gray-600
+                  text-gray-700 dark:text-gray-300 text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
                   hover:border-gray-400 dark:hover:border-orange-500/50
                   hover:bg-gray-50 dark:hover:bg-gray-900/50 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]

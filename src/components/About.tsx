@@ -7,18 +7,19 @@ interface AboutProps {
 
 const About = ({ onContactClick, onBlogClick }: AboutProps) => {
   return (
-    <section className="pt-24 md:pt-40 pb-4 md:pb-16 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-4 md:pb-16 xl:pb-20 2xl:pb-24 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
+        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+          <div className="pt-8 sm:pt-6 md:pt-0">
+          <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
             About Me 👋
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 font-light">
+          <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 font-light">
             Get to know me better; my journey, passions, and what drives me in
             the world of technology 👨‍💻
           </p>
 
-          <div className="space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+          <div className="space-y-4 sm:space-y-6 xl:space-y-8 2xl:space-y-10 text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
             <p>
               🎓 I'm a recent graduate currently interning at{" "}
               <span className="text-orange-500 dark:text-orange-400 font-medium">
@@ -232,6 +233,7 @@ const About = ({ onContactClick, onBlogClick }: AboutProps) => {
               </button>{" "}
               ☕
             </p>
+          </div>
           </div>
         </div>
       </div>

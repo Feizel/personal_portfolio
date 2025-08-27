@@ -47,6 +47,13 @@ export default {
       },
       colors: {
         'true-black': '#000000',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      screens: {
+        'xs': '320px',
       }
     },
   },

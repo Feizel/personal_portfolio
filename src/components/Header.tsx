@@ -25,7 +25,7 @@ const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4">
+      <nav className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 py-4">
         <div className="flex justify-between items-center">
           <div
             onClick={onHomeClick}
