@@ -1,19 +1,22 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Github, Linkedin, Mail, Award } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from "react";
+import { Github, Linkedin, Mail, Award } from "lucide-react";
 
 const Hero = () => {
   // Memoize titles to keep reference stable and avoid unnecessary effect re-runs
-  const titles = useMemo(() => [
-    "Feizel 👋",
-    "a Software Developer 💻",
-    "a Solutions Architect ☁️",
-    "an Astronomer 🌌",
-    "a Bookworm 📚",
-    "a Deep thinker 🤔"
-  ], []);
+  const titles = useMemo(
+    () => [
+      "Feizel 👋",
+      "a Software Developer 💻",
+      "a Solutions Architect ☁️",
+      "an Astronomer 🌌",
+      "a Bookworm 📚",
+      "a Deep thinker 🤔",
+    ],
+    []
+  );
 
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [typeSpeed, setTypeSpeed] = useState(150);
 
@@ -45,17 +48,19 @@ const Hero = () => {
   }, [displayText, isDeleting, currentTitleIndex, typeSpeed, titles]);
 
   return (
-    <section className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0"
-    style={{ backgroundImage: "url('/background.jpg')" }}>
+    <section
+      className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0"
+      style={{ backgroundImage: "url('/background.jpg')" }}
+    >
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 w-full">
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16">
-            <h1 className="text-2xl sm:text-[1.5rem] md:text-5xl xl:text-6xl 2xl:text-7xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 leading-tight">
-              Hi, I'm{' '}
+            <h1 className="text-2xl sm:text-[1.5rem] md:text-3xl xl:text-5xl 2xl:text-7xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 leading-tight">
+              Hi, I'm{" "}
               <span
                 className="
                   inline-block
-                  min-h-[2.5rem] sm:min-h-[3.5rem] xl:min-h-[4.5rem] 2xl:min-h-[5.5rem] sm:min-w-[18rem] xl:min-w-[24rem] 2xl:min-w-[30rem]
+                  min-h-[2.5rem] sm:min-h-[3.5rem] xl:min-h-[4.5rem] 2xl:min-h-[5.5rem] sm:min-w-[18rem] xl:min-w-[20rem] 2xl:min-w-[30rem]
                   text-orange-500 hover:text-orange-600 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_15px_rgba(249,115,22,0.8)]
                   transition-all duration-300 cursor-default font-display
@@ -67,8 +72,26 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">AWS Intern</span> passionate about <span className="text-blue-500 dark:text-blue-400 font-medium">cloud computing ☁️</span>, <span className="text-purple-500 dark:text-purple-400 font-medium">AI 🤖</span>, and building <span className="text-green-500 dark:text-green-400 font-medium">innovative solutions</span>.<br />
-              <br/>I'm a recent Information Technology graduate with a computer science major exploring the intersection between Cloud Technology, Artificial Intelligence, and Business Strategy 🚀.
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
+                AWS Intern
+              </span>{" "}
+              passionate about{" "}
+              <span className="text-blue-500 dark:text-blue-400 font-medium">
+                cloud computing ☁️
+              </span>
+              ,{" "}
+              <span className="text-purple-500 dark:text-purple-400 font-medium">
+                AI 🤖
+              </span>
+              , and building{" "}
+              <span className="text-green-500 dark:text-green-400 font-medium">
+                innovative solutions
+              </span>
+              .
+              <br />
+              I'm a recent Information Technology graduate with a computer
+              science major exploring the intersection between Cloud Technology,
+              Artificial Intelligence, and Business Strategy 🚀.
             </p>
 
             <div className="flex space-x-3 sm:space-x-4 xl:space-x-6 2xl:space-x-8 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
@@ -78,7 +101,10 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
+                <Github
+                  size={20}
+                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"
@@ -86,7 +112,10 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
+                <Linkedin
+                  size={20}
+                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
+                />
               </a>
               <a
                 href="https://www.credly.com/users/feizel/"
@@ -94,13 +123,19 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Award size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
+                <Award
+                  size={20}
+                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
+                />
               </a>
               <a
                 href="mailto:feizel.maduna@gmail.com"
                 className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
               >
-                <Mail size={20} className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10" />
+                <Mail
+                  size={20}
+                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
+                />
               </a>
             </div>
 
@@ -117,8 +152,8 @@ const Hero = () => {
               >
                 <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
                   🎯
-                </span>
-                {' '}View My Work
+                </span>{" "}
+                View My Work
                 <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce text-xs">
                   ✨
                 </div>
@@ -136,8 +171,8 @@ const Hero = () => {
               >
                 <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
                   📄
-                </span>
-                {' '}Download Resume
+                </span>{" "}
+                Download Resume
                 <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse text-xs">
                   💫
                 </div>
