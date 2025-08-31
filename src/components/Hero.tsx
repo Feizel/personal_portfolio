@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0"
+      className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0 touch-none md:touch-auto"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 w-full">
@@ -67,7 +67,7 @@ const Hero = () => {
                 "
               >
                 {displayText}
-                <span className="animate-blink">|</span>
+                <span className="hidden md:inline animate-blink select-none">|</span>
               </span>
             </h1>
 

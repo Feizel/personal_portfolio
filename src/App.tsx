@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -60,15 +61,80 @@ function AppContent() {
         onHomeClick={() => navigate('/')}
       />
       <main className="pb-12 sm:pb-24 md:pb-8">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About onContactClick={() => setIsContactOpen(true)} onBlogClick={() => navigate('/blog')} />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Hero />
+              </motion.div>
+            } />
+            <Route path="/about" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <About onContactClick={() => setIsContactOpen(true)} onBlogClick={() => navigate('/blog')} />
+              </motion.div>
+            } />
+            <Route path="/experience" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Experience />
+              </motion.div>
+            } />
+            <Route path="/skills" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Skills />
+              </motion.div>
+            } />
+            <Route path="/projects" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Projects />
+              </motion.div>
+            } />
+            <Route path="/blog" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <Blog />
+              </motion.div>
+            } />
+            <Route path="/blog/:slug" element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <BlogPost />
+              </motion.div>
+            } />
+          </Routes>
+        </AnimatePresence>
       </main>
       <Footer onViewChange={(view) => navigate(view === 'home' ? '/' : `/${view}`)} />
       <BottomNav 
