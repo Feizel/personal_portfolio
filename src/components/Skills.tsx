@@ -3,61 +3,72 @@ import React from "react";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "💻 Technology & Programming",
-      emoji: "💻",
+      title: "💻 Programming Languages",
+      description:
+        "Languages I've worked with during my studies, personal projects, and AWS internship",
       skills: [
-        { name: "C# 🟢", level: 80 },
-        { name: "Java ☕", level: 71 },
-        { name: "JavaScript/TypeScript ⚡", level: 73 },
-        { name: "Python 🐍", level: 78 },
-        { name: "SQL/NoSQL 🗄️", level: 72 },
-        { name: "HTML/CSS 🎨", level: 85 },
-        { name: "C/C++ 🔧", level: 60 },
+        "C#",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "SQL",
+        "HTML/CSS",
+        "C/C++",
       ],
     },
     {
-      title: "☁️ Cloud & Infrastructure",
-      emoji: "☁️",
+      title: "☁️ Cloud & AWS",
+      description:
+        "AWS services and cloud technologies from my internship experience",
       skills: [
-        {
-          name: "AWS (EC2, Lambda, VPC, S3, RDS, DynamoDB, IAM, Cognito) ☁️",
-          level: 86,
-        },
-        { name: "AWS SageMaker (Machine Learning) 🤖", level: 72 },
-        { name: "AWS Bedrock (Foundational Models) 🤖", level: 75 },
-        { name: "AWS Amplify 📱", level: 85 },
-        { name: "GraphQL 🔗", level: 70 },
-        { name: "REST APIs 🌐", level: 72 },
+        "AWS EC2",
+        "AWS Lambda",
+        "AWS S3",
+        "AWS RDS",
+        "AWS DynamoDB",
+        "AWS IAM",
+        "AWS Cognito",
+        "AWS SageMaker",
+        "AWS Bedrock",
+        "AWS Amplify",
+        "VPC",
+        "CloudFormation",
       ],
     },
     {
-      title: "📱 Frameworks & Tools",
-      emoji: "🛠️",
+      title: "🛠️ Frameworks & Tools",
+      description:
+        "Development frameworks and tools I use for building applications",
       skills: [
-        { name: "React ⚛️", level: 72 },
-        { name: ".NET Core / ASP.NET ⚙️", level: 78 },
-        { name: "Entity Framework 📊", level: 70 },
-        { name: "Firebase 🔥", level: 75 },
-        { name: "Material-UI 🎨", level: 75 },
-        { name: "Android SDK 🤖", level: 70 },
-        {
-          name: "Developer Tools (Git, VS Code, IntelliJ, Android Studio) 🛠️",
-          level: 88,
-        },
+        "React",
+        ".NET Core",
+        "ASP.NET",
+        "Entity Framework",
+        "Firebase",
+        "Material-UI",
+        "Android SDK",
+        "Git",
+        "VS Code",
+        "IntelliJ IDEA",
+        "Android Studio",
+        "REST APIs",
+        "GraphQL",
       ],
     },
     {
-      title: "🧠 Concepts & Soft Skills",
-      emoji: "🧠",
+      title: "🎯 Core Competencies",
+      description:
+        "Technical concepts and soft skills developed through education and experience",
       skills: [
-        { name: "Data Structures & Algorithms 📚", level: 71 },
-        { name: "Object-Oriented Programming 🔄", level: 75 },
-        { name: "Serverless Architecture 🌩️", level: 75 },
-        { name: "Critical Problem-solving 💡", level: 90 },
-        { name: "Effective Communication 🗣️", level: 92 },
-        { name: "Collaborative Teamwork 🤝", level: 93 },
-        { name: "Rapid Learning & Adaptability 🚀", level: 96 },
-        { name: "Time Management ⏰", level: 90 },
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "Serverless Architecture",
+        "Problem Solving",
+        "Team Collaboration",
+        "Communication",
+        "Continuous Learning",
+        "Time Management",
       ],
     },
   ];
@@ -70,43 +81,36 @@ const Skills = () => {
             <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
               🚀 Skills & Expertise
             </h2>
-          <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
-            Get to know my technical abilities, skills, and professional
-            competencies 💪
-          </p>
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
+              Get to know my technical abilities, skills, and professional
+              competencies 💪
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 xl:gap-10 2xl:gap-12">
-            {skillCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="group">
-                <div className="bg-white dark:bg-gray-900/50 rounded-lg p-4 sm:p-6 xl:p-7 2xl:p-8 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-orange-500/10">
-                  <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-all duration-300">
-                    {category.title}
-                  </h3>
+            <div className="space-y-8 sm:space-y-12 xl:space-y-16 2xl:space-y-20">
+              {skillCategories.map((category, categoryIndex) => (
+                <div key={categoryIndex} className="group">
+                  <div className="mb-6 sm:mb-8 xl:mb-10 2xl:mb-12">
+                    <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 xl:mb-4 2xl:mb-5 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-all duration-300">
+                      {category.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
+                      {category.description}
+                    </p>
+                  </div>
 
-                  <div className="space-y-3 sm:space-y-4 xl:space-y-5 2xl:space-y-6">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 xl:gap-4 2xl:gap-5">
                     {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="group/skill">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-700 dark:text-gray-300 font-medium group-hover/skill:text-orange-500 dark:group-hover/skill:text-orange-400 transition-all duration-300">
-                            {skill.name}
-                          </span>
-                          <span className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-500 dark:text-gray-400 font-medium">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 xl:h-3 2xl:h-4 overflow-hidden">
-                          <div
-                            className="bg-gradient-to-r from-orange-500 to-red-500 h-2 xl:h-3 2xl:h-4 rounded-full transition-all duration-1000 ease-out hover:shadow-md hover:shadow-orange-500/50"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
+                      <span
+                        key={skillIndex}
+                        className="group/skill px-3 sm:px-4 xl:px-5 2xl:px-6 py-2 sm:py-3 xl:py-4 2xl:py-5 text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl bg-gray-100 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-500/50 hover:bg-orange-50 dark:hover:bg-orange-900/20 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300 font-medium hover:scale-105 hover:shadow-md dark:hover:shadow-orange-500/20 cursor-default"
+                      >
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
