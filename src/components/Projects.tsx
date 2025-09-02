@@ -4,12 +4,38 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Cloud Infrastructure Dashboard",
+      title: "Creative Agency Studio Website",
       description:
-        "A monitoring dashboard for AWS resources built during my internship.",
-      tech: ["React", "AWS", "TypeScript"],
+        "A website I created for a creative agency company called 626 Creative Studio",
+      tech: ["React", "Vercel", "TypeScript"],
+      github: "#",
+      demo: "https://www.626.co.za",
+      image: "/projects/626-creative-agency.png",
+    },
+    {
+      title: "Atomus Dev Website",
+      description:
+        "A website I created for a software company called Atomus Dev",
+      tech: ["React", "Vercel", "TypeScript", "Framer", "Figma"],
+      github: "#",
+      demo: "https://www.atomusdev.co.za",
+      image: "/projects/atomusdev.png",
+    },
+    {
+      title: "Cloud Classroom Platform",
+      description:
+        "An offline e-learning platform built using AWS Services during my AWS internship",
+      tech: [
+        "DynamoDB",
+        "API Gateway",
+        "Lambda",
+        "AppSync",
+        "AWS S3",
+        "Cognito",
+      ],
       github: "#",
       demo: "#",
+      image: "/projects/cloud-classroom.png",
     },
     {
       title: "AI Blog Assistant",
@@ -18,6 +44,16 @@ const Projects = () => {
       tech: ["Python", "OpenAI API", "Flask"],
       github: "https://github.com/Feizel/AI-Blog-Assistant",
       demo: "#",
+      image: "/projects/ai-blog-assistant.png",
+    },
+    {
+      title: "My Personal Portfolio",
+      description:
+        "This portfolio website showcasing my skills, projects, and experience.",
+      tech: ["TypeScript", "React", "AWS Amplify", "Route53"],
+      github: "https://github.com/Feizel/personal_portfolio",
+      demo: "https://www.feizel.co.za",
+      image: "/projects/portfolio.png",
     },
     {
       title: "Astronomy Data Visualizer",
@@ -26,6 +62,7 @@ const Projects = () => {
       tech: ["D3.js", "React", "NASA APIs"],
       github: "#",
       demo: "#",
+      image: "/projects/astronomy-visualizer.png",
     },
   ];
 
@@ -37,54 +74,76 @@ const Projects = () => {
             <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
               📁 Projects
             </h2>
-          <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
-            A showcase of my work - from cloud infrastructure to AI applications
-            and beyond 🎆
-          </p>
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
+              A showcase of my work - from cloud infrastructure to AI
+              applications and beyond 🎆
+            </p>
 
-          <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
-                  <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
-                    {project.title}
-                  </h3>
-                  <div className="flex space-x-2 sm:space-x-3 xl:space-x-4 2xl:space-x-5">
-                    <a
-                      href={project.github}
-                      className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
-                    >
-                      <Github size={16} className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
-                    </a>
-                    <a
-                      href={project.demo}
-                      className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
-                    >
-                      <ExternalLink size={16} className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
-                    </a>
+            <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20"
+                >
+                  <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 xl:gap-8 2xl:gap-10">
+                    {/* Project Image */}
+                    <div className="lg:w-1/3 xl:w-2/5">
+                      <div className="aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 group-hover:shadow-md transition-all duration-300">
+                        <img
+                          src={project.image}
+                          alt={`${project.title} preview`}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Project Content */}
+                    <div className="lg:w-2/3 xl:w-3/5">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
+                        <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
+                          {project.title}
+                        </h3>
+                        <div className="flex space-x-2 sm:space-x-3 xl:space-x-4 2xl:space-x-5">
+                          <a
+                            href={project.github}
+                            className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
+                          >
+                            <Github
+                              size={16}
+                              className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
+                            />
+                          </a>
+                          <a
+                            href={project.demo}
+                            className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
+                          >
+                            <ExternalLink
+                              size={16}
+                              className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                      <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light">
+                        {project.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1 sm:gap-2 xl:gap-3 2xl:gap-4">
+                        {project.tech.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 text-xs sm:text-sm xl:text-base 2xl:text-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600 dark:hover:text-orange-400 dark:hover:shadow-orange-500/30 dark:hover:shadow-sm transition-all duration-300 font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1 sm:gap-2 xl:gap-3 2xl:gap-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 text-xs sm:text-sm xl:text-base 2xl:text-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600 dark:hover:text-orange-400 dark:hover:shadow-orange-500/30 dark:hover:shadow-sm transition-all duration-300 font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
