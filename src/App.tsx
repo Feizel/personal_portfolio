@@ -70,7 +70,7 @@ function AppContent() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <Hero />
+                <Hero onProjectsClick={() => navigate('/projects')} />
               </motion.div>
             } />
             <Route path="/about" element={

@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Github, Linkedin, Mail, Award } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  onProjectsClick?: () => void;
+}
+
+const Hero = ({ onProjectsClick }: HeroProps) => {
   // Memoize titles to keep reference stable and avoid unnecessary effect re-runs
   const titles = useMemo(
     () => [
@@ -141,6 +145,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6 2xl:gap-8">
               <button
+                onClick={onProjectsClick}
                 className="
                   group relative px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-orange-500 text-orange-500
                   hover:bg-orange-500 hover:text-white text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
@@ -158,25 +163,28 @@ const Hero = () => {
                   ✨
                 </div>
               </button>
-              <button
+              <a
+                href="https://drive.google.com/file/d/16-gOnXacAQ0-DxRKYdEK1ENk6_vT9gXi/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-                  group relative px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-gray-300 dark:border-gray-600
+                  group relative inline-block px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-gray-300 dark:border-gray-600
                   text-gray-700 dark:text-gray-300 text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
                   hover:border-gray-400 dark:hover:border-orange-500/50
                   hover:bg-gray-50 dark:hover:bg-gray-900/50 dark:hover:text-orange-400
                   dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]
                   transition-all duration-500 ease-out font-medium rounded-lg
-                  hover:scale-105 active:scale-95 transform hover:-rotate-1
+                  hover:scale-105 active:scale-95 transform hover:-rotate-1 text-center
                 "
               >
                 <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
                   📄
                 </span>{" "}
-                Download Resume
+                Download My CV
                 <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse text-xs">
                   💫
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
