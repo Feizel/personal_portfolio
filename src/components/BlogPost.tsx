@@ -7,6 +7,31 @@ import {
   type BlogPost,
 } from "../utils/blogLoader";
 
+const ReadingProgressBar = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setProgress(Math.min(100, Math.max(0, scrollPercent)));
+    };
+
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  return (
+    <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 dark:bg-gray-800 z-50">
+      <div 
+        className="h-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+};
+
 const BlogPostComponent = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -56,6 +81,7 @@ const BlogPostComponent = () => {
 
   return (
     <div className="min-h-screen">
+      <ReadingProgressBar />
       <header className="bg-white dark:bg-true-black border-b border-gray-200 dark:border-orange-500/20 pt-14 sm:pt-16 md:pt-20 xl:pt-24 2xl:pt-28">
         <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 py-4 sm:py-6 xl:py-8 2xl:py-10">
           <button

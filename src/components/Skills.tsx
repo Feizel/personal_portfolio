@@ -118,17 +118,17 @@ const Skills = () => {
                 </p>
               </div>
               
-              <div className="flex flex-wrap justify-center gap-6 sm:gap-8 xl:gap-12 2xl:gap-16">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 xl:gap-12 2xl:gap-16">
                 {certifications.map((cert, certIndex) => (
                   <div key={certIndex} className="group text-center">
                     <div className="mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 group-hover:scale-110 transition-transform duration-300">
                       <img 
                         src={cert.image} 
                         alt={cert.name}
-                        className="w-20 h-20 sm:w-24 sm:h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 mx-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-all duration-300"
+                        className="w-16 h-16 sm:w-24 sm:h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 mx-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-all duration-300"
                       />
                     </div>
-                    <h4 className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-semibold mb-1 sm:mb-2 xl:mb-3 2xl:mb-4 text-gray-900 dark:text-white">
+                    <h4 className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-semibold mb-1 sm:mb-2 xl:mb-3 2xl:mb-4 text-gray-900 dark:text-white px-1">
                       {cert.name}
                     </h4>
                     <p className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-600 dark:text-gray-400">
