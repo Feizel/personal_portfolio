@@ -59,6 +59,16 @@ const Projects = () => {
 
   const workInProgress = [
     {
+      title: "Lifeline - Lifepath Planner",
+      description:
+        "An interactive career navigation app that helps users map possible career paths based on their past experiences, skills, hobbies, and interests",
+      tech: ["React", "React Flow", "TypeScript", "Node.js"],
+      github: "#",
+      demo: "#",
+      image: "/projects/lifeline.png",
+      status: "In Development",
+    },
+    {
       title: "Astronomy Data Visualizer",
       description:
         "Interactive visualization of astronomical data and celestial events.",
