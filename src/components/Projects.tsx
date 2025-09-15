@@ -18,7 +18,7 @@ const Projects = () => {
         "A website I created for a software company called Atomus Dev",
       tech: ["React", "Vercel", "TypeScript", "Framer", "Figma"],
       github: "#",
-      demo: "https://atomus-dev-fqbd.vercel.app/",
+      demo: "https://atomusdev.co.za/",
       image: "/projects/atomusdev.png",
     },
     {
@@ -59,7 +59,7 @@ const Projects = () => {
 
   const workInProgress = [
     {
-      title: "Lifeline - AI Lifepath Planner",
+      title: "AI Lifepath Planner",
       description:
         "An interactive career navigation app that helps users map possible career paths with AI based on their past experiences, skills, hobbies, and interests",
       tech: ["React", "React Flow", "TypeScript", "Node.js"],
@@ -81,7 +81,7 @@ const Projects = () => {
     {
       title: "Synera AI Engine",
       description:
-        "A B2B talent mobility platform built from the Lifeline concept. AI-powered engine that helps organizations optimize talent allocation and career development strategies.",
+        "A B2B talent mobility platform built from the AI Lifepath planner concept. AI-powered engine that helps organizations optimize talent allocation and career development strategies.",
       tech: ["React", "Node.js", "AI/ML", "PostgreSQL", "AWS"],
       github: "#",
       demo: "#",
@@ -198,7 +198,7 @@ const Projects = () => {
                 {workInProgress.map((project, index) => (
                   <div
                     key={index}
-                    className="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20 relative"ame="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20 relative"
+                    className="group p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20 relative"
                   >
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 text-xs sm:text-sm bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full font-medium">
