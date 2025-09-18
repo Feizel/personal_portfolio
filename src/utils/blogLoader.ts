@@ -5,6 +5,7 @@ import aiCloudPost from '../blogposts/ai-cloud-computing.md?raw';
 import cloudMigrationPost from '../blogposts/cloud-migration-business-impact.md?raw';
 import stargazingPost from '../blogposts/stargazing-software-patterns.md?raw';
 import awsInternshipPost from '../blogposts/aws-internship-scalable-solutions.md?raw';
+import certificatesPortfolios from '../blogposts/certifications-vs-portfolios.md?raw';
 
 export interface BlogPost {
   id: number;
@@ -58,7 +59,8 @@ const markdownFiles = [
   aiCloudPost,
   cloudMigrationPost,
   stargazingPost,
-  awsInternshipPost
+  awsInternshipPost, 
+  certificatesPortfolios
 ];
 
 let cachedPosts: BlogPost[] | null = null;
