@@ -26,9 +26,9 @@ Having a wall of certificates means little if there’s nothing real to point at
 
 ## The balance
 
-Certifications are worth pursuing, just do not make the mistake of treating them like the whole game. They are one piece of the puzzle. Pair them with projects that show creativity, grit, and the ability to ship something a human can click on.
+Certifications are worth pursuing, just do not make the mistake of treating them like the whole game. They are one piece of the puzzle. Pair them with projects that show creativity, grit, and the ability to create something a human can click on.
 
-We are also lucky right now. AI makes mentorship feel close. You can refine ideas, ask for help building them, get explanations tuned to your level, and learn while shipping. The real limit is imagination, plus a little courage to release V1 when it is still rough.
+We are also lucky right now. AI makes mentorship feel close. You can refine ideas, ask for help building them, get explanations tuned to your level, and learn while building. The real limit is imagination, plus a little courage to release V1 when it is still rough.
 
 ## South African Perspective (2025)
 
