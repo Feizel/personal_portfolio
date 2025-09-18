@@ -81,6 +81,8 @@ Tech changes fast, and the people who thrive are the ones who can change with it
 
 Honestly, you can be the best coder in the room, but if you can’t explain your work, work with others, or think through messy problems, you’ll struggle. Communication and collaboration are low-key superpowers.
 
+Think clear **communication**, whether it’s writing documentation or walking a teammate through your thought process. Think **adaptability**, because tech stacks and requirements change faster than we’d like. Think **problem-solving** and **empathy**, because debugging isn’t just about code, it’s about understanding the people and use cases behind it.
+
 ### Deep dive into what excites you
 
 Pick three domains that feel alive in your hands. Go deep and get practical. For me, software engineering was the foundation I got through university, and then AI and cloud clicked into place. They intersect everywhere, AI runs on cloud, and cloud is the backbone of tools like ChatGPT. These intersections form part of the <a href="https://www.mckinsey.com/mgi/our-research/the-next-big-arenas-of-competition" target="_blank">industries of the future</a>.
