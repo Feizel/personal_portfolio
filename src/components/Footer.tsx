@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
               </span>{" "}
               at{" "}
               <a
-                href="https://www.translution.co.za/"
+                href="https://www.translutionsoftware.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
