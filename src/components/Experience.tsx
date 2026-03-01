@@ -3,25 +3,43 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: '☁️ AWS Cloud Engineer Intern',
-      company: '🚀 Amazon Web Services',
+      title: '💻 Graduate Software Engineer Intern',
+      company: '🏢 TransLution Software',
       period: '⚡ Present',
       description: (
         <>
-          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">Amazon Web Services (AWS)</span> Cloud Engineer Intern ☁️<br />
-          <strong>📍 Location:</strong> Cape Town, Western Cape<br /><br />
-          <strong>🎯 Responsibilities:</strong>
+          <a href="https://www.translution.co.za/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-300">TransLution Software</a> Graduate Software Engineer Intern 💻<br />
+          <strong>📍 Location:</strong> Rivonia, Johannesburg<br /><br />
+          <strong>🎯 Key Areas:</strong>
           <ul className="mt-2 ml-4 space-y-1">
-            <li>• Working on <span className="text-blue-500 dark:text-blue-400 font-medium">cloud infrastructure projects</span> at Amazon Web Services</li>
-            <li>• Gaining hands-on experience with <span className="text-green-500 dark:text-green-400 font-medium">enterprise-scale solutions</span></li>
-            <li>• Actively troubleshooting, automating, and contributing to cloud architecture</li>
-            <li>• Collaborating with <span className="text-purple-500 dark:text-purple-400 font-medium">global teams</span> to support mission-critical applications</li>
-            <li>• Improving expertise in <span className="text-orange-500 dark:text-orange-400 font-medium">AWS core services</span> and cutting-edge <span className="text-indigo-500 dark:text-indigo-400 font-medium">AI technologies</span></li>
-            <li>• Building scalable, secure, and innovative cloud solutions ✨</li>
+            <li>• Developing expertise in <span className="text-blue-500 dark:text-blue-400 font-medium">SQL Server</span> and <span className="text-green-500 dark:text-green-400 font-medium">ERP systems (Syspro)</span></li>
+            <li>• Building <span className="text-purple-500 dark:text-purple-400 font-medium">SSRS reports</span> and complex SQL queries for manufacturing & distribution solutions</li>
+            <li>• Learning <span className="text-orange-500 dark:text-orange-400 font-medium">TransLution platform</span> for warehouse and factory automation</li>
+            <li>• Gaining hands-on experience in <span className="text-indigo-500 dark:text-indigo-400 font-medium">business analysis</span>, solution configuration, and product support</li>
+            <li>• Working across the full software lifecycle from sales to implementation and support 🚀</li>
           </ul>
         </>
       ),
       current: true
+    },
+    {
+      title: '☁️ AWS Cloud Engineer Intern',
+      company: '🚀 Amazon Web Services',
+      period: '📅 Jan 2024 - Sep 2024',
+      description: (
+        <>
+          <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-300">Amazon Web Services (AWS)</a> Cloud Engineer Intern ☁️<br />
+          <strong>📍 Location:</strong> Cape Town, Western Cape<br /><br />
+          <strong>🎯 Achievements:</strong>
+          <ul className="mt-2 ml-4 space-y-1">
+            <li>• Worked on <span className="text-blue-500 dark:text-blue-400 font-medium">cloud infrastructure projects</span> supporting enterprise-scale solutions</li>
+            <li>• Earned <span className="text-green-500 dark:text-green-400 font-medium">three AWS certifications</span> in seven months (Cloud Practitioner, AI Practitioner, Solutions Architect Associate)</li>
+            <li>• Collaborated with <span className="text-purple-500 dark:text-purple-400 font-medium">global teams</span> on mission-critical applications</li>
+            <li>• Built scalable, secure cloud solutions using <span className="text-orange-500 dark:text-orange-400 font-medium">AWS core services</span> and <span className="text-indigo-500 dark:text-indigo-400 font-medium">AI technologies</span> ✨</li>
+          </ul>
+        </>
+      ),
+      current: false
     },
     {
       title: '🎓 Bachelor of Science in Information Technology Graduate',
@@ -29,7 +47,7 @@ const Experience = () => {
       period: '📅 2021 - 2024',
       description: (
         <>
-          <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium">University of the Free State</span> Bloemfontein, Free State 🏛️<br />
+          <a href="https://www.ufs.ac.za/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300">University of the Free State</a> Bloemfontein, Free State 🏛️<br />
           Bachelor of Science in <span className="text-green-500 dark:text-green-400 font-medium">Information Technology</span> majoring in <span className="text-blue-500 dark:text-blue-400 font-medium">Computer Science</span>. 💻<br /><br />
           <strong>📚 Relevant Coursework:</strong> <em><span className="text-purple-500 dark:text-purple-400 font-medium">Data Structures & Algorithms</span>, <span className="text-orange-500 dark:text-orange-400 font-medium">Software Engineering</span>, <span className="text-red-500 dark:text-red-400 font-medium">Mathematics & Applied Mathematics</span>,
             <span className="text-teal-500 dark:text-teal-400 font-medium">Computer Networks</span>, <span className="text-indigo-500 dark:text-indigo-400 font-medium">Advanced Databases</span>, <span className="text-pink-500 dark:text-pink-400 font-medium">Mobile Development</span>, <span className="text-cyan-500 dark:text-cyan-400 font-medium">Web Development</span>, <span className="text-yellow-500 dark:text-yellow-400 font-medium">Human-Computer Interaction</span></em> 🚀

@@ -2,6 +2,27 @@ import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
+  const mobileApps = [
+    {
+      title: "Ember: Haptics for Couples",
+      description:
+        "A private, intentional mobile experience designed to help people feel closer through subtle interaction, memory, and touch. Built with emotional safety and trust at its core.",
+      tech: ["SwiftUI", "iOS", "CoreHaptics", "CloudKit"],
+      github: "#",
+      demo: "https://atomus.co.za",
+      image: "/projects/Ember.png",
+    },
+    {
+      title: "Blank: Motion",
+      description:
+        "A minimalist physics playground that turns your iPhone into a living canvas. Fluid simulations, precise sensor input, and high-fidelity graphics create calm, responsive worlds with every tilt and motion.",
+      tech: ["SwiftUI", "iOS", "CoreMotion", "Metal", "SpriteKit"],
+      github: "#",
+      demo: "https://atomus.co.za",
+      image: "/projects/Blank.png",
+    },
+  ];
+
   const completedProjects = [
     {
       title: "Creative Agency Studio Website",
@@ -112,6 +133,106 @@ const Projects = () => {
               A showcase of my work - from cloud infrastructure to AI
               applications and beyond 🎆
             </p>
+
+            {/* Mobile Apps Section */}
+            <div className="mb-16 sm:mb-20 xl:mb-24 2xl:mb-28">
+              <div className="mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+                <h3 className="text-lg sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+                  📱 Mobile Apps
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
+                  Intentional mobile experiences built through{" "}
+                  <a
+                    href="https://atomus.co.za"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
+                  >
+                    Atomus
+                  </a>
+                  , my product studio
+                </p>
+              </div>
+
+              <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
+                {mobileApps.map((project, index) => (
+                  <a
+                    key={index}
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-4 sm:p-6 xl:p-8 2xl:p-10 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-orange-500/50 dark:hover:border-orange-400/50 dark:hover:shadow-orange-500/20 dark:hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:scale-[1.02] dark:bg-gray-900/20 cursor-pointer"
+                  >
+                    <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 xl:gap-8 2xl:gap-10">
+                      {/* Project Image */}
+                      <div className="lg:w-1/3 xl:w-2/5">
+                        <div className="aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 group-hover:shadow-md transition-all duration-300">
+                          <img
+                            src={project.image}
+                            alt={`${project.title} preview`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Project Content */}
+                      <div className="lg:w-2/3 xl:w-3/5">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
+                          <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-2 sm:mb-0">
+                            {project.title}
+                          </h3>
+                          <div className="flex space-x-2 sm:space-x-3 xl:space-x-4 2xl:space-x-5">
+                            <a
+                              href={project.github}
+                              className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
+                            >
+                              <Github
+                                size={16}
+                                className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
+                              />
+                            </a>
+                            <a
+                              href={project.demo}
+                              className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
+                            >
+                              <ExternalLink
+                                size={16}
+                                className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
+                              />
+                            </a>
+                          </div>
+                        </div>
+
+                        <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light">
+                          {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1 sm:gap-2 xl:gap-3 2xl:gap-4">
+                          {project.tech.map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 text-xs sm:text-sm xl:text-base 2xl:text-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600 dark:hover:text-orange-400 dark:hover:shadow-orange-500/30 dark:hover:shadow-sm transition-all duration-300 font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Web Projects Section */}
+            <div className="mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+              <h3 className="text-lg sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
+                🌐 Web Projects
+              </h3>
+              <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
+                Full-stack applications and cloud-based solutions
+              </p>
+            </div>
 
             {/* Completed Projects */}
             <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">

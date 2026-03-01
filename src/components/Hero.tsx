@@ -77,9 +77,18 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
 
             <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                AWS Intern
+                Graduate Software Engineer
               </span>{" "}
-              passionate about{" "}
+              at{" "}
+              <a
+                href="https://www.translution.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
+              >
+                TransLution Software
+              </a>
+              , passionate about{" "}
               <span className="text-blue-500 dark:text-blue-400 font-medium">
                 cloud computing ☁️
               </span>
@@ -93,9 +102,18 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               </span>
               .
               <br />
-              I'm a recent Information Technology graduate with a computer
-              science major exploring the intersection between Cloud Technology,
-              Artificial Intelligence, and Business Strategy 🚀.
+              I'm a recent Information Technology graduate from{" "}
+              <a
+                href="https://www.ufs.ac.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 font-medium underline decoration-blue-500/30 hover:decoration-blue-500 transition-all duration-300"
+              >
+                UFS
+              </a>{" "}
+              with a computer science major, exploring the intersection between
+              Cloud Technology, Artificial Intelligence, and Business Strategy
+              🚀.
             </p>
 
             <div className="flex space-x-3 sm:space-x-4 xl:space-x-6 2xl:space-x-8 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">

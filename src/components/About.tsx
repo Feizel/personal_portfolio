@@ -19,17 +19,33 @@ const About = ({ onContactClick }: AboutProps) => {
               the world of technology 👨‍💻
             </p>
 
+            {/* Profile Image */}
+            <div className="flex justify-center mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                <img
+                  src="/feizel.PNG"
+                  alt="Feizel"
+                  className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+
             <div className="space-y-4 sm:space-y-6 xl:space-y-8 2xl:space-y-10 text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
               <p>
-                🎓 I'm a recent graduate currently interning at{" "}
+                🎓 I'm a recent graduate currently working as a{" "}
                 <span className="text-orange-500 dark:text-orange-400 font-medium">
+                  Graduate Software Engineer Intern at TransLution Software
+                </span>
+                , where I'm developing enterprise solutions for manufacturing and
+                distribution 🏭. Previously, I interned at{" "}
+                <span className="text-blue-500 dark:text-blue-400 font-medium">
                   Amazon Web Services
                 </span>
-                , where I'm sinking myself head-first in cloud computing
-                technologies ☁️. My journey into the world of technology began
-                with a passion for coding 💻, where I built my skills and
-                learning from industry leaders. My passion sits at the
-                crossroads of{" "}
+                , where I dove deep into cloud computing technologies ☁️. My
+                journey into the world of technology began with a passion for
+                coding 💻, where I built my skills learning from industry
+                leaders. My passion sits at the crossroads of{" "}
                 <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
                   technology
                 </span>
@@ -55,12 +71,12 @@ const About = ({ onContactClick }: AboutProps) => {
               </div>
 
               <p>
-                Beyond coding and working with AWS services, I actively write
-                about emerging technology trends 📈, AI breakthroughs 🤖, cloud
-                innovations ⚡, business insights 💡, and my personal
-                fascination with astronomy 🌌 on my blog. I believe in the power
-                of continuous learning 📚 and enjoy sharing knowledge to inspire
-                and engage the tech community 🚀.
+                Beyond coding and working with enterprise software systems, I
+                actively write about emerging technology trends 📈, AI
+                breakthroughs 🤖, cloud innovations ⚡, business insights 💡, and
+                my personal fascination with astronomy 🌌 on my blog. I believe
+                in the power of continuous learning 📚 and enjoy sharing
+                knowledge to inspire and engage the tech community 🚀.
               </p>
 
               <div className="mt-6 p-3 bg-gray-50 dark:bg-gray-900/20 rounded-md border-l-2 border-orange-500/50 text-center">
@@ -222,13 +238,13 @@ const About = ({ onContactClick }: AboutProps) => {
 
             <div className="mt-8 text-center">
               <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
-                <span className="font-semibold">Plot twist:</span> I'm also
-                looking for my next adventure! 🚀
+                <span className="font-semibold">Plot twist:</span> I'm always
+                open to new opportunities! 🚀
               </p>
               <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                 If you know of any exciting opportunities where I can combine my
-                AWS skills, coding passion, and maybe even discuss Saturn's
-                rings during coffee breaks,{" "}
+                cloud skills, software engineering passion, and maybe even
+                discuss Saturn's rings during coffee breaks,{" "}
                 <button
                   onClick={onContactClick}
                   className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors cursor-pointer underline"

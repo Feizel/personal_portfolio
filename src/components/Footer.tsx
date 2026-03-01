@@ -26,9 +26,18 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
             </div>
             <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                AWS Intern
+                Graduate Software Engineer
               </span>{" "}
-              passionate about{" "}
+              at{" "}
+              <a
+                href="https://www.translution.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
+              >
+                TransLution Software
+              </a>
+              , passionate about{" "}
               <span className="text-blue-500 dark:text-blue-400 font-medium">
                 cloud computing ☁️
               </span>

@@ -6,6 +6,14 @@ import {
   renderMarkdown,
   type BlogPost,
 } from "../utils/blogLoader";
+import { Helmet } from 'react-helmet-async';
+
+<Helmet>
+  <meta property="og:title" content="My Blog Title" />
+  <meta property="og:description" content="Short excerpt here" />
+  <meta property="og:image" content="https://feizel.co.za/blogphotos/myimage.png" />
+  <meta property="og:url" content="https://feizel.co.za/blog/my-post" />
+</Helmet>
 
 const ReadingProgressBar = () => {
   const [progress, setProgress] = useState(0);
