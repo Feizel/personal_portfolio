@@ -16,7 +16,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
       "a Bookworm 📚",
       "a Deep thinker 🤔",
     ],
-    []
+    [],
   );
 
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -71,7 +71,9 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
                 "
               >
                 {displayText}
-                <span className="hidden md:inline animate-blink select-none">|</span>
+                <span className="hidden md:inline animate-blink select-none">
+                  |
+                </span>
               </span>
             </h1>
 
@@ -81,7 +83,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               </span>{" "}
               at{" "}
               <a
-                href="https://www.translution.co.za/"
+                href="https://www.translutionsoftware.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
