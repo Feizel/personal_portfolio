@@ -87,6 +87,14 @@ const Blog = () => {
                     {post.title}
                   </h2>
 
+                  {post.status && (
+                    <div className="mb-2 sm:mb-3 xl:mb-4 2xl:mb-6">
+                      <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/50">
+                        🔬 {post.status.replace(/-/g, ' ').toUpperCase()}
+                      </span>
+                    </div>
+                  )}
+
                   <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-light leading-relaxed">
                     {post.excerpt}
                   </p>

@@ -6,15 +6,14 @@ interface HeroProps {
 }
 
 const Hero = ({ onProjectsClick }: HeroProps) => {
-  // Memoize titles to keep reference stable and avoid unnecessary effect re-runs
   const titles = useMemo(
     () => [
-      "Feizel 👋",
-      "a Software Developer 💻",
-      "a Solutions Architect ☁️",
-      "an Astronomer 🌌",
-      "a Bookworm 📚",
-      "a Deep thinker 🤔",
+      "Feizel",
+      "a Software Developer",
+      "a Solutions Architect",
+      "an Astronomer",
+      "a Bookworm",
+      "a Deep thinker",
     ],
     [],
   );
@@ -83,7 +82,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               </span>{" "}
               at{" "}
               <a
-                href="https://www.translutionsoftware.com/"
+                href="https://www.translution.co.za/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
@@ -92,11 +91,11 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               </a>
               , passionate about{" "}
               <span className="text-blue-500 dark:text-blue-400 font-medium">
-                cloud computing ☁️
+                cloud computing
               </span>
               ,{" "}
               <span className="text-purple-500 dark:text-purple-400 font-medium">
-                AI 🤖
+                AI
               </span>
               , and building{" "}
               <span className="text-green-500 dark:text-green-400 font-medium">
@@ -114,8 +113,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
                 UFS
               </a>{" "}
               with a computer science major, exploring the intersection between
-              Cloud Technology, Artificial Intelligence, and Business Strategy
-              🚀.
+              Cloud Technology, Artificial Intelligence, and Business Strategy.
             </p>
 
             <div className="flex space-x-3 sm:space-x-4 xl:space-x-6 2xl:space-x-8 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
@@ -175,13 +173,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
                   transform hover:rotate-1
                 "
               >
-                <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
-                  🎯
-                </span>{" "}
                 View My Work
-                <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce text-xs">
-                  ✨
-                </div>
               </button>
               <a
                 href="https://drive.google.com/file/d/16-gOnXacAQ0-DxRKYdEK1ENk6_vT9gXi/view?usp=sharing"
@@ -197,13 +189,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
                   hover:scale-105 active:scale-95 transform hover:-rotate-1 text-center
                 "
               >
-                <span className="inline-block transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
-                  📄
-                </span>{" "}
                 Download My CV
-                <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse text-xs">
-                  💫
-                </div>
               </a>
             </div>
           </div>

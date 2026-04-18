@@ -12,11 +12,11 @@ const About = ({ onContactClick }: AboutProps) => {
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
             <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-              About Me 👋
+              About Me 
             </h2>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 font-light">
               Get to know me better; my journey, passions, and what drives me in
-              the world of technology 👨‍💻
+              the world of technology 
             </p>
 
             {/* Profile Image */}
@@ -38,11 +38,11 @@ const About = ({ onContactClick }: AboutProps) => {
                   Graduate Software Engineer Intern at TransLution Software
                 </span>
                 , where I'm developing enterprise solutions for manufacturing and
-                distribution 🏭. Previously, I interned at{" "}
+                distribution. Previously, I interned at{" "}
                 <span className="text-blue-500 dark:text-blue-400 font-medium">
                   Amazon Web Services
                 </span>
-                , where I dove deep into cloud computing technologies ☁️. My
+                , where I dove deep into cloud computing technologies. My
                 journey into the world of technology began with a passion for
                 coding 💻, where I built my skills learning from industry
                 leaders. My passion sits at the crossroads of{" "}
@@ -72,11 +72,11 @@ const About = ({ onContactClick }: AboutProps) => {
 
               <p>
                 Beyond coding and working with enterprise software systems, I
-                actively write about emerging technology trends 📈, AI
-                breakthroughs 🤖, cloud innovations ⚡, business insights 💡, and
-                my personal fascination with astronomy 🌌 on my blog. I believe
-                in the power of continuous learning 📚 and enjoy sharing
-                knowledge to inspire and engage the tech community 🚀.
+                actively write about emerging technology trends, AI
+                breakthroughs 🤖, cloud innovations ⚡, business insights, and
+                my personal fascination with astronomy on my blog. I believe
+                in the power of continuous learning and enjoy sharing
+                knowledge to inspire and engage the tech community.
               </p>
 
               <div className="mt-6 p-3 bg-gray-50 dark:bg-gray-900/20 rounded-md border-l-2 border-orange-500/50 text-center">
@@ -91,9 +91,9 @@ const About = ({ onContactClick }: AboutProps) => {
 
               <p>
                 I am fueled by the energy of connecting with visionary
-                technologists 🤝, sparking bold ideas 💡, and teaming up on
+                technologists, sparking bold ideas, and teaming up on
                 projects that don't just break the mold, but reinvent it,
-                reaching for new horizons beyond the imaginable 🌌.
+                reaching for new horizons beyond the imaginable.
               </p>
             </div>
 
@@ -127,7 +127,7 @@ const About = ({ onContactClick }: AboutProps) => {
                     <span className="font-semibold text-orange-600 dark:text-orange-400">
                       seven months
                     </span>{" "}
-                    during my internship! 🚀
+                    during my internship! 
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -142,7 +142,7 @@ const About = ({ onContactClick }: AboutProps) => {
                       </a>
                     </span>
                     , where I combined my academic technical material with my
-                    entrepreneurial spirit 💼
+                    entrepreneurial spirit 
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -155,7 +155,7 @@ const About = ({ onContactClick }: AboutProps) => {
                       CloudClassroom
                     </span>{" "}
                     project at AWS received glowing feedback, proving I can
-                    deliver enterprise-grade solutions 🎉
+                    deliver enterprise-grade solutions
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -168,7 +168,7 @@ const About = ({ onContactClick }: AboutProps) => {
                       96%
                     </span>{" "}
                     on my Event Management System project while maintaining
-                    consistently strong academic performance 📚
+                    consistently strong academic performance
                   </p>
                 </div>
               </div>
@@ -176,7 +176,7 @@ const About = ({ onContactClick }: AboutProps) => {
 
             <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900/30 dark:to-green-900/10 rounded-xl border border-green-100 dark:border-green-900/20">
               <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-4 text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                <span className="animate-bounce">🎭</span> And just for fun
+                And just for fun
               </h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -189,7 +189,7 @@ const About = ({ onContactClick }: AboutProps) => {
                       grade 8
                     </span>
                     , which shocked my mom because she thought it was just an
-                    expensive toy! Thus began my obsession with astronomy 🌟
+                    expensive toy! Thus began my obsession with astronomy 
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -201,7 +201,7 @@ const About = ({ onContactClick }: AboutProps) => {
                     <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent font-semibold">
                       "1000 Ways to Die" Wikipedia page,
                     </span>{" "}
-                    definitely an unusual way to spend a weekend! 😅
+                    definitely an unusual way to spend a weekend! 
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -214,7 +214,7 @@ const About = ({ onContactClick }: AboutProps) => {
                       Real Madrid FC
                     </span>{" "}
                     fan, <span className="font-semibold">Hala Madrid!</span> But
-                    do not worry, I am not one of those annoying fans LOL! 👑
+                    do not worry, I am not one of those annoying fans LOL! 
                   </p>
                 </div>
                 <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
@@ -239,7 +239,7 @@ const About = ({ onContactClick }: AboutProps) => {
             <div className="mt-8 text-center">
               <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
                 <span className="font-semibold">Plot twist:</span> I'm always
-                open to new opportunities! 🚀
+                open to new opportunities! 
               </p>
               <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                 If you know of any exciting opportunities where I can combine my

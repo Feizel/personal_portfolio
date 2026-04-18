@@ -6,6 +6,7 @@ import cloudMigrationPost from '../blogposts/cloud-migration-business-impact.md?
 import stargazingPost from '../blogposts/stargazing-software-patterns.md?raw';
 import awsInternshipPost from '../blogposts/aws-internship-scalable-solutions.md?raw';
 import certificatesPortfolios from '../blogposts/certifications-vs-portfolios.md?raw';
+import polymarketEnginesPost from '../blogposts/polymarket-btc-engines.md?raw';
 
 export interface BlogPost {
   id: number;
@@ -15,6 +16,7 @@ export interface BlogPost {
   content: string;
   date: string;
   readTime: string;
+  status?: string;
   tags: string[];
 }
 
@@ -60,7 +62,8 @@ const markdownFiles = [
   cloudMigrationPost,
   stargazingPost,
   awsInternshipPost, 
-  certificatesPortfolios
+  certificatesPortfolios,
+  polymarketEnginesPost
 ];
 
 let cachedPosts: BlogPost[] | null = null;
@@ -81,6 +84,7 @@ export const loadBlogPosts = (): BlogPost[] => {
       content: content,
       date: data.date as string,
       readTime: data.readTime as string,
+      status: data.status as string | undefined,
       tags: (data.tags as string[]) || []
     });
   });
