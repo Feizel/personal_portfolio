@@ -49,6 +49,11 @@ function AppContent() {
 
   const go = (view: string) => navigate(view === 'home' ? '/' : `/${view}`);
 
+  // Route transitions key on the top-level section, not the full path, so that
+  // /work and /work/:slug stay mounted together — the shared-element morph
+  // between a work row and its case needs both to live under one tree.
+  const section = location.pathname.split('/')[1] || 'home';
+
   return (
     <div className="min-h-screen bg-white dark:bg-true-black transition-colors duration-500">
       <Header
@@ -58,13 +63,18 @@ function AppContent() {
       />
       <main className="pb-12 sm:pb-24 md:pb-8">
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+          <Routes location={location} key={section}>
             <Route path="/" element={
               <motion.div {...page}>
                 <Hero onWorkClick={() => navigate('/work')} onContactClick={() => setIsContactOpen(true)} />
               </motion.div>
             } />
             <Route path="/work" element={
+              <motion.div {...page}>
+                <Work />
+              </motion.div>
+            } />
+            <Route path="/work/:slug" element={
               <motion.div {...page}>
                 <Work />
               </motion.div>

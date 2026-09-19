@@ -1,113 +1,113 @@
-import React, { useState, useEffect, useMemo } from "react";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-  AwardIcon,
-} from "./icons";
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { GithubIcon, LinkedinIcon, MailIcon, AwardIcon } from "./icons";
 import { InkUnderline } from "./sketch";
+import OrbitField from "./OrbitField";
 
 interface HeroProps {
   onWorkClick?: () => void;
   onContactClick?: () => void;
 }
 
+/**
+ * The headline arrives rather than types.
+ *
+ * Each line rises out of its own clipped band, staggered, on a spring — so the
+ * words settle into place instead of being spelled out one character at a
+ * time. Under reduced motion every line is simply present from the first
+ * frame; nothing is gated behind an animation that may never run.
+ */
+const line = {
+  hidden: { y: "110%" },
+  show: {
+    y: "0%",
+    transition: { type: "spring", stiffness: 190, damping: 26, mass: 0.9 },
+  },
+} as const;
+
+const fade = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+} as const;
+
 const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
-  const titles = useMemo(
-    () => [
-      "Feizel",
-      "a software developer",
-      "a creative technologist",
-      "an amateur astronomer",
-    ],
-    [],
-  );
+  const calm = useReducedMotion();
 
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typeSpeed, setTypeSpeed] = useState(150);
-
-  useEffect(() => {
-    const currentTitle = titles[currentTitleIndex];
-
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayText.length < currentTitle.length) {
-          setDisplayText(currentTitle.substring(0, displayText.length + 1));
-          setTypeSpeed(150);
-        } else {
-          setTypeSpeed(2000);
-          setIsDeleting(true);
-        }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(currentTitle.substring(0, displayText.length - 1));
-          setTypeSpeed(75);
-        } else {
-          setIsDeleting(false);
-          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
-          setTypeSpeed(500);
-        }
-      }
-    }, typeSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentTitleIndex, typeSpeed, titles]);
+  // With reduced motion on, skip straight to the settled state.
+  const container = {
+    hidden: {},
+    show: {
+      transition: calm ? {} : { staggerChildren: 0.09, delayChildren: 0.12 },
+    },
+  };
 
   const socialClass =
-    "p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300";
+    "p-2 sm:p-3 xl:p-4 text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300";
   const socialIconClass = "w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7";
 
+  /** One clipped band. The mask is what makes the line feel lifted, not faded. */
+  const Line = ({ children }: { children: React.ReactNode }) => (
+    <span className="block overflow-hidden pb-[0.12em]">
+      <motion.span className="block" variants={calm ? undefined : line}>
+        {children}
+      </motion.span>
+    </span>
+  );
+
   return (
-    <section className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 w-full">
-        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
-          <div className="pt-8 sm:pt-6 md:pt-0 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16">
-            <h1 className="text-2xl sm:text-[1.5rem] md:text-3xl xl:text-5xl 2xl:text-7xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 leading-tight">
-              Hi, I'm{" "}
-              <span
-                className="
-                  inline-block
-                  min-h-[2.5rem] sm:min-h-[3.5rem] xl:min-h-[4.5rem] 2xl:min-h-[5.5rem] sm:min-w-[18rem] xl:min-w-[20rem] 2xl:min-w-[30rem]
-                  text-orange-500 transition-colors duration-300 cursor-default font-display
-                "
-              >
-                {displayText}
-                <span className="hidden md:inline animate-blink select-none">
-                  |
-                </span>
-              </span>
+    <section className="relative flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 pb-0 overflow-hidden">
+      <OrbitField />
+
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={container}
+        className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 w-full pointer-events-none"
+      >
+        <div className="max-w-3xl xl:max-w-4xl pointer-events-auto">
+          <div className="pt-8 sm:pt-6 md:pt-0 mb-6 sm:mb-8 xl:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-black text-gray-900 dark:text-white mb-6 xl:mb-8 leading-[1.08] tracking-tight font-display">
+              <Line>I build software</Line>
+              <Line>
+                <span className="text-orange-500">for the physical world.</span>
+              </Line>
             </h1>
 
-            <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 xl:mb-8 leading-relaxed font-light">
-              I build{" "}
+            <motion.p
+              variants={calm ? undefined : fade}
+              className="text-base sm:text-lg md:text-xl xl:text-2xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed font-light max-w-2xl"
+            >
+              Cloud systems that move stock, work and paperwork through
+              factories and warehouses — the{" "}
               <InkUnderline seed={11}>
                 <span className="text-gray-900 dark:text-white font-medium">
-                  SaaS for factories
+                  load-bearing kind
                 </span>
-              </InkUnderline>{" "}
-              — cloud software that moves stock, work and paperwork through
-              manufacturing and distribution businesses.
-            </p>
+              </InkUnderline>
+              , where a dropped record is a truck that doesn't leave.
+            </motion.p>
 
-            <p className="text-sm sm:text-[0.9rem] md:text-xl xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
+            <motion.p
+              variants={calm ? undefined : fade}
+              className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 xl:mb-14 leading-relaxed font-light max-w-2xl"
+            >
               Developer on the cloud platform at{" "}
               <a
-                href="https://www.translution.co.za/"
+                href="https://www.translutionsoftware.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
               >
                 TransLution Software
               </a>
-              . I write the code, and I build alongside AI the way you'd work
-              with a mentor — argue with it, verify it, keep what holds up.
-              Computer science graduate, GradStar Top 100, three AWS
-              certifications.
-            </p>
+              . Creative technologist, amateur astronomer, and a believer that
+              the interface is the argument.
+            </motion.p>
 
-            <div className="flex space-x-2 sm:space-x-3 xl:space-x-5 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+            <motion.div
+              variants={calm ? undefined : fade}
+              className="flex space-x-1 sm:space-x-2 xl:space-x-4 mb-8 sm:mb-10 xl:mb-14"
+            >
               <a
                 href="https://github.com/Feizel"
                 className={socialClass}
@@ -142,14 +142,17 @@ const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
               >
                 <MailIcon className={socialIconClass} />
               </button>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6 2xl:gap-8">
+            <motion.div
+              variants={calm ? undefined : fade}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6"
+            >
               <button
                 onClick={onWorkClick}
                 className="
-                  px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border border-orange-500 text-orange-500
-                  hover:bg-orange-500 hover:text-white text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
+                  px-6 sm:px-8 xl:px-10 py-2.5 sm:py-3 xl:py-4 border border-orange-500 text-orange-500
+                  hover:bg-orange-500 hover:text-white text-sm xl:text-lg
                   transition-colors duration-300 font-medium rounded-lg
                 "
               >
@@ -158,18 +161,18 @@ const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
               <button
                 onClick={onContactClick}
                 className="
-                  px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border border-gray-300 dark:border-gray-700
-                  text-gray-700 dark:text-gray-300 text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
+                  px-6 sm:px-8 xl:px-10 py-2.5 sm:py-3 xl:py-4 border border-gray-300 dark:border-gray-700
+                  text-gray-700 dark:text-gray-300 text-sm xl:text-lg
                   hover:border-gray-400 dark:hover:border-orange-500/50 dark:hover:text-orange-400
                   transition-colors duration-300 font-medium rounded-lg text-center
                 "
               >
                 Request my CV
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
