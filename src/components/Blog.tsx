@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { ClockIcon } from "./icons";
 import { localSiderealTime, moonPhase } from "../utils/sky";
 import { loadBlogPosts, type BlogPost } from "../utils/blogLoader";
@@ -17,6 +17,11 @@ import { loadBlogPosts, type BlogPost } from "../utils/blogLoader";
  * The chart is the flourish, not the interface. Everything it shows is also in
  * the log beneath it, which is an ordinary, readable, keyboard-navigable list;
  * pointing at either half highlights the other.
+ *
+ * Pointing is magnetic: the pointer does not have to find a star, it only has
+ * to be nearer to one than to any other, and the whole readout springs across
+ * to meet it. Hitting a seven-pixel target was the worst thing about the first
+ * version of this.
  */
 
 interface Plotted extends BlogPost {
@@ -93,6 +98,62 @@ const Blog = () => {
     [plotted],
   );
 
+  /*
+   * One spring pair drives every follower on the chart — the crosshair, the
+   * readout and the halo all read from it, so they move as one object rather
+   * than as four things that happen to animate at once.
+   */
+  const spring = { stiffness: 260, damping: 32, mass: 0.7 };
+  const markX = useSpring(50, spring);
+  const markY = useSpring(24, spring);
+  const markOn = useSpring(0, { stiffness: 220, damping: 30 });
+  const leftPct = useTransform(markX, (v) => `${v}%`);
+  const topPct = useTransform(markY, (v) => `${(v / 46) * 100}%`);
+
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  const activeStar = useMemo(
+    () => plotted.find((p) => p.slug === active) ?? null,
+    [plotted, active],
+  );
+
+  // Move the followers whenever the active entry changes, wherever the change
+  // came from — the chart, the list, or the keyboard.
+  useEffect(() => {
+    if (!activeStar) {
+      markOn.set(0);
+      return;
+    }
+    markX.set(activeStar.x);
+    markY.set(activeStar.y);
+    markOn.set(1);
+  }, [activeStar, markX, markY, markOn]);
+
+  /** Nearest entry to the pointer, in the chart's own coordinates. */
+  const onChartMove = useCallback(
+    (e: React.MouseEvent) => {
+      const el = chartRef.current;
+      if (!el || !plotted.length) return;
+      const rect = el.getBoundingClientRect();
+      const px = ((e.clientX - rect.left) / rect.width) * 100;
+      const py = ((e.clientY - rect.top) / rect.height) * 46;
+
+      let best = plotted[0];
+      let bestD = Infinity;
+      for (const star of plotted) {
+        // Weighted toward the horizontal, since that axis carries the dates
+        // and is what the eye is actually scanning along.
+        const d = Math.hypot((star.x - px) * 0.75, star.y - py);
+        if (d < bestD) {
+          bestD = d;
+          best = star;
+        }
+      }
+      if (best.slug !== active) setActive(best.slug);
+    },
+    [plotted, active],
+  );
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -118,13 +179,18 @@ const Blog = () => {
 
           {/*
             The chart is drawn in two layers: an SVG stretched edge to edge for
-            the joining lines, and the stars as positioned elements on top.
-            Doing it this way keeps the stars perfectly round at any aspect
-            ratio — a single SVG would either letterbox or squash them — and
-            lets each one be a real, focusable link.
+            the joining lines and guides, and the stars as positioned elements
+            on top. Doing it this way keeps the stars perfectly round at any
+            aspect ratio — a single SVG would either letterbox or squash them —
+            and lets each one be a real, focusable link.
           */}
           <div className="relative rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/30 overflow-hidden mb-3">
-            <div className="relative h-[210px] sm:h-[260px] xl:h-[300px]">
+            <div
+              ref={chartRef}
+              onMouseMove={onChartMove}
+              onMouseLeave={() => setActive(null)}
+              className="relative h-[210px] sm:h-[260px] xl:h-[300px]"
+            >
               <svg
                 viewBox="0 0 100 46"
                 preserveAspectRatio="none"
@@ -147,6 +213,7 @@ const Blog = () => {
 
                 {chain.slice(0, -1).map((star, i) => {
                   const next = chain[i + 1];
+                  const lit = active === star.slug || active === next.slug;
                   return (
                     <motion.line
                       key={`${star.slug}-link`}
@@ -154,7 +221,9 @@ const Blog = () => {
                       y1={star.y}
                       x2={next.x}
                       y2={next.y}
-                      className="stroke-orange-500/40"
+                      className={`transition-colors duration-500 ${
+                        lit ? "stroke-orange-400" : "stroke-orange-500/35"
+                      }`}
                       strokeWidth="1"
                       vectorEffect="non-scaling-stroke"
                       // A pathLength draw-on fights non-scaling-stroke: the
@@ -169,6 +238,25 @@ const Blog = () => {
                 })}
               </svg>
 
+              {/* Crosshair, dropped from whichever entry is being read. */}
+              <motion.div
+                aria-hidden="true"
+                style={{ left: leftPct, opacity: markOn }}
+                className="pointer-events-none absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-orange-500/35 to-transparent"
+              />
+              <motion.div
+                aria-hidden="true"
+                style={{ top: topPct, opacity: markOn }}
+                className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/35 to-transparent"
+              />
+
+              {/* The halo travels between entries rather than reappearing. */}
+              <motion.div
+                aria-hidden="true"
+                style={{ left: leftPct, top: topPct, opacity: markOn }}
+                className="pointer-events-none absolute h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-md"
+              />
+
               {plotted.map((star, i) => {
                 const isActive = active === star.slug;
                 const size = 7 + star.r * 4;
@@ -180,8 +268,6 @@ const Blog = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.15 + i * 0.08 }}
                     onClick={() => navigate(`/blog/${star.slug}`)}
-                    onMouseEnter={() => setActive(star.slug)}
-                    onMouseLeave={() => setActive(null)}
                     onFocus={() => setActive(star.slug)}
                     onBlur={() => setActive(null)}
                     aria-label={`${star.title} — ${star.readTime}`}
@@ -193,10 +279,12 @@ const Blog = () => {
                       height: size,
                     }}
                   >
-                    <span
-                      className={`block h-full w-full rounded-full transition-all duration-300 ${
+                    <motion.span
+                      animate={{ scale: isActive ? 1.55 : 1 }}
+                      transition={{ type: "spring", stiffness: 340, damping: 22 }}
+                      className={`block h-full w-full rounded-full transition-colors duration-300 ${
                         isActive
-                          ? "bg-orange-400 ring-8 ring-orange-500/20"
+                          ? "bg-orange-400"
                           : "bg-gray-400 dark:bg-gray-300"
                       }`}
                     />
@@ -204,13 +292,30 @@ const Blog = () => {
                 );
               })}
 
-              {/* The title of whichever star is being pointed at. */}
-              <p
-                hidden={!active}
+              {/* The readout, which travels with the crosshair. */}
+              <motion.div
+                style={{ left: leftPct, opacity: markOn }}
+                className="pointer-events-none absolute bottom-3 -translate-x-1/2 whitespace-nowrap text-center"
+              >
+                <span className="block font-mono text-[0.6rem] uppercase tracking-[0.2em] text-orange-500 dark:text-orange-400">
+                  {activeStar?.readTime.replace(" read", "")}
+                </span>
+                <span className="mt-0.5 block font-mono text-[0.55rem] uppercase tracking-[0.18em] text-gray-400 dark:text-gray-500">
+                  {activeStar &&
+                    new Date(activeStar.date).toLocaleDateString("en-ZA", {
+                      year: "numeric",
+                      month: "short",
+                    })}
+                </span>
+              </motion.div>
+
+              {/* The title of whichever entry is being read. */}
+              <motion.p
+                style={{ opacity: markOn }}
                 className="pointer-events-none absolute left-4 top-4 max-w-[70%] font-mono text-[0.65rem] uppercase tracking-[0.18em] text-orange-500 dark:text-orange-400"
               >
-                {plotted.find((p) => p.slug === active)?.title}
-              </p>
+                {activeStar?.title}
+              </motion.p>
             </div>
 
             {/* Instruments, for the same reason a real log has them. */}

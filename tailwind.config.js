@@ -9,6 +9,8 @@ export default {
         'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
         'retro': ['Space Grotesk', 'system-ui', 'sans-serif'],
         'cursive': ['Dancing Script', 'cursive'],
+        'mono': ['JetBrains Mono', 'SF Mono', 'ui-monospace', 'monospace'],
+        'reader': ['Newsreader', 'Georgia', 'serif'],
       },
       animation: {
         'in': 'fadeIn 0.2s ease-out',
