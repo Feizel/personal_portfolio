@@ -1,5 +1,5 @@
 import React from "react";
-import { InkCircle, InkUnderline } from "./sketch";
+import { InkUnderline } from "./sketch";
 
 interface AboutProps {
   onContactClick?: () => void;
@@ -208,15 +208,6 @@ const About = ({ onContactClick }: AboutProps) => {
                     </span>
                   </div>
                 ))}
-                <p className="mt-5 text-sm text-gray-500 dark:text-gray-500 font-light">
-                  <InkCircle seed={34}>
-                    <span className="text-gray-900 dark:text-white font-medium">
-                      Three
-                    </span>
-                  </InkCircle>{" "}
-                  AWS certifications inside seven months, and a national top-100
-                  ranking for employability the same year.
-                </p>
               </div>
             </div>
 
