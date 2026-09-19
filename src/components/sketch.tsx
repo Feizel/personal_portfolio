@@ -1,58 +1,31 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import React, { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   DrawablyCard,
   DrawablyCircle,
   DrawablyHighlight,
   DrawablyUnderline,
 } from "drawably/react";
+import {
+  SketchContext,
+  useSketch,
+  SKETCH_STORAGE_KEY,
+  type SketchState,
+} from "./sketchContext";
 
 /**
  * The hand-drawn accent layer.
  *
- * Drawably is used as ink on top of a clean page, never as the page itself —
- * a few marks that look annotated by hand, at a roughness low enough to read
- * as deliberate rather than cartoon.
+ * The ink is alive by default: every mark keeps a slow line boil, so the page
+ * reads as drawn rather than printed. `~` is not the on switch any more — it
+ * pushes the pen harder, raising roughness and jitter until the whole site
+ * looks sketched in a hurry.
  *
- * Two knobs live here so every mark stays consistent:
- *   - ink follows the theme, so strokes never sit at 20% contrast in dark mode
- *   - `boil` (the animated line jitter) is off unless the reader opts in, and
- *     is always off when they've asked for reduced motion
+ * Reduced motion still wins outright: the boil drops to zero and the marks sit
+ * still, in both states.
  *
- * Sketch mode is the one easter egg: press `~` and the ink gets louder.
+ * Only components are exported from this file; the hook and context live in
+ * sketchContext.ts so Fast Refresh can keep state across edits.
  */
-
-interface SketchState {
-  /** Bumped on every toggle, so the confirmation can re-announce itself. */
-  pulse: number;
-  /** Reader has turned the ink up via the `~` key. */
-  loud: boolean;
-  toggleLoud: () => void;
-  /** Stroke colour for the current theme. */
-  ink: string;
-  roughness: number;
-  /** Frames per second of line jitter. 0 is a still pen. */
-  boil: number;
-}
-
-const SketchContext = createContext<SketchState>({
-  pulse: 0,
-  loud: false,
-  toggleLoud: () => {},
-  ink: "#f97316",
-  roughness: 0.8,
-  boil: 0,
-});
-
-export const useSketch = () => useContext(SketchContext);
-
-const STORAGE_KEY = "sketch-mode";
 
 export const SketchProvider = ({ children }: { children: ReactNode }) => {
   const [loud, setLoud] = useState(false);
@@ -61,15 +34,15 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    setLoud(localStorage.getItem(STORAGE_KEY) === "on");
+    setLoud(localStorage.getItem(SKETCH_STORAGE_KEY) === "on");
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, loud ? "on" : "off");
+    localStorage.setItem(SKETCH_STORAGE_KEY, loud ? "on" : "off");
     document.documentElement.classList.toggle("sketch-loud", loud);
   }, [loud]);
 
-  // `~` anywhere outside a field turns the ink up.
+  // `~` anywhere outside a field pushes the pen harder.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "~" && e.key !== "`") return;
@@ -114,8 +87,9 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
         setPulse((n) => n + 1);
       },
       ink: isDark ? "#fbbf24" : "#1f2937",
-      roughness: loud ? 1.9 : 0.8,
-      boil: loud && !reducedMotion ? 4 : 0,
+      roughness: loud ? 2.1 : 0.9,
+      // Alive by default — a slow boil at rest, a fast one when pushed.
+      boil: reducedMotion ? 0 : loud ? 6 : 2,
     }),
     [pulse, loud, isDark, reducedMotion],
   );
@@ -131,8 +105,8 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
 /**
  * Brief confirmation that the ~ key did something.
  *
- * Without it the toggle is silent whenever no ink is on screen, which reads as
- * a broken shortcut rather than a quiet one.
+ * Without it the change is easy to miss whenever no ink is on screen, which
+ * reads as a broken shortcut rather than a quiet one.
  */
 const SketchToast = () => {
   const { pulse, loud } = useSketch();
@@ -150,13 +124,13 @@ const SketchToast = () => {
       role="status"
       aria-live="polite"
       hidden={!shown}
-      className={`fixed left-1/2 -translate-x-1/2 bottom-8 z-[60] pointer-events-none
-        px-4 py-2 rounded-full text-sm font-medium
+      className={`fixed left-1/2 -translate-x-1/2 bottom-28 z-[60] pointer-events-none
+        px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap
         bg-gray-900/90 dark:bg-white/10 text-white backdrop-blur-xl
         border border-white/10 transition-all duration-300
         ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
     >
-      {loud ? "Pen down — sketch mode on" : "Pen up"}
+      {loud ? "Pressing harder" : "Easing off"}
     </div>
   );
 };

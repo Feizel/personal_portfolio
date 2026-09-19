@@ -10,7 +10,8 @@ import BlogPost from './components/BlogPost';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import ThemeToggle from './components/ThemeToggle';
-import CursorTrail from './components/CursorTrail';
+import BottomNav from './components/BottomNav';
+import SkyEgg from './components/SkyEgg';
 import { SketchProvider } from './components/sketch';
 import 'drawably/style.css';
 
@@ -25,6 +26,7 @@ const page = {
 function AppContent() {
   const [isDark, setIsDark] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isSkyOpen, setIsSkyOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -54,6 +56,28 @@ function AppContent() {
   // between a work row and its case needs both to live under one tree.
   const section = location.pathname.split('/')[1] || 'home';
 
+  // The dock highlights blog posts as Writing, and cases as Work.
+  const currentView = section === '' ? 'home' : section;
+
+  /*
+   * A second way in to the sky, for anyone not using a pointer: type "sky".
+   * The orbital-field hold is the intended discovery, but it cannot be the
+   * only one, since it needs a mouse and a steady hand.
+   */
+  useEffect(() => {
+    let buffer = '';
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (el?.isContentEditable) return;
+      if (e.key.length !== 1) return;
+      buffer = (buffer + e.key.toLowerCase()).slice(-3);
+      if (buffer === 'sky') setIsSkyOpen(true);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-true-black transition-colors duration-500">
       <Header
@@ -66,7 +90,11 @@ function AppContent() {
           <Routes location={location} key={section}>
             <Route path="/" element={
               <motion.div {...page}>
-                <Hero onWorkClick={() => navigate('/work')} onContactClick={() => setIsContactOpen(true)} />
+                <Hero
+                  onWorkClick={() => navigate('/work')}
+                  onContactClick={() => setIsContactOpen(true)}
+                  onDiscoverSky={() => setIsSkyOpen(true)}
+                />
               </motion.div>
             } />
             <Route path="/work" element={
@@ -105,9 +133,10 @@ function AppContent() {
         </AnimatePresence>
       </main>
       <Footer onViewChange={go} />
+      <BottomNav currentView={currentView} onViewChange={go} />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <SkyEgg open={isSkyOpen} onClose={() => setIsSkyOpen(false)} />
       <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-      <CursorTrail />
     </div>
   );
 }

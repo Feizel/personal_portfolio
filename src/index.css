@@ -12,18 +12,6 @@
   }
 
   /*
-   * The custom cursor replaces the system one, so it is only hidden where a
-   * real pointer exists. Touch devices keep their native behaviour, and the
-   * trail is skipped entirely (see CursorTrail).
-   */
-  @media (pointer: fine) {
-    html.cursor-trail-active,
-    html.cursor-trail-active * {
-      cursor: none;
-    }
-  }
-
-  /*
    * Text stays selectable. People copy email addresses, quotes and code off a
    * portfolio; blocking that to protect nothing is a bad trade.
    */

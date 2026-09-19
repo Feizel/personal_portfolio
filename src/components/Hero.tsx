@@ -7,6 +7,7 @@ import OrbitField from "./OrbitField";
 interface HeroProps {
   onWorkClick?: () => void;
   onContactClick?: () => void;
+  onDiscoverSky?: () => void;
 }
 
 /**
@@ -30,7 +31,7 @@ const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 } as const;
 
-const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
+const Hero = ({ onWorkClick, onContactClick, onDiscoverSky }: HeroProps) => {
   const calm = useReducedMotion();
 
   // With reduced motion on, skip straight to the settled state.
@@ -56,7 +57,7 @@ const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
 
   return (
     <section className="relative flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 pb-0 overflow-hidden">
-      <OrbitField />
+      <OrbitField onDiscover={onDiscoverSky} />
 
       <motion.div
         initial="hidden"

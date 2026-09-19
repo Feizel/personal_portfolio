@@ -1,6 +1,6 @@
 import React from "react";
 import { GithubIcon, LinkedinIcon, MailIcon, AwardIcon, OrbitIcon } from "./icons";
-import { useSketch } from "./sketch";
+import { useSketch } from "./sketchContext";
 
 interface FooterProps {
   onViewChange?: (view: string) => void;
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
     "p-3 bg-white dark:bg-gray-900 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 border border-gray-200 dark:border-gray-800";
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900/20 border-t border-gray-200 dark:border-gray-800 py-16">
+    <footer className="bg-gray-50 dark:bg-gray-900/20 border-t border-gray-200 dark:border-gray-800 pt-16 pb-32">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -128,7 +128,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
               <kbd className="px-1.5 py-0.5 border border-gray-300 dark:border-gray-700 rounded text-[0.7rem] font-mono">
                 ~
               </kbd>{" "}
-              {loud ? "to put the pen down" : "to pick up a pen"}
+              {loud ? "to ease off" : "to press harder"}
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-light">
               © {new Date().getFullYear()}

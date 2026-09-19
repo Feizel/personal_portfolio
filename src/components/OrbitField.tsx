@@ -32,9 +32,19 @@ const EPSILON = 26;
 const CENTRAL_MASS = 1500;
 const POINTER_MASS = 900;
 
-const OrbitField = () => {
+interface OrbitFieldProps {
+  /**
+   * Fired when the reader holds the pointer at the centre of the system long
+   * enough to collapse it. The one unlabelled thing on the page.
+   */
+  onDiscover?: () => void;
+}
+
+const OrbitField = ({ onDiscover }: OrbitFieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const discover = useRef(onDiscover);
+  discover.current = onDiscover;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -56,11 +66,21 @@ const OrbitField = () => {
 
     const pointer = { x: 0, y: 0, active: false };
 
+    /**
+     * Holding still near the centre winds the central mass up, which visibly
+     * pulls the orbits inward. Hold it through the collapse and the sky opens.
+     */
+    const DWELL_RADIUS = 78;
+    const DWELL_MS = 1150;
+    let dwellFor = 0;
+    let fired = false;
+    let collapse = 0; // 0 at rest, 1 fully collapsed
+
     const isDark = () => document.documentElement.classList.contains("dark");
 
     /** Where the central mass sits. Right of centre, clear of the headline. */
     const centre = () => ({
-      x: width * (width < 768 ? 0.5 : 0.68),
+      x: width * (width < 768 ? 0.5 : 0.8),
       y: height * 0.48,
     });
 
@@ -108,12 +128,32 @@ const OrbitField = () => {
     const step = (dt: number) => {
       const { x: cx, y: cy } = centre();
 
+      // Track how long the pointer has been parked on the centre.
+      if (pointer.active && !fired) {
+        const pd = Math.hypot(pointer.x - cx, (pointer.y - cy) * 1.6);
+        if (pd < DWELL_RADIUS) {
+          dwellFor += dt * 16.67;
+          if (dwellFor >= DWELL_MS) {
+            fired = true;
+            discover.current?.();
+          }
+        } else {
+          dwellFor = Math.max(0, dwellFor - dt * 40);
+        }
+      } else if (!pointer.active) {
+        dwellFor = Math.max(0, dwellFor - dt * 40);
+      }
+      collapse = Math.min(1, dwellFor / DWELL_MS);
+
+      // The mass grows as the system is held, so the orbits tighten visibly.
+      const mass = CENTRAL_MASS * (1 + collapse * 5);
+
       for (const b of bodies) {
         // Central mass.
         let dx = cx - b.x;
         let dy = (cy - b.y) * 1.9; // matches the flattened disc
         let d2 = dx * dx + dy * dy + EPSILON * EPSILON;
-        let inv = CENTRAL_MASS / (d2 * Math.sqrt(d2));
+        let inv = mass / (d2 * Math.sqrt(d2));
         b.vx += dx * inv * dt;
         b.vy += dy * inv * dt;
 
@@ -154,7 +194,8 @@ const OrbitField = () => {
       ctx.clearRect(0, 0, width, height);
 
       for (const b of bodies) {
-        const alpha = dark ? 0.16 + b.mass * 0.3 : 0.1 + b.mass * 0.18;
+        const lift = 1 + collapse * 2.2;
+        const alpha = (dark ? 0.16 + b.mass * 0.3 : 0.1 + b.mass * 0.18) * lift;
 
         if (b.history.length > 1) {
           ctx.beginPath();
@@ -207,10 +248,20 @@ const OrbitField = () => {
       const rect = wrap.getBoundingClientRect();
       pointer.x = e.clientX - rect.left;
       pointer.y = e.clientY - rect.top;
-      pointer.active = true;
+      pointer.active =
+        pointer.x >= 0 &&
+        pointer.y >= 0 &&
+        pointer.x <= rect.width &&
+        pointer.y <= rect.height;
+      if (!pointer.active) {
+        dwellFor = 0;
+        fired = false;
+      }
     };
     const onPointerLeave = () => {
       pointer.active = false;
+      dwellFor = 0;
+      fired = false;
     };
 
     const onVisibility = () => {
@@ -241,7 +292,7 @@ const OrbitField = () => {
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(wrap);
 
-    wrap.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
     wrap.addEventListener("pointerleave", onPointerLeave);
     document.addEventListener("visibilitychange", onVisibility);
 
@@ -249,7 +300,7 @@ const OrbitField = () => {
       stop();
       observer.disconnect();
       resizeObserver.disconnect();
-      wrap.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointermove", onPointerMove);
       wrap.removeEventListener("pointerleave", onPointerLeave);
       document.removeEventListener("visibilitychange", onVisibility);
     };
