@@ -1,19 +1,24 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { Github, Linkedin, Mail, Award } from "lucide-react";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  AwardIcon,
+} from "./icons";
+import { InkUnderline } from "./sketch";
 
 interface HeroProps {
   onProjectsClick?: () => void;
+  onContactClick?: () => void;
 }
 
-const Hero = ({ onProjectsClick }: HeroProps) => {
+const Hero = ({ onProjectsClick, onContactClick }: HeroProps) => {
   const titles = useMemo(
     () => [
       "Feizel",
-      "a Software Developer",
-      "a Solutions Architect",
-      "an Astronomer",
-      "a Bookworm",
-      "a Deep thinker",
+      "a software developer",
+      "a creative technologist",
+      "an amateur astronomer",
     ],
     [],
   );
@@ -50,11 +55,12 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentTitleIndex, typeSpeed, titles]);
 
+  const socialClass =
+    "p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300";
+  const socialIconClass = "w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7";
+
   return (
-    <section
-      className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0 touch-none md:touch-auto"
-      style={{ backgroundImage: "url('/background.jpg')" }}
-    >
+    <section className="flex items-center justify-center pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-0 md:pb-0">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12 w-full">
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16">
@@ -64,9 +70,7 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
                 className="
                   inline-block
                   min-h-[2.5rem] sm:min-h-[3.5rem] xl:min-h-[4.5rem] 2xl:min-h-[5.5rem] sm:min-w-[18rem] xl:min-w-[20rem] 2xl:min-w-[30rem]
-                  text-orange-500 hover:text-orange-600 dark:hover:text-orange-400
-                  dark:hover:drop-shadow-[0_0_15px_rgba(249,115,22,0.8)]
-                  transition-all duration-300 cursor-default font-display
+                  text-orange-500 transition-colors duration-300 cursor-default font-display
                 "
               >
                 {displayText}
@@ -76,11 +80,19 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                Graduate Software Engineer
-              </span>{" "}
-              at{" "}
+            <p className="text-base sm:text-[0.95rem] md:text-2xl xl:text-3xl 2xl:text-4xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 xl:mb-8 leading-relaxed font-light">
+              I build{" "}
+              <InkUnderline seed={11}>
+                <span className="text-gray-900 dark:text-white font-medium">
+                  SaaS for factories
+                </span>
+              </InkUnderline>{" "}
+              — cloud software that moves stock, work and paperwork through
+              manufacturing and distribution businesses.
+            </p>
+
+            <p className="text-sm sm:text-[0.9rem] md:text-xl xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed font-light">
+              Developer on the cloud platform at{" "}
               <a
                 href="https://www.translution.co.za/"
                 target="_blank"
@@ -89,108 +101,70 @@ const Hero = ({ onProjectsClick }: HeroProps) => {
               >
                 TransLution Software
               </a>
-              , passionate about{" "}
-              <span className="text-blue-500 dark:text-blue-400 font-medium">
-                cloud computing
-              </span>
-              ,{" "}
-              <span className="text-purple-500 dark:text-purple-400 font-medium">
-                AI
-              </span>
-              , and building{" "}
-              <span className="text-green-500 dark:text-green-400 font-medium">
-                innovative solutions
-              </span>
-              .
-              <br />
-              I'm a recent Information Technology graduate from{" "}
-              <a
-                href="https://www.ufs.ac.za/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 font-medium underline decoration-blue-500/30 hover:decoration-blue-500 transition-all duration-300"
-              >
-                UFS
-              </a>{" "}
-              with a computer science major, exploring the intersection between
-              Cloud Technology, Artificial Intelligence, and Business Strategy.
+              . Computer science graduate, three AWS certifications, and a
+              standing interest in what happens when AI agents write production
+              code and humans stay accountable for it.
             </p>
 
-            <div className="flex space-x-3 sm:space-x-4 xl:space-x-6 2xl:space-x-8 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+            <div className="flex space-x-2 sm:space-x-3 xl:space-x-5 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
               <a
                 href="https://github.com/Feizel"
-                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
-                <Github
-                  size={20}
-                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
-                />
+                <GithubIcon className={socialIconClass} />
               </a>
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"
-                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <Linkedin
-                  size={20}
-                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
-                />
+                <LinkedinIcon className={socialIconClass} />
               </a>
               <a
                 href="https://www.credly.com/users/feizel/"
-                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Credly certifications"
               >
-                <Award
-                  size={20}
-                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
-                />
+                <AwardIcon className={socialIconClass} />
               </a>
-              <a
-                href="mailto:feizel.maduna@gmail.com"
-                className="p-2 sm:p-3 xl:p-4 2xl:p-5 text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110 hover:rotate-3"
+              <button
+                onClick={onContactClick}
+                className={socialClass}
+                aria-label="Contact"
               >
-                <Mail
-                  size={20}
-                  className="sm:w-6 sm:h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10"
-                />
-              </a>
+                <MailIcon className={socialIconClass} />
+              </button>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6 2xl:gap-8">
               <button
                 onClick={onProjectsClick}
                 className="
-                  group relative px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-orange-500 text-orange-500
+                  px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border border-orange-500 text-orange-500
                   hover:bg-orange-500 hover:text-white text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
-                  transition-all duration-500 ease-out font-medium rounded-lg
-                  hover:shadow-lg hover:shadow-orange-500/25 dark:hover:shadow-orange-500/50 dark:hover:shadow-xl
-                  hover:scale-105 active:scale-95 dark:shadow-orange-500/30 dark:shadow-md
-                  transform hover:rotate-1
+                  transition-colors duration-300 font-medium rounded-lg
                 "
               >
-                View My Work
+                See what I've built
               </button>
-              <a
-                href="https://drive.google.com/file/d/16-gOnXacAQ0-DxRKYdEK1ENk6_vT9gXi/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={onContactClick}
                 className="
-                  group relative inline-block px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border-2 border-gray-300 dark:border-gray-600
+                  px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border border-gray-300 dark:border-gray-700
                   text-gray-700 dark:text-gray-300 text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl
-                  hover:border-gray-400 dark:hover:border-orange-500/50
-                  hover:bg-gray-50 dark:hover:bg-gray-900/50 dark:hover:text-orange-400
-                  dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]
-                  transition-all duration-500 ease-out font-medium rounded-lg
-                  hover:scale-105 active:scale-95 transform hover:-rotate-1 text-center
+                  hover:border-gray-400 dark:hover:border-orange-500/50 dark:hover:text-orange-400
+                  transition-colors duration-300 font-medium rounded-lg text-center
                 "
               >
-                Download My CV
-              </a>
+                Request my CV
+              </button>
             </div>
           </div>
         </div>

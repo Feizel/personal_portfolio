@@ -7,7 +7,7 @@ export default {
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
-        'retro': ['Orbitron', 'monospace'],
+        'retro': ['Space Grotesk', 'system-ui', 'sans-serif'],
         'cursive': ['Dancing Script', 'cursive'],
       },
       animation: {

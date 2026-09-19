@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeftIcon, CalendarIcon, ClockIcon } from "./icons";
 import { loadBlogPosts, type BlogPost } from "../utils/blogLoader";
 
 const Blog = () => {
@@ -41,14 +41,14 @@ const Blog = () => {
             onClick={() => navigate("/")}
             className="flex items-center text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 text-sm sm:text-base xl:text-lg 2xl:text-xl"
           >
-            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
+            <ArrowLeftIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
             Back to Portfolio
           </button>
           <h1 className="text-2xl sm:text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 xl:mb-6 2xl:mb-8 font-retro">
-            My Journal
+            Writing
           </h1>
           <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl text-gray-600 dark:text-gray-300 font-light">
-            Casual reflections on tech, AI, cloud, business, and space
+            Notes and longer pieces on AI, cloud, systems, and the sky.
           </p>
         </div>
       </header>
@@ -71,14 +71,14 @@ const Blog = () => {
                 <div className="p-4 sm:p-6 xl:p-7 2xl:p-8">
                   <div className="flex items-center flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-500 dark:text-gray-400 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
                     <div className="flex items-center">
-                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
+                      <CalendarIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
                       {new Date(post.date).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                       })}
                     </div>
                     <div className="flex items-center">
-                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
+                      <ClockIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
                       {post.readTime}
                     </div>
                   </div>
@@ -90,7 +90,7 @@ const Blog = () => {
                   {post.status && (
                     <div className="mb-2 sm:mb-3 xl:mb-4 2xl:mb-6">
                       <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/50">
-                        🔬 {post.status.replace(/-/g, ' ').toUpperCase()}
+                        {post.status.replace(/-/g, ' ').toUpperCase()}
                       </span>
                     </div>
                   )}

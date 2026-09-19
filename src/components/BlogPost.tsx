@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, UserIcon } from "./icons";
 import {
   getBlogPostBySlug,
   renderMarkdown,
@@ -80,7 +80,7 @@ const BlogPostComponent = () => {
             onClick={() => navigate("/blog")}
             className="text-orange-500 hover:text-orange-600 transition-colors"
           >
-            Back to Journal
+            Back to writing
           </button>
         </div>
       </div>
@@ -96,8 +96,8 @@ const BlogPostComponent = () => {
             onClick={() => navigate("/blog")}
             className="flex items-center text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 text-sm sm:text-base xl:text-lg 2xl:text-xl"
           >
-            <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
-            Back to Journal
+            <ArrowLeftIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
+            Back to writing
           </button>
           <h1 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 font-retro">
             {post.title}
@@ -105,13 +105,13 @@ const BlogPostComponent = () => {
           {post.status && (
             <div className="mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
               <span className="inline-flex items-center px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/50">
-                🔬 {post.status.replace(/-/g, ' ').toUpperCase()}
+                {post.status.replace(/-/g, ' ').toUpperCase()}
               </span>
             </div>
           )}
           <div className="flex items-center flex-wrap gap-2 sm:gap-6 xl:gap-8 2xl:gap-10 text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-500 dark:text-gray-400">
             <div className="flex items-center">
-              <Calendar className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
+              <CalendarIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -119,11 +119,11 @@ const BlogPostComponent = () => {
               })}
             </div>
             <div className="flex items-center">
-              <Clock className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
+              <ClockIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
               {post.readTime}
             </div>
             <div className="flex items-center">
-              <User className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
+              <UserIcon className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-1" />
               Written by:{" "}
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"

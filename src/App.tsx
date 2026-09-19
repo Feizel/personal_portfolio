@@ -14,6 +14,8 @@ import ContactModal from './components/ContactModal';
 import ThemeToggle from './components/ThemeToggle';
 import CursorTrail from './components/CursorTrail';
 import BottomNav from './components/BottomNav';
+import { SketchProvider } from './components/sketch';
+import 'drawably/style.css';
 
 function AppContent() {
   const [isDark, setIsDark] = useState(true);
@@ -70,7 +72,7 @@ function AppContent() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <Hero onProjectsClick={() => navigate('/projects')} />
+                <Hero onProjectsClick={() => navigate('/projects')} onContactClick={() => setIsContactOpen(true)} />
               </motion.div>
             } />
             <Route path="/about" element={
@@ -151,7 +153,9 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <SketchProvider>
+        <AppContent />
+      </SketchProvider>
     </Router>
   );
 }

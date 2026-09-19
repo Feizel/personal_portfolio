@@ -1,178 +1,139 @@
 import React from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Award,
-  Heart,
-  Code,
-  Rocket,
-  Coffee,
-} from "lucide-react";
+import { GithubIcon, LinkedinIcon, MailIcon, AwardIcon, OrbitIcon } from "./icons";
+import { useSketch } from "./sketch";
 
 interface FooterProps {
   onViewChange?: (view: string) => void;
 }
 
+const links: { label: string; view: string }[] = [
+  { label: "Home", view: "home" },
+  { label: "About", view: "about" },
+  { label: "Experience", view: "experience" },
+  { label: "Skills", view: "skills" },
+  { label: "Projects", view: "projects" },
+  { label: "Writing", view: "blog" },
+];
+
+const interests = [
+  "SaaS and cloud platforms",
+  "ERP and manufacturing systems",
+  "AI-augmented development",
+  "Astronomy",
+];
+
 const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
+  const { loud } = useSketch();
+
+  const socialClass =
+    "p-3 bg-white dark:bg-gray-900 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 border border-gray-200 dark:border-gray-800";
+
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900/20 border-t border-gray-200 dark:border-orange-500/20 py-16">
+    <footer className="bg-gray-50 dark:bg-gray-900/20 border-t border-gray-200 dark:border-gray-800 py-16">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand Section */}
+          {/* Brand */}
           <div className="space-y-6">
-            <div className="text-3xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive">
+            <div className="text-3xl font-bold text-gray-900 dark:text-white font-cursive">
               Feizel
             </div>
             <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                Graduate Software Engineer
-              </span>{" "}
-              at{" "}
-              <a
-                href="https://www.translutionsoftware.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium underline decoration-orange-500/30 hover:decoration-orange-500 transition-all duration-300"
-              >
-                TransLution Software
-              </a>
-              , passionate about{" "}
-              <span className="text-blue-500 dark:text-blue-400 font-medium">
-                cloud computing ☁️
-              </span>
-              ,{" "}
-              <span className="text-purple-500 dark:text-purple-400 font-medium">
-                AI 🤖
-              </span>
-              , and building{" "}
-              <span className="text-green-500 dark:text-green-400 font-medium">
-                innovative solutions
-              </span>
-              . Always exploring the intersection of technology and the cosmos
-              🌌.
+              Software developer and creative technologist. I build cloud
+              software for manufacturing, and write about AI, systems and the
+              sky.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a
-                href="https://github.com/feizel"
-                className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+                href="https://github.com/Feizel"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
-                <Github size={20} />
+                <GithubIcon size={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/feizel-ze-maduna/"
-                className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
+                <LinkedinIcon size={20} />
               </a>
               <a
                 href="https://www.credly.com/users/feizel"
-                className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+                className={socialClass}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Credly certifications"
               >
-                <Award size={20} />
+                <AwardIcon size={20} />
               </a>
               <a
                 href="mailto:feizel.maduna@gmail.com"
-                className="p-3 bg-white dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 dark:hover:shadow-orange-500/30 dark:hover:shadow-md dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+                className={socialClass}
+                aria-label="Email"
               >
-                <Mail size={20} />
+                <MailIcon size={20} />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-display">
-              🧭 Explore
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-500">
+              Explore
             </h3>
             <div className="space-y-3">
-              <button
-                onClick={() => onViewChange?.("home")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                🏠 Home
-              </button>
-              <button
-                onClick={() => onViewChange?.("about")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                👋 About Me
-              </button>
-              <button
-                onClick={() => onViewChange?.("experience")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                💼 Experience
-              </button>
-              <button
-                onClick={() => onViewChange?.("skills")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                🚀 Skills
-              </button>
-              <button
-                onClick={() => onViewChange?.("projects")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                📁 Projects
-              </button>
-              <button
-                onClick={() => onViewChange?.("blog")}
-                className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-light text-left"
-              >
-                📝 Blog
-              </button>
+              {links.map(({ label, view }) => (
+                <button
+                  key={view}
+                  onClick={() => onViewChange?.(view)}
+                  className="block text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 font-light text-left"
+                >
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Interests & Tech */}
+          {/* Interests */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-display">
-              💫 Interests
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-500">
+              Currently interested in
             </h3>
             <div className="space-y-3">
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">☁️</span>
-                <span className="font-light">Cloud Computing</span>
-              </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">🤖</span>
-                <span className="font-light">Artificial Intelligence</span>
-              </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">🌌</span>
-                <span className="font-light">Astronomy</span>
-              </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <span className="w-4 h-4 mr-2 text-orange-500 text-sm">📈</span>
-                <span className="font-light">Business Strategy</span>
-              </div>
+              {interests.map((interest) => (
+                <div
+                  key={interest}
+                  className="flex items-center text-gray-600 dark:text-gray-400"
+                >
+                  <span className="w-1 h-1 mr-3 rounded-full bg-orange-500/70"></span>
+                  <span className="font-light">{interest}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-500 dark:text-gray-400 flex items-center font-light">
-              Made with <Coffee className="w-4 h-4 mx-2 text-orange-500" /> by
-              <a
-                href="https://www.linkedin.com/in/feizel-ze-maduna/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-1 text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium transition-colors duration-300 hover:underline"
-              >
-                Feizel
-              </a>
+        {/* Bottom */}
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 dark:text-gray-400 flex items-center font-light text-sm">
+              <OrbitIcon size={16} className="mr-2 text-orange-500" />
+              Built by Feizel, in South Africa
+            </p>
+            <p className="text-gray-400 dark:text-gray-600 text-xs font-light">
+              {/* The one easter egg, stated plainly rather than hidden meanly. */}
+              Press{" "}
+              <kbd className="px-1.5 py-0.5 border border-gray-300 dark:border-gray-700 rounded text-[0.7rem] font-mono">
+                ~
+              </kbd>{" "}
+              {loud ? "to put the pen down" : "to pick up a pen"}
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-light">
-              © {new Date().getFullYear()} All rights reserved
+              © {new Date().getFullYear()}
             </p>
           </div>
         </div>

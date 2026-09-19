@@ -24,7 +24,7 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "💻 Programming Languages",
+      title: "Programming languages",
       description:
         "Languages I've worked with during my studies, personal projects, and AWS internship",
       skills: [
@@ -39,7 +39,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "☁️ Cloud & AWS",
+      title: "Cloud and AWS",
       description:
         "AWS services and cloud technologies from my internship experience",
       skills: [
@@ -58,7 +58,22 @@ const Skills = () => {
       ],
     },
     {
-      title: "🛠️ Frameworks & Tools",
+      title: "Data and platforms",
+      description:
+        "What I work with day to day on the cloud deployment platform",
+      skills: [
+        "PostgreSQL",
+        "SQL Server",
+        "Multi-tenant SaaS",
+        "AI agent orchestration",
+        "LLM tooling",
+        "Git",
+        "CI/CD",
+        "Technical documentation",
+      ],
+    },
+    {
+      title: "Frameworks and tools",
       description:
         "Development frameworks and tools I use for building applications",
       skills: [
@@ -69,7 +84,6 @@ const Skills = () => {
         "Firebase",
         "Material-UI",
         "Android SDK",
-        "Git",
         "VS Code",
         "IntelliJ IDEA",
         "Android Studio",
@@ -78,7 +92,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "🎯 Core Competencies",
+      title: "Core competencies",
       description:
         "Technical concepts and soft skills developed through education and experience",
       skills: [
@@ -99,19 +113,18 @@ const Skills = () => {
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
-            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-              🚀 Skills & Expertise
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300 cursor-default">
+              Skills
             </h2>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
-              Get to know my technical abilities, skills, and professional
-              competencies 💪
+              What I actually reach for, roughly in order of how often.
             </p>
 
             {/* Certifications Section */}
             <div className="mb-12 sm:mb-16 xl:mb-20 2xl:mb-24">
               <div className="mb-6 sm:mb-8 xl:mb-10 2xl:mb-12">
                 <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 xl:mb-4 2xl:mb-5 hover:text-orange-500 dark:hover:text-orange-400 transition-all duration-300">
-                  🏆 AWS Certifications
+                  AWS certifications
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
                   Professional certifications earned during my AWS internship

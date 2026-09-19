@@ -3,54 +3,60 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: '💻 Graduate Software Engineer Intern',
-      company: '🏢 TransLution Software',
-      period: '⚡ Present',
+      title: 'Software Developer, SaaS & Cloud Platform',
+      company: 'TransLution Software',
+      period: 'Current',
       description: (
         <>
-          <a href="https://www.translution.co.za/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-300">TransLution Software</a> Graduate Software Engineer Intern 💻<br />
-          <strong>📍 Location:</strong> Rivonia, Johannesburg<br /><br />
-          <strong>🎯 Key Areas:</strong>
-          <ul className="mt-2 ml-4 space-y-1">
-            <li>• Developing expertise in <span className="text-blue-500 dark:text-blue-400 font-medium">SQL Server</span> and <span className="text-green-500 dark:text-green-400 font-medium">ERP systems (Syspro)</span></li>
-            <li>• Building <span className="text-purple-500 dark:text-purple-400 font-medium">SSRS reports</span> and complex SQL queries for manufacturing & distribution solutions</li>
-            <li>• Learning <span className="text-orange-500 dark:text-orange-400 font-medium">TransLution platform</span> for warehouse and factory automation</li>
-            <li>• Gaining hands-on experience in <span className="text-indigo-500 dark:text-indigo-400 font-medium">business analysis</span>, solution configuration, and product support</li>
-            <li>• Working across the full software lifecycle from sales to implementation and support 🚀</li>
+          <a href="https://www.translution.co.za/" target="_blank" rel="noopener noreferrer" className="text-orange-500 dark:text-orange-400 font-medium hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300">TransLution</a> builds warehouse and factory automation software for
+          manufacturers and distributors, sitting alongside the ERP systems those
+          businesses already run. I work in the product development team on the
+          cloud deployment platform.
+          <ul className="mt-3 ml-4 space-y-1.5">
+            <li>Building and maintaining modules on a multi-tenant SaaS platform</li>
+            <li>Reviewing, testing and debugging AI-agent-generated code for correctness, security and performance</li>
+            <li>Turning user stories into prompts and workflows that agents can execute reliably</li>
+            <li>Designing and querying relational data — PostgreSQL primarily, SQL Server alongside it</li>
+            <li>Writing the developer documentation and integration guides the platform runs on</li>
           </ul>
+          <p className="mt-3 text-gray-500 dark:text-gray-500">
+            The interesting part is not that agents write code. It is that
+            somebody still has to be answerable for what ships.
+          </p>
         </>
       ),
       current: true
     },
     {
-      title: '☁️ AWS Cloud Engineer Intern',
-      company: '🚀 Amazon Web Services',
-      period: '📅 Jan 2024 - Sep 2024',
+      title: 'Cloud Engineer Intern',
+      company: 'Amazon Web Services',
+      period: 'Jan 2024 – Sep 2024',
       description: (
         <>
-          <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-300">Amazon Web Services (AWS)</a> Cloud Engineer Intern ☁️<br />
-          <strong>📍 Location:</strong> Cape Town, Western Cape<br /><br />
-          <strong>🎯 Achievements:</strong>
-          <ul className="mt-2 ml-4 space-y-1">
-            <li>• Worked on <span className="text-blue-500 dark:text-blue-400 font-medium">cloud infrastructure projects</span> supporting enterprise-scale solutions</li>
-            <li>• Earned <span className="text-green-500 dark:text-green-400 font-medium">three AWS certifications</span> in seven months (Cloud Practitioner, AI Practitioner, Solutions Architect Associate)</li>
-            <li>• Collaborated with <span className="text-purple-500 dark:text-purple-400 font-medium">global teams</span> on mission-critical applications</li>
-            <li>• Built scalable, secure cloud solutions using <span className="text-orange-500 dark:text-orange-400 font-medium">AWS core services</span> and <span className="text-indigo-500 dark:text-indigo-400 font-medium">AI technologies</span> ✨</li>
+          Nine months inside <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" className="text-orange-500 dark:text-orange-400 font-medium hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300">AWS</a>, working on cloud infrastructure for
+          enterprise-scale systems.
+          <ul className="mt-3 ml-4 space-y-1.5">
+            <li>Built scalable, secure solutions on AWS core services</li>
+            <li>Earned three certifications in seven months: Cloud Practitioner, AI Practitioner, Solutions Architect Associate</li>
+            <li>Collaborated with distributed teams across time zones on live systems</li>
           </ul>
         </>
       ),
       current: false
     },
     {
-      title: '🎓 Bachelor of Science in Information Technology Graduate',
-      company: '🏛️ University of the Free State',
-      period: '📅 2021 - 2024',
+      title: 'BSc Information Technology',
+      company: 'University of the Free State',
+      period: '2021 – 2024',
       description: (
         <>
-          <a href="https://www.ufs.ac.za/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300">University of the Free State</a> Bloemfontein, Free State 🏛️<br />
-          Bachelor of Science in <span className="text-green-500 dark:text-green-400 font-medium">Information Technology</span> majoring in <span className="text-blue-500 dark:text-blue-400 font-medium">Computer Science</span>. 💻<br /><br />
-          <strong>📚 Relevant Coursework:</strong> <em><span className="text-purple-500 dark:text-purple-400 font-medium">Data Structures & Algorithms</span>, <span className="text-orange-500 dark:text-orange-400 font-medium">Software Engineering</span>, <span className="text-red-500 dark:text-red-400 font-medium">Mathematics & Applied Mathematics</span>,
-            <span className="text-teal-500 dark:text-teal-400 font-medium">Computer Networks</span>, <span className="text-indigo-500 dark:text-indigo-400 font-medium">Advanced Databases</span>, <span className="text-pink-500 dark:text-pink-400 font-medium">Mobile Development</span>, <span className="text-cyan-500 dark:text-cyan-400 font-medium">Web Development</span>, <span className="text-yellow-500 dark:text-yellow-400 font-medium">Human-Computer Interaction</span></em> 🚀
+          <a href="https://www.ufs.ac.za/" target="_blank" rel="noopener noreferrer" className="text-orange-500 dark:text-orange-400 font-medium hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300">University of the Free State</a>, Bloemfontein — majoring in computer science.
+          <p className="mt-3">
+            <span className="text-gray-700 dark:text-gray-300 font-medium">Coursework worth naming:</span>{' '}
+            data structures and algorithms, software engineering, mathematics and
+            applied mathematics, computer networks, advanced databases, mobile
+            and web development, human-computer interaction.
+          </p>
         </>
       ),
       current: false
@@ -62,41 +68,41 @@ const Experience = () => {
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
-            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-              💼 Experience
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300 cursor-default">
+              Experience
             </h2>
           <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
-            My professional journey and educational background in technology and cloud computing 🚀
+            Where I've worked and what I was actually doing there.
           </p>
-          
+
           <div className="space-y-6 sm:space-y-8 xl:space-y-10 2xl:space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className="group">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 mt-2">
-                    <div className={`w-3 h-3 rounded-full transition-all duration-300 group-hover:scale-125 ${
-                      exp.current 
-                        ? 'bg-orange-500 shadow-lg shadow-orange-500/50 dark:shadow-orange-500/80 dark:animate-pulse-glow' 
-                        : 'bg-gray-300 dark:bg-gray-600 group-hover:bg-orange-400 dark:group-hover:bg-orange-400 dark:group-hover:shadow-orange-400/50 dark:group-hover:shadow-md'
+                    <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      exp.current
+                        ? 'bg-orange-500'
+                        : 'bg-gray-300 dark:bg-gray-700 group-hover:bg-orange-400'
                     }`}></div>
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 dark:group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300">
+                      <h3 className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300">
                         {exp.title}
                       </h3>
-                      <span className={`text-xs sm:text-sm xl:text-base 2xl:text-lg font-medium px-2 sm:px-3 xl:px-4 2xl:px-5 py-1 xl:py-2 2xl:py-3 rounded-full transition-all duration-300 ${
-                        exp.current 
-                          ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 dark:shadow-orange-500/30 dark:shadow-sm' 
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 group-hover:bg-orange-100 dark:group-hover:bg-orange-900/30 group-hover:text-orange-600 dark:group-hover:text-orange-400'
+                      <span className={`text-xs sm:text-sm xl:text-base font-medium px-2 sm:px-3 py-1 rounded-full transition-colors duration-300 ${
+                        exp.current
+                          ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
                       }`}>
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <p className="text-sm sm:text-base md:text-lg xl:text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">
                       {exp.company}
                     </p>
-                    <div className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
+                    <div className="text-xs sm:text-sm md:text-base xl:text-lg text-gray-600 dark:text-gray-400 font-light [&_ul]:list-disc [&_ul]:marker:text-orange-500/60">
                       {exp.description}
                     </div>
                   </div>

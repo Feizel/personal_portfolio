@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLinkIcon, GithubIcon } from "./icons";
 
 const Projects = () => {
   const mobileApps = [
@@ -127,18 +127,18 @@ const Projects = () => {
         <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
             <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-              📁 Projects
+              Projects
             </h2>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20 font-light">
               A showcase of my work - from cloud infrastructure to AI
-              applications and beyond 🎆
+              applications and beyond
             </p>
 
             {/* Mobile Apps Section */}
             <div className="mb-16 sm:mb-20 xl:mb-24 2xl:mb-28">
               <div className="mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
                 <h3 className="text-lg sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-                  📱 Mobile Apps
+                  Mobile
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
                   Intentional mobile experiences built through{" "}
@@ -186,7 +186,7 @@ const Projects = () => {
                               href={project.github}
                               className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                             >
-                              <Github
+                              <GithubIcon
                                 size={16}
                                 className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
                               />
@@ -195,7 +195,7 @@ const Projects = () => {
                               href={project.demo}
                               className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                             >
-                              <ExternalLink
+                              <ExternalLinkIcon
                                 size={16}
                                 className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
                               />
@@ -227,7 +227,7 @@ const Projects = () => {
             {/* Web Projects Section */}
             <div className="mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
               <h3 className="text-lg sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-                🌐 Web Projects
+                Web
               </h3>
               <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
                 Full-stack applications and cloud-based solutions
@@ -267,7 +267,7 @@ const Projects = () => {
                             href={project.github}
                             className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                           >
-                            <Github
+                            <GithubIcon
                               size={16}
                               className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
                             />
@@ -276,7 +276,7 @@ const Projects = () => {
                             href={project.demo}
                             className="text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 hover:scale-110"
                           >
-                            <ExternalLink
+                            <ExternalLinkIcon
                               size={16}
                               className="sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
                             />
@@ -308,7 +308,7 @@ const Projects = () => {
             <div className="mt-16 sm:mt-20 xl:mt-24 2xl:mt-28">
               <div className="mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
                 <h3 className="text-lg sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 xl:mb-6 2xl:mb-8 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-                  🚧 Work in Progress
+                  In progress
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl text-gray-600 dark:text-gray-400 font-light">
                   Projects currently in development and upcoming ideas

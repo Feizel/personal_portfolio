@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { SunIcon, MoonIcon } from "./icons";
 
 interface ThemeToggleProps {
   isDark: boolean;
@@ -14,9 +14,9 @@ const ThemeToggle = ({ isDark, onToggle }: ThemeToggleProps) => {
       aria-label="Toggle theme"
     >
       {isDark ? (
-        <Sun className="w-5 h-5 text-orange-500 dark:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]" />
+        <SunIcon className="w-5 h-5 text-orange-500" />
       ) : (
-        <Moon className="w-5 h-5 text-gray-600" />
+        <MoonIcon className="w-5 h-5 text-gray-600" />
       )}
     </button>
   );

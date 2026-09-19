@@ -29,7 +29,7 @@ const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
         <div className="flex justify-between items-center">
           <div
             onClick={onHomeClick}
-            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-300 cursor-pointer font-cursive"
+            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 cursor-pointer font-cursive"
           >
             Feizel
           </div>
@@ -37,13 +37,13 @@ const Header = ({ onContactClick, onBlogClick, onHomeClick }: HeaderProps) => {
           <div className="flex items-center space-x-8">
             <button
               onClick={onBlogClick}
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)] transition-all duration-300 font-medium"
+              className="text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 font-medium"
             >
-              Journal
+              Writing
             </button>
             <button
               onClick={onContactClick}
-              className="px-6 py-2 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white dark:hover:text-white transition-all duration-300 font-medium rounded-lg hover:shadow-lg hover:shadow-orange-500/25 dark:hover:shadow-orange-500/50 dark:hover:shadow-lg hover:scale-105 active:scale-95 dark:shadow-orange-500/30 dark:shadow-md"
+              className="px-5 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors duration-300 font-medium rounded-lg"
             >
               Contact
             </button>
