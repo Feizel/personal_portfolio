@@ -8,11 +8,11 @@ import {
 import { InkUnderline } from "./sketch";
 
 interface HeroProps {
-  onProjectsClick?: () => void;
+  onWorkClick?: () => void;
   onContactClick?: () => void;
 }
 
-const Hero = ({ onProjectsClick, onContactClick }: HeroProps) => {
+const Hero = ({ onWorkClick, onContactClick }: HeroProps) => {
   const titles = useMemo(
     () => [
       "Feizel",
@@ -101,9 +101,10 @@ const Hero = ({ onProjectsClick, onContactClick }: HeroProps) => {
               >
                 TransLution Software
               </a>
-              . Computer science graduate, three AWS certifications, and a
-              standing interest in what happens when AI agents write production
-              code and humans stay accountable for it.
+              . I write the code, and I build alongside AI the way you'd work
+              with a mentor — argue with it, verify it, keep what holds up.
+              Computer science graduate, GradStar Top 100, three AWS
+              certifications.
             </p>
 
             <div className="flex space-x-2 sm:space-x-3 xl:space-x-5 mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
@@ -145,7 +146,7 @@ const Hero = ({ onProjectsClick, onContactClick }: HeroProps) => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6 2xl:gap-8">
               <button
-                onClick={onProjectsClick}
+                onClick={onWorkClick}
                 className="
                   px-6 sm:px-8 xl:px-10 2xl:px-12 py-2 sm:py-3 xl:py-4 2xl:py-5 border border-orange-500 text-orange-500
                   hover:bg-orange-500 hover:text-white text-sm sm:text-[0.8rem] xl:text-lg 2xl:text-xl

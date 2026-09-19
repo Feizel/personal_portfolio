@@ -29,6 +29,8 @@ import {
  */
 
 interface SketchState {
+  /** Bumped on every toggle, so the confirmation can re-announce itself. */
+  pulse: number;
   /** Reader has turned the ink up via the `~` key. */
   loud: boolean;
   toggleLoud: () => void;
@@ -40,6 +42,7 @@ interface SketchState {
 }
 
 const SketchContext = createContext<SketchState>({
+  pulse: 0,
   loud: false,
   toggleLoud: () => {},
   ink: "#f97316",
@@ -53,6 +56,7 @@ const STORAGE_KEY = "sketch-mode";
 
 export const SketchProvider = ({ children }: { children: ReactNode }) => {
   const [loud, setLoud] = useState(false);
+  const [pulse, setPulse] = useState(0);
   const [isDark, setIsDark] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
 
@@ -72,7 +76,9 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
       const el = e.target as HTMLElement | null;
       if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
       if (el?.isContentEditable) return;
+      e.preventDefault();
       setLoud((prev) => !prev);
+      setPulse((n) => n + 1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -101,17 +107,57 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
 
   const value = useMemo<SketchState>(
     () => ({
+      pulse,
       loud,
-      toggleLoud: () => setLoud((prev) => !prev),
+      toggleLoud: () => {
+        setLoud((prev) => !prev);
+        setPulse((n) => n + 1);
+      },
       ink: isDark ? "#fbbf24" : "#1f2937",
       roughness: loud ? 1.9 : 0.8,
       boil: loud && !reducedMotion ? 4 : 0,
     }),
-    [loud, isDark, reducedMotion],
+    [pulse, loud, isDark, reducedMotion],
   );
 
   return (
-    <SketchContext.Provider value={value}>{children}</SketchContext.Provider>
+    <SketchContext.Provider value={value}>
+      {children}
+      <SketchToast />
+    </SketchContext.Provider>
+  );
+};
+
+/**
+ * Brief confirmation that the ~ key did something.
+ *
+ * Without it the toggle is silent whenever no ink is on screen, which reads as
+ * a broken shortcut rather than a quiet one.
+ */
+const SketchToast = () => {
+  const { pulse, loud } = useSketch();
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    if (pulse === 0) return;
+    setShown(true);
+    const timer = setTimeout(() => setShown(false), 1600);
+    return () => clearTimeout(timer);
+  }, [pulse]);
+
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      hidden={!shown}
+      className={`fixed left-1/2 -translate-x-1/2 bottom-8 z-[60] pointer-events-none
+        px-4 py-2 rounded-full text-sm font-medium
+        bg-gray-900/90 dark:bg-white/10 text-white backdrop-blur-xl
+        border border-white/10 transition-all duration-300
+        ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+    >
+      {loud ? "Pen down — sketch mode on" : "Pen up"}
+    </div>
   );
 };
 

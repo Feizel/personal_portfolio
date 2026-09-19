@@ -6,16 +6,57 @@ interface AboutProps {
   onBlogClick?: () => void;
 }
 
+/** Compact CV rows, replacing the Skills and Experience pages. */
+const history = [
+  {
+    heading: "Currently",
+    rows: [
+      {
+        title: "Developer, SaaS & cloud platform",
+        place: "TransLution Software",
+        year: "",
+      },
+    ],
+  },
+  {
+    heading: "Before",
+    rows: [
+      {
+        title: "Cloud Engineer Intern",
+        place: "Amazon Web Services",
+        year: "2024",
+      },
+      {
+        title: "BSc Information Technology",
+        place: "University of the Free State",
+        year: "2021–24",
+      },
+    ],
+  },
+];
+
+const recognition = [
+  {
+    title: "GradStar Top 100",
+    place: "Gautrain GradStar Awards",
+    year: "2024",
+    href: "https://gradstar.co.za/2024-top-100/",
+  },
+  { title: "AWS Solutions Architect Associate", place: "", year: "2025" },
+  { title: "AWS AI Practitioner", place: "", year: "2025" },
+  { title: "AWS Cloud Practitioner", place: "", year: "2025" },
+];
+
 const About = ({ onContactClick }: AboutProps) => {
   return (
-    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-4 md:pb-16 xl:pb-20 2xl:pb-24 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
-        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 pb-4 md:pb-16 xl:pb-20 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8">
+        <div className="max-w-3xl xl:max-w-4xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
-            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300 cursor-default">
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               About
             </h2>
-            <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-10 sm:mb-14 font-light">
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-10 sm:mb-14 font-light">
               The short version, and why I build the things I build.
             </p>
 
@@ -38,11 +79,25 @@ const About = ({ onContactClick }: AboutProps) => {
                   SaaS platform for manufacturing and distribution
                 </span>{" "}
                 — the unglamorous, load-bearing kind of software, where a
-                dropped record is a truck that doesn't leave. Most of my day is
-                data modelling, reviewing code that AI agents wrote, and
-                deciding whether it is actually correct. It is a good place to
-                learn, because the software is allowed to be wrong exactly zero
-                times.
+                dropped record is a truck that doesn't leave. I write the
+                modules, model the data, and own what ships. It is a good place
+                to learn, because the software is allowed to be wrong exactly
+                zero times.
+              </p>
+
+              <p>
+                I build with AI the way you'd work alongside someone further
+                along than you — as a{" "}
+                <InkUnderline seed={14}>
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    partner and a mentor
+                  </span>
+                </InkUnderline>
+                , not an autocomplete and not an oracle. I argue with it, ask it
+                to explain itself, throw out what doesn't hold up, and write the
+                parts it gets wrong. It is the fastest I have ever learned, and
+                it only works if you can tell good code from plausible code.
+                Most of the job is building that judgement.
               </p>
 
               <p>
@@ -90,53 +145,85 @@ const About = ({ onContactClick }: AboutProps) => {
               </p>
             </div>
 
-            <div className="mt-12 border border-gray-200 dark:border-gray-800 rounded-xl p-6 sm:p-8">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-500 mb-6">
-                For the record
-              </h3>
-              <div className="space-y-5 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 font-light">
-                <p>
-                  <InkUnderline seed={21}>
-                    <span className="text-gray-900 dark:text-white font-medium">
-                      Three AWS certifications
-                    </span>
-                  </InkUnderline>{" "}
-                  — Cloud Practitioner, AI Practitioner, Solutions Architect
-                  Associate — earned inside seven months during my internship.
-                </p>
-                <p>
-                  Co-founded{" "}
-                  <a
-                    href="https://atomusdev.co.za/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors underline decoration-orange-500/30 font-medium"
+            {/* History — what used to be the Experience and Skills pages. */}
+            <div className="mt-16 sm:mt-20 space-y-10">
+              {history.map((group) => (
+                <div key={group.heading}>
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                    {group.heading}
+                  </h3>
+                  {group.rows.map((row) => (
+                    <div
+                      key={row.title}
+                      className="grid grid-cols-[1fr_auto] items-baseline gap-4 py-3"
+                    >
+                      <div>
+                        <p className="text-sm sm:text-base xl:text-lg text-gray-900 dark:text-white font-medium">
+                          {row.title}
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
+                          {row.place}
+                        </p>
+                      </div>
+                      <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light tabular-nums">
+                        {row.year}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              <div>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                  Recognition
+                </h3>
+                {recognition.map((row) => (
+                  <div
+                    key={row.title}
+                    className="grid grid-cols-[1fr_auto] items-baseline gap-4 py-3"
                   >
-                    Atomus
-                  </a>
-                  , a small studio where the brief is usually "this should not
-                  look like everything else".
-                </p>
-                <p>
-                  Built CloudClassroom during my time at AWS, and scored{" "}
+                    <div>
+                      <p className="text-sm sm:text-base xl:text-lg text-gray-900 dark:text-white font-medium">
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+                          >
+                            {row.title}
+                          </a>
+                        ) : (
+                          row.title
+                        )}
+                      </p>
+                      {row.place && (
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
+                          {row.place}
+                        </p>
+                      )}
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light tabular-nums">
+                      {row.year}
+                    </span>
+                  </div>
+                ))}
+                <p className="mt-5 text-sm text-gray-500 dark:text-gray-500 font-light">
                   <InkCircle seed={34}>
                     <span className="text-gray-900 dark:text-white font-medium">
-                      96%
+                      Three
                     </span>
                   </InkCircle>{" "}
-                  on my final-year event management system.
-                </p>
-                <p>
-                  Bought a telescope long before I could justify it. Still the
-                  best purchase I've made.
+                  AWS certifications inside seven months, and a national top-100
+                  ranking for employability the same year.
                 </p>
               </div>
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-16 text-center">
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-light">
-                I like talking to people building strange, ambitious things.
-                If that's you,{" "}
+                I like talking to people building strange, ambitious things. If
+                that's you,{" "}
                 <button
                   onClick={onContactClick}
                   className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors cursor-pointer underline decoration-orange-500/30"
