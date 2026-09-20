@@ -3,67 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    font-family: 'Inter', system-ui, sans-serif;
-    cursor: none; /* Hide default cursor */
-  }
-  
+  /*
+   * Set on body, not on `*`. A universal selector applies the family directly
+   * to every element, which outranks a font utility inherited from a parent —
+   * so `font-mono` on a container silently did nothing to the text inside it.
+   */
   body {
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    cursor: none; /* Hide default cursor */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
-  
-  /* Mobile-specific cursor hiding */
-  @media (max-width: 767px) {
-    * {
-      cursor: none !important;
-      -webkit-touch-callout: none !important;
-      -webkit-user-select: none !important;
-      -khtml-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      user-select: none !important;
-      -webkit-tap-highlight-color: transparent !important;
-    }
+
+  /* Form controls do not inherit type by default. */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
   }
+
+  /*
+   * Text stays selectable. People copy email addresses, quotes and code off a
+   * portfolio; blocking that to protect nothing is a bad trade.
+   */
 
   .font-display {
     font-family: 'Space Grotesk', system-ui, sans-serif;
-  }
-
-  .font-retro {
-    font-family: 'Orbitron', monospace;
   }
 
   .font-cursive {
     font-family: 'Dancing Script', cursive;
   }
 
-  /* Custom cursor styles for interactive elements */
-  a, button, [role="button"], input, textarea, select {
-    cursor: none !important;
-  }
-
-  /* Ensure cursor trail works on all elements */
-  * {
-    cursor: none !important;
-  }
-  
-  /* Mobile-specific interactive element cursor hiding */
-  @media (max-width: 767px) {
-    a, button, [role="button"], input, textarea, select {
-      cursor: none !important;
-      -webkit-touch-callout: none !important;
-      -webkit-user-select: none !important;
-      -webkit-tap-highlight-color: transparent !important;
-    }
-  }
 }
 
 /* Remove glow effects in light mode */
@@ -92,4 +62,23 @@ html:not(.dark) .dark\:hover\:drop-shadow-\[0_0_10px_rgba\(249\,115\,22\,0\.8\)\
 
 html:not(.dark) .dark\:hover\:drop-shadow-\[0_0_8px_rgba\(249\,115\,22\,0\.6\)\]:hover {
   filter: none !important;
+}
+
+/* Sketch mode (press ~): warms the page toward paper behind the ink. */
+html.sketch-loud body {
+  background-image: radial-gradient(
+    circle at 20% 0%,
+    rgba(251, 191, 36, 0.05),
+    transparent 55%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,257 +1,227 @@
 import React from "react";
+import { InkUnderline } from "./sketch";
 
 interface AboutProps {
   onContactClick?: () => void;
   onBlogClick?: () => void;
 }
 
+/** Compact CV rows, replacing the Skills and Experience pages. */
+const history = [
+  {
+    heading: "Currently",
+    rows: [
+      {
+        title: "Developer, SaaS & cloud platform",
+        place: "TransLution Software",
+        year: "",
+      },
+    ],
+  },
+  {
+    heading: "Before",
+    rows: [
+      {
+        title: "Cloud Engineer Intern",
+        place: "Amazon Web Services",
+        year: "2024",
+      },
+      {
+        title: "BSc Information Technology",
+        place: "University of the Free State",
+        year: "2021–24",
+      },
+    ],
+  },
+];
+
+const recognition = [
+  {
+    title: "GradStar Top 100",
+    place: "Gautrain GradStar Awards",
+    year: "2024",
+    href: "https://gradstar.co.za/2024-top-100/",
+  },
+  { title: "AWS Solutions Architect Associate", place: "", year: "2025" },
+  { title: "AWS AI Practitioner", place: "", year: "2025" },
+  { title: "AWS Cloud Practitioner", place: "", year: "2025" },
+];
+
 const About = ({ onContactClick }: AboutProps) => {
   return (
-    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 2xl:pt-56 pb-4 md:pb-16 xl:pb-20 2xl:pb-24 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto px-4 sm:px-6 xl:px-8 2xl:px-12">
-        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+    <section className="pt-20 sm:pt-24 md:pt-40 xl:pt-48 pb-4 md:pb-16 xl:pb-20 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8">
+        <div className="max-w-3xl xl:max-w-4xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
-            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 dark:hover:text-orange-400 dark:hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.6)] transition-all duration-300 cursor-default">
-              About Me 
+            <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              About
             </h2>
-            <p className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 font-light">
-              Get to know me better; my journey, passions, and what drives me in
-              the world of technology 
+            <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-10 sm:mb-14 font-light">
+              The short version, and why I build the things I build.
             </p>
 
             {/* Profile Image */}
-            <div className="flex justify-center mb-8 sm:mb-12 xl:mb-16 2xl:mb-20">
+            <div className="flex justify-center mb-10 sm:mb-14 xl:mb-16">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                <div className="absolute -inset-px bg-orange-500/30 rounded-full blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src="/feizel.PNG"
                   alt="Feizel"
-                  className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-105 transition-transform duration-300"
+                  className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-full object-cover border-2 border-white dark:border-gray-800"
                 />
               </div>
             </div>
 
-            <div className="space-y-4 sm:space-y-6 xl:space-y-8 2xl:space-y-10 text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+            <div className="space-y-6 sm:space-y-8 text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
               <p>
-                🎓 I'm a recent graduate currently working as a{" "}
-                <span className="text-orange-500 dark:text-orange-400 font-medium">
-                  Graduate Software Engineer Intern at TransLution Software
-                </span>
-                , where I'm developing enterprise solutions for manufacturing and
-                distribution. Previously, I interned at{" "}
-                <span className="text-blue-500 dark:text-blue-400 font-medium">
-                  Amazon Web Services
-                </span>
-                , where I dove deep into cloud computing technologies. My
-                journey into the world of technology began with a passion for
-                coding 💻, where I built my skills learning from industry
-                leaders. My passion sits at the crossroads of{" "}
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-medium">
-                  technology
-                </span>
-                ,{" "}
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium">
-                  artificial intelligence
-                </span>
-                , and{" "}
-                <span className="bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent font-medium">
-                  business strategy
-                </span>
-                , driving me to build solutions that create meaningful impact.
+                I'm a software developer working on a{" "}
+                <span className="text-gray-900 dark:text-white font-medium">
+                  SaaS platform for manufacturing and distribution
+                </span>{" "}
+                — the unglamorous, load-bearing kind of software, where a
+                dropped record is a truck that doesn't leave. I write the
+                modules, model the data, and own what ships. It is a good place
+                to learn, because the software is allowed to be wrong exactly
+                zero times.
               </p>
 
-              <div className="mt-6 p-3 bg-gray-50 dark:bg-gray-900/20 rounded-md border-l-2 border-orange-500/50 text-center">
-                <blockquote className="text-sm italic text-gray-600 dark:text-gray-400 mb-1 text-center">
-                  "If I have seen further it is by standing on the shoulders of
-                  giants"
-                </blockquote>
-                <cite className="text-xs text-gray-500 dark:text-gray-500">
-                  — Sir Isaac Newton, <em>Polymath</em>
+              <p>
+                I build with AI the way you'd work alongside someone further
+                along than you — as a{" "}
+                <InkUnderline seed={14}>
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    partner and a mentor
+                  </span>
+                </InkUnderline>
+                , not an autocomplete and not an oracle. I argue with it, ask it
+                to explain itself, throw out what doesn't hold up, and write the
+                parts it gets wrong. It is the fastest I have ever learned, and
+                it only works if you can tell good code from plausible code.
+                Most of the job is building that judgement.
+              </p>
+
+              <p>
+                The other half of how I think is design. I care how a thing
+                feels to use, not only whether it returns 200. I call that{" "}
+                <InkUnderline seed={7}>
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    creative technologist
+                  </span>
+                </InkUnderline>{" "}
+                because the two halves aren't separable in practice: the
+                interface is the argument, and a system nobody wants to touch is
+                a system that failed.
+              </p>
+
+              <blockquote className="my-10 pl-5 border-l border-orange-500/40 text-sm sm:text-base italic text-gray-500 dark:text-gray-400">
+                We are made of starstuff. We are a way for the cosmos to know
+                itself.
+                <cite className="block mt-2 not-italic text-xs text-gray-500 dark:text-gray-500">
+                  Carl Sagan
                 </cite>
-              </div>
-
-              <p>
-                Beyond coding and working with enterprise software systems, I
-                actively write about emerging technology trends, AI
-                breakthroughs 🤖, cloud innovations ⚡, business insights, and
-                my personal fascination with astronomy on my blog. I believe
-                in the power of continuous learning and enjoy sharing
-                knowledge to inspire and engage the tech community.
-              </p>
-
-              <div className="mt-6 p-3 bg-gray-50 dark:bg-gray-900/20 rounded-md border-l-2 border-orange-500/50 text-center">
-                <blockquote className="text-sm italic text-gray-600 dark:text-gray-400 mb-1 text-center">
-                  "It always seems impossible until it is done."
-                </blockquote>
-                <cite className="text-xs text-gray-500 dark:text-gray-500">
-                  — Nelson Rolihlahla Mandela,{" "}
-                  <em>Former South-African President</em>
-                </cite>
-              </div>
-
-              <p>
-                I am fueled by the energy of connecting with visionary
-                technologists, sparking bold ideas, and teaming up on
-                projects that don't just break the mold, but reinvent it,
-                reaching for new horizons beyond the imaginable.
-              </p>
-            </div>
-
-            <div className="mt-6 p-3 bg-gray-50 dark:bg-gray-900/20 rounded-md border-l-2 border-orange-500/50 text-center">
-              <blockquote className="text-sm italic text-gray-600 dark:text-gray-400 mb-1 text-center">
-                "We are made of starstuff. We are a way for the cosmos to know
-                itself"
               </blockquote>
-              <cite className="text-xs text-gray-500 dark:text-gray-500">
-                — Carl Sagan, <em>Astrophysicist</em>
-              </cite>
-            </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-900/30 dark:to-orange-900/10 rounded-xl border border-orange-100 dark:border-orange-900/20">
-              <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-4 text-orange-600 dark:text-orange-400 flex items-center gap-2">
-                <span className="animate-pulse">🎯</span> A Few Fun Facts About
-                Me
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-orange-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    ☁️
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I earned{" "}
-                    <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-semibold">
-                      three AWS certifications:
-                    </span>{" "}
-                    Cloud Practitioner, AI Practitioner, and Solutions Architect
-                    Associate, in just{" "}
-                    <span className="font-semibold text-orange-600 dark:text-orange-400">
-                      seven months
-                    </span>{" "}
-                    during my internship! 
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-blue-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    🏢
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I co-founded{" "}
-                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-semibold">
-                      <a href="https://atomusdev.co.za/" target="_blank">
-                        Atomus Dev
-                      </a>
-                    </span>
-                    , where I combined my academic technical material with my
-                    entrepreneurial spirit 
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-green-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    ⭐
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    My{" "}
-                    <span className="bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent font-semibold">
-                      CloudClassroom
-                    </span>{" "}
-                    project at AWS received glowing feedback, proving I can
-                    deliver enterprise-grade solutions
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-purple-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    🎓
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Scored{" "}
-                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold">
-                      96%
-                    </span>{" "}
-                    on my Event Management System project while maintaining
-                    consistently strong academic performance
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900/30 dark:to-green-900/10 rounded-xl border border-green-100 dark:border-green-900/20">
-              <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-4 text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                And just for fun
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-yellow-500 text-lg group-hover:rotate-12 transition-transform duration-200">
-                    🔭
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I bought my first telescope in{" "}
-                    <span className="font-semibold text-yellow-600 dark:text-yellow-400">
-                      grade 8
-                    </span>
-                    , which shocked my mom because she thought it was just an
-                    expensive toy! Thus began my obsession with astronomy 
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-red-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    💀
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I once read through the entire{" "}
-                    <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent font-semibold">
-                      "1000 Ways to Die" Wikipedia page,
-                    </span>{" "}
-                    definitely an unusual way to spend a weekend! 
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-white text-lg group-hover:bounce transition-transform duration-200">
-                    ⚽
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I'm a big{" "}
-                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-semibold">
-                      Real Madrid FC
-                    </span>{" "}
-                    fan, <span className="font-semibold">Hala Madrid!</span> But
-                    do not worry, I am not one of those annoying fans LOL! 
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 group hover:bg-white/50 dark:hover:bg-gray-800/30 p-3 rounded-lg transition-all duration-200">
-                  <span className="text-orange-500 text-lg group-hover:scale-110 transition-transform duration-200">
-                    📝
-                  </span>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I keep a laid-back tech journal where I jot down my random
-                    thoughts on tech, AI breakthroughs,, and cosmic discoveries,{" "}
-                    <a
-                      href="/blog"
-                      className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors underline font-medium"
-                    >
-                      check out my notes
-                    </a>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
-                <span className="font-semibold">Plot twist:</span> I'm always
-                open to new opportunities! 
+              <p>
+                Science is the through-line. I read astronomy the way other
+                people follow a league — orbital mechanics, telescope optics,
+                whatever the current arguments are about dark matter. It shows
+                up in my work more than it should: the good engineering
+                instincts are the same instincts, which is to say measure first,
+                distrust a clean result, and assume the universe is stranger
+                than your model of it.
               </p>
-              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-                If you know of any exciting opportunities where I can combine my
-                cloud skills, software engineering passion, and maybe even
-                discuss Saturn's rings during coffee breaks,{" "}
+
+              <p>
+                I write about all of it —{" "}
+                <a
+                  href="/blog"
+                  className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors underline decoration-orange-500/30 font-medium"
+                >
+                  notes and longer pieces
+                </a>{" "}
+                on AI, cloud, and things happening several light years away.
+                Writing is how I find out whether I understood something or just
+                recognised it.
+              </p>
+            </div>
+
+            {/* History — what used to be the Experience and Skills pages. */}
+            <div className="mt-16 sm:mt-20 space-y-10">
+              {history.map((group) => (
+                <div key={group.heading}>
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                    {group.heading}
+                  </h3>
+                  {group.rows.map((row) => (
+                    <div
+                      key={row.title}
+                      className="grid grid-cols-[1fr_auto] items-baseline gap-4 py-3"
+                    >
+                      <div>
+                        <p className="text-sm sm:text-base xl:text-lg text-gray-900 dark:text-white font-medium">
+                          {row.title}
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
+                          {row.place}
+                        </p>
+                      </div>
+                      <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light tabular-nums">
+                        {row.year}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              <div>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                  Recognition
+                </h3>
+                {recognition.map((row) => (
+                  <div
+                    key={row.title}
+                    className="grid grid-cols-[1fr_auto] items-baseline gap-4 py-3"
+                  >
+                    <div>
+                      <p className="text-sm sm:text-base xl:text-lg text-gray-900 dark:text-white font-medium">
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+                          >
+                            {row.title}
+                          </a>
+                        ) : (
+                          row.title
+                        )}
+                      </p>
+                      {row.place && (
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
+                          {row.place}
+                        </p>
+                      )}
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light tabular-nums">
+                      {row.year}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-light">
+                I like talking to people building strange, ambitious things. If
+                that's you,{" "}
                 <button
                   onClick={onContactClick}
-                  className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors cursor-pointer underline"
+                  className="font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors cursor-pointer underline decoration-orange-500/30"
                 >
-                  reach out to me!
-                </button>{" "}
-                ☕
+                  say hello
+                </button>
+                .
               </p>
             </div>
           </div>

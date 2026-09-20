@@ -7,8 +7,10 @@ export default {
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
-        'retro': ['Orbitron', 'monospace'],
+        'retro': ['Space Grotesk', 'system-ui', 'sans-serif'],
         'cursive': ['Dancing Script', 'cursive'],
+        'mono': ['JetBrains Mono', 'SF Mono', 'ui-monospace', 'monospace'],
+        'reader': ['Newsreader', 'Georgia', 'serif'],
       },
       animation: {
         'in': 'fadeIn 0.2s ease-out',
