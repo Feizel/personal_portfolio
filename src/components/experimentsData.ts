@@ -1,4 +1,4 @@
-export interface Project {
+export interface Experiment {
   slug: string;
   name: string;
   /** One line, for the index. */
@@ -17,7 +17,7 @@ export interface Project {
   body: string[];
 }
 
-export const projects: Project[] = [
+export const experiments: Experiment[] = [
   {
     slug: "ember",
     name: "Ember",
@@ -104,4 +104,4 @@ export const projects: Project[] = [
 ];
 
 export const bySlug = (slug?: string) =>
-  projects.find((p) => p.slug === slug);
+  experiments.find((e) => e.slug === slug);

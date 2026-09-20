@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const links = [
-  { label: "Work", view: "work", path: "/work" },
+  { label: "Experiments", view: "experiments", path: "/experiments" },
   { label: "About", view: "about", path: "/about" },
   { label: "Writing", view: "blog", path: "/blog" },
 ];
@@ -43,6 +43,13 @@ const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
           </button>
 
           <div className="flex items-center gap-5 sm:gap-8">
+            {/*
+              The dock carries primary navigation on small screens, so these
+              links would only be a second copy of it — and with the longer
+              labels they pushed Contact off the right edge. Header keeps the
+              wordmark and Contact; the dock keeps the rest.
+            */}
+            <div className="hidden md:flex items-center gap-5 sm:gap-8">
             {links.map(({ label, view, path }) => {
               const active =
                 currentPath === path ||
@@ -68,6 +75,7 @@ const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
                 </button>
               );
             })}
+            </div>
 
             <button
               onClick={onContactClick}

@@ -8,7 +8,7 @@ interface BottomNavProps {
 
 const navItems = [
   { id: "home", label: "Home", icon: HomeIcon },
-  { id: "work", label: "Work", icon: FolderIcon },
+  { id: "experiments", label: "Experiments", icon: FolderIcon },
   { id: "about", label: "About", icon: UserIcon },
   { id: "blog", label: "Writing", icon: CodeIcon },
 ];

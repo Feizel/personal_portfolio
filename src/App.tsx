@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation, useParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Work from './components/Work';
+import Experiments from './components/Experiments';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Footer from './components/Footer';
@@ -14,6 +14,12 @@ import BottomNav from './components/BottomNav';
 import SkyEgg from './components/SkyEgg';
 import { SketchProvider } from './components/sketch';
 import 'drawably/style.css';
+
+/** Carries an old /work/:slug bookmark to the same case under its new path. */
+function WorkSlugRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={`/experiments/${slug}`} replace />;
+}
 
 /** One transition for every route, so pages feel like one surface. */
 const page = {
@@ -91,20 +97,20 @@ function AppContent() {
             <Route path="/" element={
               <motion.div {...page}>
                 <Hero
-                  onWorkClick={() => navigate('/work')}
+                  onWorkClick={() => navigate('/experiments')}
                   onContactClick={() => setIsContactOpen(true)}
                   onDiscoverSky={() => setIsSkyOpen(true)}
                 />
               </motion.div>
             } />
-            <Route path="/work" element={
+            <Route path="/experiments" element={
               <motion.div {...page}>
-                <Work />
+                <Experiments />
               </motion.div>
             } />
-            <Route path="/work/:slug" element={
+            <Route path="/experiments/:slug" element={
               <motion.div {...page}>
-                <Work />
+                <Experiments />
               </motion.div>
             } />
             <Route path="/about" element={
@@ -123,9 +129,12 @@ function AppContent() {
               </motion.div>
             } />
 
-            {/* Retired sections. Their content lives on About and Work now, so
-                old links and bookmarks land somewhere real instead of 404ing. */}
-            <Route path="/projects" element={<Navigate to="/work" replace />} />
+            {/* Retired sections. Their content lives on About and Experiments
+                now, so old links and bookmarks land somewhere real instead of
+                404ing. Work was renamed, so its paths redirect too. */}
+            <Route path="/work" element={<Navigate to="/experiments" replace />} />
+            <Route path="/work/:slug" element={<WorkSlugRedirect />} />
+            <Route path="/projects" element={<Navigate to="/experiments" replace />} />
             <Route path="/skills" element={<Navigate to="/about" replace />} />
             <Route path="/experience" element={<Navigate to="/about" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
