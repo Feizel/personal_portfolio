@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { InkUnderline } from "./sketch";
 import { motion, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { ClockIcon } from "./icons";
 import { localSiderealTime, moonPhase } from "../utils/sky";
@@ -162,7 +163,9 @@ const Blog = () => {
       <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8">
         <div className="pt-8 sm:pt-6 md:pt-0">
           <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Writing
+            <InkUnderline tone="rose" seed={5}>
+              Writing
+            </InkUnderline>
           </h2>
           <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-10 font-light max-w-2xl">
             Split a star's light and the bright lines tell you what it is made

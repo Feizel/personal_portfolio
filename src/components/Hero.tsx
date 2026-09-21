@@ -79,7 +79,7 @@ const Hero = ({ onContactClick, onDiscoverSky }: HeroProps) => {
             >
               Cloud systems that move stock, work and paperwork through
               factories and warehouses — the{" "}
-              <InkUnderline seed={11}>
+              <InkUnderline tone="amber" seed={11}>
                 <span className="text-gray-900 dark:text-white font-medium">
                   load-bearing kind
                 </span>

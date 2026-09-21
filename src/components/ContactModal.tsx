@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { InkUnderline } from "./sketch";
 import {
   CloseIcon,
   MailIcon,
@@ -64,7 +65,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </button>
 
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          Get in touch
+          <InkUnderline tone="blue" seed={6}>
+            Get in touch
+          </InkUnderline>
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400 font-light mb-8 select-text">
           Email is the way in. I read everything, and I answer most things.

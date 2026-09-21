@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { InkBadge, InkDivider } from "./sketch";
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, UserIcon } from "./icons";
 import {
   getBlogPostBySlug,
@@ -104,9 +105,13 @@ const BlogPostComponent = () => {
           </h1>
           {post.status && (
             <div className="mb-3 sm:mb-4 xl:mb-6 2xl:mb-8">
-              <span className="inline-flex items-center px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/50">
-                {post.status.replace(/-/g, ' ').toUpperCase()}
-              </span>
+              <InkBadge
+                tone="amber"
+                seed={4}
+                className="[padding:5px_12px] font-mono text-[0.62rem] uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300"
+              >
+                {post.status.replace(/-/g, " ").toUpperCase()}
+              </InkBadge>
             </div>
           )}
           <div className="flex items-center flex-wrap gap-2 sm:gap-6 xl:gap-8 2xl:gap-10 text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-500 dark:text-gray-400">
@@ -144,15 +149,18 @@ const BlogPostComponent = () => {
           dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
         />
 
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div className="mt-12">
+          <InkDivider tone="rose" seed={12} className="mb-8" />
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-sm bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full font-medium dark:shadow-orange-500/20 dark:shadow-sm font-retro"
+              <InkBadge
+                key={tag}
+                tone="rose"
+                seed={120 + index}
+                className="[padding:5px_12px] text-sm text-gray-600 dark:text-gray-300"
               >
                 {tag}
-              </span>
+              </InkBadge>
             ))}
           </div>
         </div>
