@@ -1,14 +1,18 @@
 import React, { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
+  DrawablyBadge,
   DrawablyCard,
   DrawablyCircle,
+  DrawablyDivider,
   DrawablyHighlight,
   DrawablyUnderline,
 } from "drawably/react";
 import {
+  INKS,
   SketchContext,
   useSketch,
   SKETCH_STORAGE_KEY,
+  type InkTone,
   type SketchState,
 } from "./sketchContext";
 
@@ -86,7 +90,8 @@ export const SketchProvider = ({ children }: { children: ReactNode }) => {
         setLoud((prev) => !prev);
         setPulse((n) => n + 1);
       },
-      ink: isDark ? "#fbbf24" : "#1f2937",
+      ink: INKS.amber[isDark ? 1 : 0],
+      inkFor: (tone: InkTone = "default") => INKS[tone][isDark ? 1 : 0],
       roughness: loud ? 2.1 : 0.9,
       // Alive by default — a slow boil at rest, a fast one when pushed.
       boil: reducedMotion ? 0 : loud ? 6 : 2,
@@ -135,11 +140,18 @@ const SketchToast = () => {
   );
 };
 
-type MarkProps = { children: ReactNode; className?: string; seed?: number };
+type MarkProps = {
+  children: ReactNode;
+  className?: string;
+  seed?: number;
+  /** Which pen. Omitted marks use the default ink. */
+  tone?: InkTone;
+};
 
 /** Hand-drawn rule under a phrase. */
-export const InkUnderline = ({ children, className, seed }: MarkProps) => {
-  const { ink, roughness, boil } = useSketch();
+export const InkUnderline = ({ children, className, seed, tone }: MarkProps) => {
+  const { inkFor, roughness, boil } = useSketch();
+  const ink = inkFor(tone);
   return (
     <DrawablyUnderline
       stroke={ink}
@@ -159,8 +171,9 @@ export const InkUnderline = ({ children, className, seed }: MarkProps) => {
  * Kept to numerals and very short strings — an ellipse stretched around a long
  * phrase reads as a mistake rather than an annotation. Phrases get an underline.
  */
-export const InkCircle = ({ children, className, seed }: MarkProps) => {
-  const { ink, roughness, boil } = useSketch();
+export const InkCircle = ({ children, className, seed, tone }: MarkProps) => {
+  const { inkFor, roughness, boil } = useSketch();
+  const ink = inkFor(tone);
   return (
     <DrawablyCircle
       stroke={ink}
@@ -175,8 +188,9 @@ export const InkCircle = ({ children, className, seed }: MarkProps) => {
 };
 
 /** Marker pass over a phrase. */
-export const InkHighlight = ({ children, className, seed }: MarkProps) => {
-  const { ink, roughness, boil } = useSketch();
+export const InkHighlight = ({ children, className, seed, tone }: MarkProps) => {
+  const { inkFor, roughness, boil } = useSketch();
+  const ink = inkFor(tone);
   return (
     <DrawablyHighlight
       stroke={ink}
@@ -191,8 +205,9 @@ export const InkHighlight = ({ children, className, seed }: MarkProps) => {
 };
 
 /** Sketched panel, replacing a gradient box. */
-export const InkCard = ({ children, className, seed }: MarkProps) => {
-  const { ink, roughness, boil } = useSketch();
+export const InkCard = ({ children, className, seed, tone }: MarkProps) => {
+  const { inkFor, roughness, boil } = useSketch();
+  const ink = inkFor(tone);
   return (
     <DrawablyCard
       stroke={ink}
@@ -203,5 +218,46 @@ export const InkCard = ({ children, className, seed }: MarkProps) => {
     >
       {children}
     </DrawablyCard>
+  );
+};
+
+/** Sketched badge, for a short status word. */
+export const InkBadge = ({
+  children,
+  className,
+  seed,
+  tone,
+  variant = "outline",
+}: MarkProps & { variant?: "outline" | "scribble" }) => {
+  const { inkFor, roughness, boil } = useSketch();
+  return (
+    <DrawablyBadge
+      stroke={inkFor(tone)}
+      roughness={roughness}
+      boil={boil}
+      seed={seed}
+      variant={variant}
+      className={className}
+    >
+      {children}
+    </DrawablyBadge>
+  );
+};
+
+/** Drawn rule, in place of a hairline border. */
+export const InkDivider = ({
+  className,
+  seed,
+  tone,
+}: Omit<MarkProps, "children">) => {
+  const { inkFor, roughness, boil } = useSketch();
+  return (
+    <DrawablyDivider
+      stroke={inkFor(tone)}
+      roughness={roughness}
+      boil={boil}
+      seed={seed}
+      className={className}
+    />
   );
 };

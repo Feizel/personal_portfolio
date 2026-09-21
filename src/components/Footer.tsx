@@ -8,7 +8,7 @@ interface FooterProps {
 
 const links: { label: string; view: string }[] = [
   { label: "Home", view: "home" },
-  { label: "Experiments", view: "experiments" },
+  { label: "Builds", view: "builds" },
   { label: "About", view: "about" },
   { label: "Writing", view: "blog" },
 ];

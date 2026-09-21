@@ -11,8 +11,8 @@ import { Helmet } from 'react-helmet-async';
 <Helmet>
   <meta property="og:title" content="My Blog Title" />
   <meta property="og:description" content="Short excerpt here" />
-  <meta property="og:image" content="https://feizel.co.za/blogphotos/myimage.png" />
-  <meta property="og:url" content="https://feizel.co.za/blog/my-post" />
+  <meta property="og:image" content="https://feizel.dev/blogphotos/myimage.png" />
+  <meta property="og:url" content="https://feizel.dev/blog/my-post" />
 </Helmet>
 
 const ReadingProgressBar = () => {

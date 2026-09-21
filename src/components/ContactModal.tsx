@@ -67,8 +67,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           Get in touch
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400 font-light mb-8 select-text">
-          Email is the way in. I read everything, I answer most things, and I'll
-          send my CV on request.
+          Email is the way in. I read everything, and I answer most things.
         </p>
 
         <div className="mb-8">
