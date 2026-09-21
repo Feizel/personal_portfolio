@@ -1,5 +1,5 @@
 import React from "react";
-import { InkUnderline } from "./sketch";
+import { InkDivider, InkUnderline } from "./sketch";
 
 interface AboutProps {
   onContactClick?: () => void;
@@ -54,7 +54,9 @@ const About = ({ onContactClick }: AboutProps) => {
         <div className="max-w-3xl xl:max-w-4xl">
           <div className="pt-8 sm:pt-6 md:pt-0">
             <h2 className="text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              About
+              <InkUnderline tone="teal" seed={2}>
+                About
+              </InkUnderline>
             </h2>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-10 sm:mb-14 font-light">
               The short version, and why I build the things I build.
@@ -88,7 +90,7 @@ const About = ({ onContactClick }: AboutProps) => {
               <p>
                 I build with AI the way you'd work alongside someone further
                 along than you — as a{" "}
-                <InkUnderline seed={14}>
+                <InkUnderline tone="teal" seed={14}>
                   <span className="text-gray-900 dark:text-white font-medium">
                     partner and a mentor
                   </span>
@@ -103,7 +105,7 @@ const About = ({ onContactClick }: AboutProps) => {
               <p>
                 The other half of how I think is design. I care how a thing
                 feels to use, not only whether it returns 200. I call that{" "}
-                <InkUnderline seed={7}>
+                <InkUnderline tone="violet" seed={7}>
                   <span className="text-gray-900 dark:text-white font-medium">
                     creative technologist
                   </span>
@@ -149,9 +151,10 @@ const About = ({ onContactClick }: AboutProps) => {
             <div className="mt-16 sm:mt-20 space-y-10">
               {history.map((group) => (
                 <div key={group.heading}>
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
                     {group.heading}
                   </h3>
+                  <InkDivider seed={51} className="mt-3 mb-2" />
                   {group.rows.map((row) => (
                     <div
                       key={row.title}
@@ -174,9 +177,10 @@ const About = ({ onContactClick }: AboutProps) => {
               ))}
 
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 pb-4 mb-2 border-b border-gray-200 dark:border-gray-800">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
                   Recognition
                 </h3>
+                <InkDivider seed={57} className="mt-3 mb-2" />
                 {recognition.map((row) => (
                   <div
                     key={row.title}

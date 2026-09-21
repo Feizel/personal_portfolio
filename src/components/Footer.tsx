@@ -1,6 +1,7 @@
 import React from "react";
 import { GithubIcon, LinkedinIcon, MailIcon, AwardIcon, OrbitIcon } from "./icons";
 import { useSketch } from "./sketchContext";
+import { InkDivider } from "./sketch";
 
 interface FooterProps {
   onViewChange?: (view: string) => void;
@@ -8,7 +9,7 @@ interface FooterProps {
 
 const links: { label: string; view: string }[] = [
   { label: "Home", view: "home" },
-  { label: "Experiments", view: "experiments" },
+  { label: "Builds", view: "builds" },
   { label: "About", view: "about" },
   { label: "Writing", view: "blog" },
 ];
@@ -116,7 +117,8 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
+        <div className="mt-12 pt-8">
+          <InkDivider seed={71} className="mb-8" />
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 dark:text-gray-400 flex items-center font-light text-sm">
               <OrbitIcon size={16} className="mr-2 text-orange-500" />

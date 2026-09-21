@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { navItems } from "./navItems";
+import { InkUnderline } from "./sketch";
 
 interface HeaderProps {
   currentPath: string;
-  onContactClick: () => void;
   onNavigate: (view: string) => void;
 }
 
-const links = [
-  { label: "Experiments", view: "experiments", path: "/experiments" },
-  { label: "About", view: "about", path: "/about" },
-  { label: "Writing", view: "blog", path: "/blog" },
-];
-
 /**
- * The only navigation. The bottom dock is gone: with three destinations it was
- * a second menu covering the footer, so the header carries everything.
+ * The header and the floating dock render the same list, in the same order.
+ * Above `md` the header carries it; below that the header keeps only the
+ * wordmark, which is the way home, and the dock carries everything else.
+ *
+ * The current page is marked with a drawn rule rather than a CSS one, and
+ * each destination has its own pen — so the nav is where the ink introduces
+ * itself, before anyone finds it on a page.
  */
-const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
+const Header = ({ currentPath, onNavigate }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,10 @@ const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-4">
+      <nav
+        aria-label="Primary"
+        className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-4"
+      >
         <div className="flex justify-between items-center gap-4">
           <button
             onClick={() => onNavigate("home")}
@@ -42,18 +45,13 @@ const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
             Feizel
           </button>
 
-          <div className="flex items-center gap-5 sm:gap-8">
-            {/*
-              The dock carries primary navigation on small screens, so these
-              links would only be a second copy of it — and with the longer
-              labels they pushed Contact off the right edge. Header keeps the
-              wordmark and Contact; the dock keeps the rest.
-            */}
-            <div className="hidden md:flex items-center gap-5 sm:gap-8">
-            {links.map(({ label, view, path }) => {
+          <div className="hidden md:flex items-center gap-5 sm:gap-8">
+            {navItems.map(({ label, view, path, tone }, i) => {
               const active =
-                currentPath === path ||
-                (path === "/blog" && currentPath.startsWith("/blog"));
+                !!path &&
+                (currentPath === path ||
+                  (path === "/blog" && currentPath.startsWith("/blog")) ||
+                  (path === "/builds" && currentPath.startsWith("/builds")));
 
               return (
                 <button
@@ -66,23 +64,16 @@ const Header = ({ currentPath, onContactClick, onNavigate }: HeaderProps) => {
                       : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
-                  {label}
-                  <span
-                    className={`absolute -bottom-1.5 left-0 right-0 h-px bg-orange-500 origin-left transition-transform duration-300 ${
-                      active ? "scale-x-100" : "scale-x-0"
-                    }`}
-                  />
+                  {active ? (
+                    <InkUnderline tone={tone} seed={40 + i}>
+                      {label}
+                    </InkUnderline>
+                  ) : (
+                    label
+                  )}
                 </button>
               );
             })}
-            </div>
-
-            <button
-              onClick={onContactClick}
-              className="px-4 sm:px-5 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors duration-300 text-sm sm:text-base font-medium rounded-lg"
-            >
-              Contact
-            </button>
           </div>
         </div>
       </nav>

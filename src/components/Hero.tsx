@@ -5,7 +5,6 @@ import { InkUnderline } from "./sketch";
 import OrbitField from "./OrbitField";
 
 interface HeroProps {
-  onWorkClick?: () => void;
   onContactClick?: () => void;
   onDiscoverSky?: () => void;
 }
@@ -31,7 +30,7 @@ const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 } as const;
 
-const Hero = ({ onWorkClick, onContactClick, onDiscoverSky }: HeroProps) => {
+const Hero = ({ onContactClick, onDiscoverSky }: HeroProps) => {
   const calm = useReducedMotion();
 
   // With reduced motion on, skip straight to the settled state.
@@ -80,7 +79,7 @@ const Hero = ({ onWorkClick, onContactClick, onDiscoverSky }: HeroProps) => {
             >
               Cloud systems that move stock, work and paperwork through
               factories and warehouses — the{" "}
-              <InkUnderline seed={11}>
+              <InkUnderline tone="amber" seed={11}>
                 <span className="text-gray-900 dark:text-white font-medium">
                   load-bearing kind
                 </span>
@@ -142,33 +141,6 @@ const Hero = ({ onWorkClick, onContactClick, onDiscoverSky }: HeroProps) => {
                 aria-label="Contact"
               >
                 <MailIcon className={socialIconClass} />
-              </button>
-            </motion.div>
-
-            <motion.div
-              variants={calm ? undefined : fade}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-6"
-            >
-              <button
-                onClick={onWorkClick}
-                className="
-                  px-6 sm:px-8 xl:px-10 py-2.5 sm:py-3 xl:py-4 border border-orange-500 text-orange-500
-                  hover:bg-orange-500 hover:text-white text-sm xl:text-lg
-                  transition-colors duration-300 font-medium rounded-lg
-                "
-              >
-                See what I've built
-              </button>
-              <button
-                onClick={onContactClick}
-                className="
-                  px-6 sm:px-8 xl:px-10 py-2.5 sm:py-3 xl:py-4 border border-gray-300 dark:border-gray-700
-                  text-gray-700 dark:text-gray-300 text-sm xl:text-lg
-                  hover:border-gray-400 dark:hover:border-orange-500/50 dark:hover:text-orange-400
-                  transition-colors duration-300 font-medium rounded-lg text-center
-                "
-              >
-                Request my CV
               </button>
             </motion.div>
           </div>

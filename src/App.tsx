@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Experiments from './components/Experiments';
+import Builds from './components/Builds';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Footer from './components/Footer';
@@ -15,10 +15,10 @@ import SkyEgg from './components/SkyEgg';
 import { SketchProvider } from './components/sketch';
 import 'drawably/style.css';
 
-/** Carries an old /work/:slug bookmark to the same case under its new path. */
-function WorkSlugRedirect() {
+/** Carries an old bookmark to the same case under its current path. */
+function SlugRedirect() {
   const { slug } = useParams();
-  return <Navigate to={`/experiments/${slug}`} replace />;
+  return <Navigate to={`/builds/${slug}`} replace />;
 }
 
 /** One transition for every route, so pages feel like one surface. */
@@ -55,14 +55,22 @@ function AppContent() {
     }
   }, [isDark]);
 
-  const go = (view: string) => navigate(view === 'home' ? '/' : `/${view}`);
+  const go = (view: string) => {
+    // Contact is a modal, not a page, but it sits in the nav like any other
+    // item — on mobile the dock is the only navigation there is.
+    if (view === 'contact') {
+      setIsContactOpen(true);
+      return;
+    }
+    navigate(view === 'home' ? '/' : `/${view}`);
+  };
 
   // Route transitions key on the top-level section, not the full path, so that
   // /work and /work/:slug stay mounted together — the shared-element morph
   // between a work row and its case needs both to live under one tree.
   const section = location.pathname.split('/')[1] || 'home';
 
-  // The dock highlights blog posts as Writing, and cases as Work.
+  // The dock highlights blog posts as Writing, and cases as Builds.
   const currentView = section === '' ? 'home' : section;
 
   /*
@@ -86,31 +94,26 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-true-black transition-colors duration-500">
-      <Header
-        currentPath={location.pathname}
-        onContactClick={() => setIsContactOpen(true)}
-        onNavigate={go}
-      />
+      <Header currentPath={location.pathname} onNavigate={go} />
       <main className="pb-12 sm:pb-24 md:pb-8">
         <AnimatePresence mode="wait">
           <Routes location={location} key={section}>
             <Route path="/" element={
               <motion.div {...page}>
                 <Hero
-                  onWorkClick={() => navigate('/experiments')}
                   onContactClick={() => setIsContactOpen(true)}
                   onDiscoverSky={() => setIsSkyOpen(true)}
                 />
               </motion.div>
             } />
-            <Route path="/experiments" element={
+            <Route path="/builds" element={
               <motion.div {...page}>
-                <Experiments />
+                <Builds />
               </motion.div>
             } />
-            <Route path="/experiments/:slug" element={
+            <Route path="/builds/:slug" element={
               <motion.div {...page}>
-                <Experiments />
+                <Builds />
               </motion.div>
             } />
             <Route path="/about" element={
@@ -129,12 +132,14 @@ function AppContent() {
               </motion.div>
             } />
 
-            {/* Retired sections. Their content lives on About and Experiments
-                now, so old links and bookmarks land somewhere real instead of
-                404ing. Work was renamed, so its paths redirect too. */}
-            <Route path="/work" element={<Navigate to="/experiments" replace />} />
-            <Route path="/work/:slug" element={<WorkSlugRedirect />} />
-            <Route path="/projects" element={<Navigate to="/experiments" replace />} />
+            {/* Retired paths. The section has been called Work, then
+                Experiments, and is now Builds; every earlier name still has to
+                land somewhere real. Retired pages fold into About. */}
+            <Route path="/experiments" element={<Navigate to="/builds" replace />} />
+            <Route path="/experiments/:slug" element={<SlugRedirect />} />
+            <Route path="/work" element={<Navigate to="/builds" replace />} />
+            <Route path="/work/:slug" element={<SlugRedirect />} />
+            <Route path="/projects" element={<Navigate to="/builds" replace />} />
             <Route path="/skills" element={<Navigate to="/about" replace />} />
             <Route path="/experience" element={<Navigate to="/about" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
